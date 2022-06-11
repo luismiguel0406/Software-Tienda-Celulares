@@ -62,11 +62,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControlesUser\CuUsuarios.cs">
+    <Compile Include="ControlesUser\cuArticulo.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="ControlesUser\CuUsuarios.Designer.cs">
-      <DependentUpon>CuUsuarios.cs</DependentUpon>
+    <Compile Include="ControlesUser\cuArticulo.Designer.cs">
+      <DependentUpon>cuArticulo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="customButton.cs">
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="FrmArticulos.cs">
       <SubType>Form</SubType>
@@ -130,8 +133,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ControlesUser\CuUsuarios.resx">
-      <DependentUpon>CuUsuarios.cs</DependentUpon>
+    <EmbeddedResource Include="ControlesUser\cuArticulo.resx">
+      <DependentUpon>cuArticulo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmArticulos.resx">
       <DependentUpon>FrmArticulos.cs</DependentUpon>

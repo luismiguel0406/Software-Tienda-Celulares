@@ -51,19 +51,19 @@ namespace MenuGerman
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
            // MainMenuStrip = cargaMenuDinamico(msMenu, 1);
-            lblUsuario.Text = GlobalClass.Usuario;
+            //label1.Text = GlobalClass.Usuario;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            panel2.Top = button1.Top;
+      
                 FrmArticulos frmarticulos = new FrmArticulos();
                 frmarticulos.ShowDialog();                                        
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            panel2.Top = button2.Top;
+            
             frmCategoria frmCategoria = new frmCategoria();
             frmCategoria.ShowDialog();
         }
