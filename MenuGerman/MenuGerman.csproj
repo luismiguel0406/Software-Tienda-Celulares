@@ -62,6 +62,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControlesUser\CuUsuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesUser\CuUsuarios.Designer.cs">
+      <DependentUpon>CuUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmArticulos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -124,6 +130,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="ControlesUser\CuUsuarios.resx">
+      <DependentUpon>CuUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmArticulos.resx">
       <DependentUpon>FrmArticulos.cs</DependentUpon>
     </EmbeddedResource>

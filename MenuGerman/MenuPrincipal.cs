@@ -13,7 +13,11 @@ namespace MenuGerman
         {   _frmLogin = frmLogin;
             InitializeComponent();
         }
+        public MenuPrincipal()
+        {
+            InitializeComponent();
 
+        }
         public MenuStrip cargaMenuDinamico(MenuStrip menuStrip, int tipoMenu)
         {
             int numQuery = 1;
@@ -51,13 +55,15 @@ namespace MenuGerman
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {           
+        {
+            panel2.Top = button1.Top;
                 FrmArticulos frmarticulos = new FrmArticulos();
                 frmarticulos.ShowDialog();                                        
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
+            panel2.Top = button2.Top;
             frmCategoria frmCategoria = new frmCategoria();
             frmCategoria.ShowDialog();
         }
