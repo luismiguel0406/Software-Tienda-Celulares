@@ -17,6 +17,17 @@ namespace Utilidades
         public static int Login { get { return 5; } }
         public static int detalleIngreso { get { return 6; } }
 
+        public static void limpiar(UserControl cu)
+        {
+            foreach (Control c in cu.Controls)
+            {
+                if (c is TextBox || c is RichTextBox)
+                {
+                    c.Text = string.Empty;
+                }                
+            }
+
+        }
         public static void limpiar(Form frm)
         {
             foreach (Control c in frm.Controls)
@@ -24,7 +35,7 @@ namespace Utilidades
                 if (c is TextBox || c is RichTextBox)
                 {
                     c.Text = string.Empty;
-                }                
+                }
             }
 
         }

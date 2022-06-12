@@ -93,6 +93,16 @@ namespace MenuGerman.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Close_30px {
+            get {
+                object obj = ResourceManager.GetObject("Close_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Delete_30px {
             get {
                 object obj = ResourceManager.GetObject("Delete_30px", resourceCulture);
@@ -186,6 +196,26 @@ namespace MenuGerman.Properties {
         internal static System.Drawing.Bitmap user_24px {
             get {
                 object obj = ResourceManager.GetObject("user_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_30px {
+            get {
+                object obj = ResourceManager.GetObject("user_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap user_black30px {
+            get {
+                object obj = ResourceManager.GetObject("user_black30px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

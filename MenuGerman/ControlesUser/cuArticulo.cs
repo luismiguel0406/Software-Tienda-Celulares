@@ -1,13 +1,6 @@
 ﻿using CapaDeDatos.Models;
 using CapaNegocio.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilidades;
 
@@ -69,7 +62,7 @@ namespace MenuGerman.ControlesUser
 
                 }
                 MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //GlobalClass.limpiar(this);
+                GlobalClass.limpiar(this);
 
             }
             catch (Exception ex)
@@ -84,7 +77,7 @@ namespace MenuGerman.ControlesUser
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-           // GlobalClass.limpiar(this);
+            GlobalClass.limpiar(this);
             GlobalClass.limpiar(dgvArticulo);
             editar = false;
             txtIdArticulo.Enabled = true;
@@ -94,6 +87,10 @@ namespace MenuGerman.ControlesUser
         {
             DatosFormulario();
             dgvArticulo.DataSource = ArticuloDTO.MantenimientoArticulo(articuloModel, GlobalClass.Select);
+            if (dgvArticulo.Rows.Count==0)
+            {
+                MessageBox.Show("Sin datos para Mostrar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -130,6 +127,12 @@ namespace MenuGerman.ControlesUser
             cbCategoria.DataSource = dt;
             cbCategoria.DisplayMember = dt.Columns["NOMBRE"].ToString();
             cbCategoria.ValueMember = dt.Columns["IDCATEGORIA"].ToString();
+        }
+
+        private void btnAgregarCategoria_Click(object sender, EventArgs e)
+        {
+            frmCategoria frmCategoria = new frmCategoria();
+            frmCategoria.ShowDialog();
         }
     }
 }
