@@ -42,6 +42,7 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new MenuGerman.customButton();
+            this.imageryService1 = new Microsoft.Reporting.Map.WebForms.VirtualEarth.ImageryService();
             this.upPanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -227,6 +228,12 @@
             this.btnCerrar.UseVisualStyleBackColor = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // imageryService1
+            // 
+            this.imageryService1.Credentials = null;
+            this.imageryService1.Url = "http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc";
+            this.imageryService1.UseDefaultCredentials = false;
+            // 
             // MenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,6 +274,7 @@
         private customButton btnCerrar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUsuario;
+        private Microsoft.Reporting.Map.WebForms.VirtualEarth.ImageryService imageryService1;
     }
 }
 

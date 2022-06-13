@@ -55,7 +55,7 @@ namespace MenuGerman.ControlesUser
 
                 }
                 else
-                {
+                {//EVITAR GUARDAR SI LOS CAMPOS ESTAN VACIOS
 
                     DatosFormulario();
                     dgvArticulo.DataSource = ArticuloDTO.MantenimientoArticulo(articuloModel, GlobalClass.Insert);
@@ -95,7 +95,7 @@ namespace MenuGerman.ControlesUser
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            if (GlobalClass.validaDgv(dgvArticulo))
+            if (Validaciones.validaDgv(dgvArticulo))
             {
                 DatosdataGridView();
                 txtIdArticulo.Enabled = false;
@@ -106,7 +106,7 @@ namespace MenuGerman.ControlesUser
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (GlobalClass.validaDgv(dgvArticulo))
+            if (Validaciones.validaDgv(dgvArticulo))
             {
                 DialogResult dialogo = MessageBox.Show("Esta seguro que desea eliminar?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogo == DialogResult.Yes)
@@ -133,6 +133,34 @@ namespace MenuGerman.ControlesUser
         {
             frmCategoria frmCategoria = new frmCategoria();
             frmCategoria.ShowDialog();
+        }
+
+       
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.soloLetras(e);
+        }
+
+        private void txtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.soloNumeros(e);
+        }
+
+        private void txtStock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            Validaciones.soloNumeros(e);
+        }
+
+        private void dgvArticulo_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            lblDataGridView.Visible = false;
+        }
+
+        private void dgvArticulo_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if (dgvArticulo.Rows.Count == 0)
+                lblDataGridView.Visible = true;
+
         }
     }
 }

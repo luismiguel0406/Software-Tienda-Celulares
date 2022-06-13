@@ -17,6 +17,7 @@ namespace Utilidades
         public static int Login { get { return 5; } }
         public static int detalleIngreso { get { return 6; } }
 
+
         public static void limpiar(UserControl cu)
         {
             foreach (Control c in cu.Controls)
@@ -60,17 +61,7 @@ namespace Utilidades
             dgv.Rows.Clear();
         }
 
-        public static bool validaDgv(DataGridView dgv)
-        {
-            if (dgv.Rows.Count == 0)
-            {   MessageBox.Show("No ha seleccionado una fila","Mensaje",MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            else
-            {
-                return true;
-            }
-        }
+       
         public static string numeroComprobante(string serie, string tipo)
         {
 
@@ -86,6 +77,18 @@ namespace Utilidades
             if (idRol == 1 && adm == "ADMINISTRADOR") return true;
             return false;
 
+        }
+        public static bool validaDgv(DataGridView dgv)
+        {
+            if (dgv.Rows.Count == 0)
+            {
+                MessageBox.Show("No ha seleccionado una fila", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }
