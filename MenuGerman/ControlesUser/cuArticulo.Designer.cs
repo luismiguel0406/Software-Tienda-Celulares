@@ -47,13 +47,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.dgvArticulo = new System.Windows.Forms.DataGridView();
+            this.lblDataGridView = new System.Windows.Forms.Label();
+            this.btnAgregarCategoria = new MenuGerman.customButton();
             this.btnCancelar = new MenuGerman.customButton();
             this.btnBuscar = new MenuGerman.customButton();
             this.btnEliminar = new MenuGerman.customButton();
             this.btnEditar = new MenuGerman.customButton();
             this.btnGuardar = new MenuGerman.customButton();
-            this.btnAgregarCategoria = new MenuGerman.customButton();
-            this.lblDataGridView = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,6 +144,7 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.AccessibleName = "";
             this.txtCodigo.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodigo.Location = new System.Drawing.Point(21, 41);
             this.txtCodigo.Name = "txtCodigo";
@@ -215,6 +216,7 @@
             this.dgvArticulo.AllowUserToDeleteRows = false;
             this.dgvArticulo.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvArticulo.BackgroundColor = System.Drawing.Color.White;
+            this.dgvArticulo.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.MediumSlateBlue;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -223,7 +225,8 @@
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvArticulo.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvArticulo.ColumnHeadersHeight = 35;
+            this.dgvArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -243,6 +246,40 @@
             this.dgvArticulo.TabIndex = 13;
             this.dgvArticulo.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvArticulo_RowsAdded);
             this.dgvArticulo.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvArticulo_RowsRemoved);
+            // 
+            // lblDataGridView
+            // 
+            this.lblDataGridView.AutoSize = true;
+            this.lblDataGridView.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataGridView.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblDataGridView.Location = new System.Drawing.Point(168, 413);
+            this.lblDataGridView.Name = "lblDataGridView";
+            this.lblDataGridView.Size = new System.Drawing.Size(792, 17);
+            this.lblDataGridView.TabIndex = 15;
+            this.lblDataGridView.Text = "Agregue articulos para poder visualizarlos aqui debajo, Utilice el formulario y a" +
+    " continuacion haga click en el boton  \"Guardar\"";
+            // 
+            // btnAgregarCategoria
+            // 
+            this.btnAgregarCategoria.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnAgregarCategoria.BackGroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnAgregarCategoria.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnAgregarCategoria.BorderRadius = 4;
+            this.btnAgregarCategoria.BorderSize = 0;
+            this.btnAgregarCategoria.FlatAppearance.BorderSize = 0;
+            this.btnAgregarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCategoria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnAgregarCategoria.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarCategoria.Image = global::MenuGerman.Properties.Resources.add_30px;
+            this.btnAgregarCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarCategoria.Location = new System.Drawing.Point(692, 102);
+            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
+            this.btnAgregarCategoria.Size = new System.Drawing.Size(46, 40);
+            this.btnAgregarCategoria.TabIndex = 14;
+            this.btnAgregarCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregarCategoria.TextColor = System.Drawing.Color.White;
+            this.btnAgregarCategoria.UseVisualStyleBackColor = false;
+            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
             // 
             // btnCancelar
             // 
@@ -359,44 +396,11 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // btnAgregarCategoria
-            // 
-            this.btnAgregarCategoria.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnAgregarCategoria.BackGroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnAgregarCategoria.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnAgregarCategoria.BorderRadius = 4;
-            this.btnAgregarCategoria.BorderSize = 0;
-            this.btnAgregarCategoria.FlatAppearance.BorderSize = 0;
-            this.btnAgregarCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregarCategoria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnAgregarCategoria.ForeColor = System.Drawing.Color.White;
-            this.btnAgregarCategoria.Image = global::MenuGerman.Properties.Resources.add_30px;
-            this.btnAgregarCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarCategoria.Location = new System.Drawing.Point(692, 102);
-            this.btnAgregarCategoria.Name = "btnAgregarCategoria";
-            this.btnAgregarCategoria.Size = new System.Drawing.Size(46, 40);
-            this.btnAgregarCategoria.TabIndex = 14;
-            this.btnAgregarCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAgregarCategoria.TextColor = System.Drawing.Color.White;
-            this.btnAgregarCategoria.UseVisualStyleBackColor = false;
-            this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);
-            // 
-            // lblDataGridView
-            // 
-            this.lblDataGridView.AutoSize = true;
-            this.lblDataGridView.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataGridView.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblDataGridView.Location = new System.Drawing.Point(168, 413);
-            this.lblDataGridView.Name = "lblDataGridView";
-            this.lblDataGridView.Size = new System.Drawing.Size(792, 17);
-            this.lblDataGridView.TabIndex = 15;
-            this.lblDataGridView.Text = "Agregue articulos para poder visualizarlos aqui debajo, Utilice el formulario y a" +
-    " continuacion haga click en el boton  \"Guardar\"";
-            // 
             // cuArticulo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.Controls.Add(this.lblDataGridView);
             this.Controls.Add(this.btnAgregarCategoria);
             this.Controls.Add(this.dgvArticulo);

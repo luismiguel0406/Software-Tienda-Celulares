@@ -2,6 +2,7 @@
 using MenuGerman.ControlesUser;
 using System;
 using System.Data;
+using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using Utilidades;
@@ -131,16 +132,29 @@ namespace MenuGerman
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
+     
 
         private void btnArticulosMenu_Click(object sender, EventArgs e)
         {
             cuArticulo cu = new cuArticulo();
             this.mainPanel.Controls.Add(cu);
            
+        }
+
+        private void btnCerrar_Click_1(object sender, EventArgs e)
+        {
+            Close();
+
+        }
+
+        private void btnCerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnCerrar.BackColor = Color.Crimson;
+        }
+
+        private void btnCerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrar.BackColor = Color.Transparent;
         }
     }
 }

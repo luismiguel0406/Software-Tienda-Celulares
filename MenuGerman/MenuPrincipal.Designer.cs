@@ -40,9 +40,9 @@
             this.menuPanel = new System.Windows.Forms.Panel();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.imageryService1 = new Microsoft.Reporting.Map.WebForms.VirtualEarth.ImageryService();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new MenuGerman.customButton();
-            this.imageryService1 = new Microsoft.Reporting.Map.WebForms.VirtualEarth.ImageryService();
             this.upPanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -196,6 +196,12 @@
             this.lblUsuario.TabIndex = 18;
             this.lblUsuario.Text = "Juan perez";
             // 
+            // imageryService1
+            // 
+            this.imageryService1.Credentials = null;
+            this.imageryService1.Url = "http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc";
+            this.imageryService1.UseDefaultCredentials = false;
+            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MenuGerman.Properties.Resources.user_black30px;
@@ -208,8 +214,8 @@
             // 
             // btnCerrar
             // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Crimson;
-            this.btnCerrar.BackGroundColor = System.Drawing.Color.Crimson;
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.BackGroundColor = System.Drawing.Color.Transparent;
             this.btnCerrar.BorderColor = System.Drawing.Color.Crimson;
             this.btnCerrar.BorderRadius = 0;
             this.btnCerrar.BorderSize = 0;
@@ -217,22 +223,18 @@
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Image = global::MenuGerman.Properties.Resources.Close_30px;
+            this.btnCerrar.Image = global::MenuGerman.Properties.Resources.Close_thin2_30px;
             this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrar.Location = new System.Drawing.Point(1314, -1);
+            this.btnCerrar.Location = new System.Drawing.Point(1302, 4);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(38, 31);
-            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.Size = new System.Drawing.Size(37, 20);
+            this.btnCerrar.TabIndex = 2;
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrar.TextColor = System.Drawing.Color.White;
             this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // imageryService1
-            // 
-            this.imageryService1.Credentials = null;
-            this.imageryService1.Url = "http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc";
-            this.imageryService1.UseDefaultCredentials = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
+            this.btnCerrar.MouseLeave += new System.EventHandler(this.btnCerrar_MouseLeave);
+            this.btnCerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnCerrar_MouseMove);
             // 
             // MenuPrincipal
             // 
@@ -271,10 +273,10 @@
         private System.Windows.Forms.Panel menuPanel;
         private System.Windows.Forms.Panel mainPanel;
         private System.Windows.Forms.Label label1;
-        private customButton btnCerrar;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label lblUsuario;
         private Microsoft.Reporting.Map.WebForms.VirtualEarth.ImageryService imageryService1;
+        private customButton btnCerrar;
     }
 }
 

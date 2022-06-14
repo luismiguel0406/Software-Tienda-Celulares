@@ -42,5 +42,16 @@ namespace Utilidades
                 return;
             }
         }
+       public static void camposNoVacios(UserControl us)
+        {
+
+            foreach (Control ctrl in us.Controls)
+            {
+                if(ctrl is TextBox || ctrl is RichTextBox)
+                {
+                    //codes here
+                }
+            }
+        }
     }
 }

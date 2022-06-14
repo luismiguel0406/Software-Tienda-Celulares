@@ -1,6 +1,7 @@
 ﻿using CapaDeDatos.Models;
 using CapaNegocio.DTO;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Utilidades;
 
@@ -19,7 +20,7 @@ namespace MenuGerman
         private void DatosFormulario()
         {
             categoriaModel.nombre = string.IsNullOrEmpty(txtNombre.Text) ? string.Empty : txtNombre.Text;
-            categoriaModel.descripcion = string.IsNullOrEmpty(rtDescripcion.Text) ? string.Empty : rtDescripcion.Text;
+           // categoriaModel.descripcion = string.IsNullOrEmpty(rtDescripcion.Text) ? string.Empty : rtDescripcion.Text;
             categoriaModel.idCategoria = string.IsNullOrEmpty(txtIdcategoria.Text) ? 0 : Convert.ToInt32(txtIdcategoria.Text);
             categoriaModel.estado = string.IsNullOrEmpty(cbEstado.Text) ? 1 : Convert.ToInt32(cbEstado.Text);
         }
@@ -28,15 +29,25 @@ namespace MenuGerman
         {
             txtIdcategoria.Text = dgvCategoria.CurrentRow.Cells["IDCATEGORIA"].Value.ToString();
             txtNombre.Text = dgvCategoria.CurrentRow.Cells["NOMBRE"].Value.ToString();
-            rtDescripcion.Text = dgvCategoria.CurrentRow.Cells["DESCRIPCION"].Value.ToString();
+           // rtDescripcion.Text = dgvCategoria.CurrentRow.Cells["DESCRIPCION"].Value.ToString();
             cbEstado.Text = dgvCategoria.CurrentRow.Cells["ESTADO"].Value.ToString();
              
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
-        {          
+        {
             DatosFormulario();
             dgvCategoria.DataSource = CategoriaDTO.MantenimientoCategoria(categoriaModel, GlobalClass.Select);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            if (GlobalClass.validaDgv(dgvCategoria))
+            {
+                DatosdataGridView();
+                editar = true;
+                txtIdcategoria.Enabled = false;
+            }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -54,18 +65,7 @@ namespace MenuGerman
                 {
                     return;
                 }
-            }     
-        }
-
-        private void btnEditar_Click(object sender, EventArgs e)
-        {
-            if (GlobalClass.validaDgv(dgvCategoria))
-            {
-                DatosdataGridView();
-                editar = true;
-                txtIdcategoria.Enabled = false;
-            } 
-          
+            }
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -74,14 +74,14 @@ namespace MenuGerman
             {
                 if (editar)
                 {
-                   DatosFormulario();
-                   dgvCategoria.DataSource = CategoriaDTO.MantenimientoCategoria(categoriaModel,GlobalClass.Update);
-                   txtIdcategoria.Enabled = true;
+                    DatosFormulario();
+                    dgvCategoria.DataSource = CategoriaDTO.MantenimientoCategoria(categoriaModel, GlobalClass.Update);
+                    txtIdcategoria.Enabled = true;
                 }
                 else
                 {
                     DatosFormulario();
-                    dgvCategoria.DataSource = CategoriaDTO.MantenimientoCategoria(categoriaModel, GlobalClass.Insert);                 
+                    dgvCategoria.DataSource = CategoriaDTO.MantenimientoCategoria(categoriaModel, GlobalClass.Insert);
                 }
                 MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 GlobalClass.limpiar(this);
@@ -97,12 +97,19 @@ namespace MenuGerman
 
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnCerrar_MouseMove(object sender, MouseEventArgs e)
         {
-            GlobalClass.limpiar(this);
-            GlobalClass.limpiar(dgvCategoria);
-            editar = false;
-            txtIdcategoria.Enabled = true;
+            btnCerrar.BackColor = Color.Crimson;
+        }
+
+        private void btnCerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrar.BackColor = Color.Transparent;
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

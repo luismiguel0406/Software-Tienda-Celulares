@@ -103,6 +103,26 @@ namespace MenuGerman.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Close_thin_30px {
+            get {
+                object obj = ResourceManager.GetObject("Close_thin_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Close_thin2_30px {
+            get {
+                object obj = ResourceManager.GetObject("Close_thin2_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Delete_30px {
             get {
                 object obj = ResourceManager.GetObject("Delete_30px", resourceCulture);
