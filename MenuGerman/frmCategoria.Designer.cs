@@ -39,12 +39,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dgvCategoria = new System.Windows.Forms.DataGridView();
             this.upperPanelCategoria = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new MenuGerman.customButton();
             this.btnBuscar = new MenuGerman.customButton();
             this.btnGuardar = new MenuGerman.customButton();
             this.btnEliminar = new MenuGerman.customButton();
             this.btnEditar = new MenuGerman.customButton();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblDataGridView = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
             this.upperPanelCategoria.SuspendLayout();
@@ -144,6 +144,8 @@
             this.dgvCategoria.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCategoria.Size = new System.Drawing.Size(575, 175);
             this.dgvCategoria.TabIndex = 52;
+            this.dgvCategoria.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvCategoria_RowsAdded);
+            this.dgvCategoria.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvCategoria_RowsRemoved);
             // 
             // upperPanelCategoria
             // 
@@ -155,6 +157,17 @@
             this.upperPanelCategoria.Name = "upperPanelCategoria";
             this.upperPanelCategoria.Size = new System.Drawing.Size(672, 26);
             this.upperPanelCategoria.TabIndex = 57;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(19, 3);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(120, 17);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "Agregar Categoria";
             // 
             // btnCerrar
             // 
@@ -267,17 +280,6 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(19, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(120, 17);
-            this.label1.TabIndex = 49;
-            this.label1.Text = "Agregar Categoria";
-            // 
             // lblDataGridView
             // 
             this.lblDataGridView.AutoSize = true;
@@ -313,6 +315,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCategoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = " Categoria";
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).EndInit();
             this.upperPanelCategoria.ResumeLayout(false);

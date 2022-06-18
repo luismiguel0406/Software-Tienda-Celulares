@@ -271,12 +271,11 @@
             this.btnAgregarCategoria.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
             this.btnAgregarCategoria.ForeColor = System.Drawing.Color.White;
             this.btnAgregarCategoria.Image = global::MenuGerman.Properties.Resources.add_30px;
-            this.btnAgregarCategoria.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarCategoria.Location = new System.Drawing.Point(692, 102);
             this.btnAgregarCategoria.Name = "btnAgregarCategoria";
             this.btnAgregarCategoria.Size = new System.Drawing.Size(46, 40);
             this.btnAgregarCategoria.TabIndex = 14;
-            this.btnAgregarCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregarCategoria.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarCategoria.TextColor = System.Drawing.Color.White;
             this.btnAgregarCategoria.UseVisualStyleBackColor = false;
             this.btnAgregarCategoria.Click += new System.EventHandler(this.btnAgregarCategoria_Click);

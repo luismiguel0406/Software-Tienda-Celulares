@@ -111,5 +111,16 @@ namespace MenuGerman
         {
             Close();
         }
+
+        private void dgvCategoria_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            lblDataGridView.Visible = false;
+        }
+
+        private void dgvCategoria_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if (dgvCategoria.Rows.Count == 0)
+                lblDataGridView.Visible = true;
+        }
     }
 }

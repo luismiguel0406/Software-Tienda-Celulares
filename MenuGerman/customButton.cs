@@ -67,10 +67,7 @@ namespace MenuGerman
             this.BackColor = Color.MediumSlateBlue;
             this.ForeColor = Color.White;
             this.Resize += new EventHandler(Button_Resize);
-            this.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            this.ImageAlign = ContentAlignment.MiddleLeft;
-            this.TextAlign = ContentAlignment.MiddleRight;
-           
+            this.Font = new Font("Segoe UI", 12F, FontStyle.Bold);          
         }
 
         private void Button_Resize(object sender, EventArgs e)

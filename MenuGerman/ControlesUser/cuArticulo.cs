@@ -15,6 +15,13 @@ namespace MenuGerman.ControlesUser
         {
             InitializeComponent();
         }
+        private void comboBoxCategoria()
+        {
+            var dt = CategoriaDTO.MantenimientoCategoria(categoriaModel, GlobalClass.Select);
+            cbCategoria.DataSource = dt;
+            cbCategoria.DisplayMember = dt.Columns["NOMBRE"].ToString();
+            cbCategoria.ValueMember = dt.Columns["IDCATEGORIA"].ToString();
+        }
 
         public void DatosFormulario()
         {
@@ -123,16 +130,14 @@ namespace MenuGerman.ControlesUser
 
         private void cuArticulo_Load(object sender, EventArgs e)
         {
-            var dt = CategoriaDTO.MantenimientoCategoria(categoriaModel, GlobalClass.Select);
-            cbCategoria.DataSource = dt;
-            cbCategoria.DisplayMember = dt.Columns["NOMBRE"].ToString();
-            cbCategoria.ValueMember = dt.Columns["IDCATEGORIA"].ToString();
+            comboBoxCategoria();
         }
 
         private void btnAgregarCategoria_Click(object sender, EventArgs e)
         {
             frmCategoria frmCategoria = new frmCategoria();
             frmCategoria.ShowDialog();
+            comboBoxCategoria();
         }
 
        

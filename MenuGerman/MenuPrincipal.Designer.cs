@@ -32,17 +32,17 @@
             this.button8 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.btnArticulosMenu = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnIngresoMenu = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.upPanel = new System.Windows.Forms.Panel();
+            this.btnCerrar = new MenuGerman.customButton();
             this.label1 = new System.Windows.Forms.Label();
             this.menuPanel = new System.Windows.Forms.Panel();
-            this.mainPanel = new System.Windows.Forms.Panel();
-            this.lblUsuario = new System.Windows.Forms.Label();
-            this.imageryService1 = new Microsoft.Reporting.Map.WebForms.VirtualEarth.ImageryService();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new MenuGerman.customButton();
+            this.lblUsuario = new System.Windows.Forms.Label();
+            this.mainPanel = new System.Windows.Forms.Panel();
+            this.imageryService1 = new Microsoft.Reporting.Map.WebForms.VirtualEarth.ImageryService();
             this.upPanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -91,19 +91,20 @@
             this.btnArticulosMenu.UseVisualStyleBackColor = false;
             this.btnArticulosMenu.Click += new System.EventHandler(this.btnArticulosMenu_Click);
             // 
-            // button6
+            // btnIngresoMenu
             // 
-            this.button6.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(0, 325);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(180, 65);
-            this.button6.TabIndex = 15;
-            this.button6.Text = "Ingresos";
-            this.button6.UseVisualStyleBackColor = false;
+            this.btnIngresoMenu.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnIngresoMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnIngresoMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnIngresoMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnIngresoMenu.ForeColor = System.Drawing.Color.White;
+            this.btnIngresoMenu.Location = new System.Drawing.Point(0, 325);
+            this.btnIngresoMenu.Name = "btnIngresoMenu";
+            this.btnIngresoMenu.Size = new System.Drawing.Size(180, 65);
+            this.btnIngresoMenu.TabIndex = 15;
+            this.btnIngresoMenu.Text = "Ingresos";
+            this.btnIngresoMenu.UseVisualStyleBackColor = false;
+            this.btnIngresoMenu.Click += new System.EventHandler(this.btnIngresoMenu_Click);
             // 
             // button5
             // 
@@ -146,72 +147,6 @@
             this.upPanel.TabIndex = 3;
             this.upPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.upPanel_MouseDown);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 4);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(153, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Sistema Inventario";
-            // 
-            // menuPanel
-            // 
-            this.menuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.menuPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.menuPanel.Controls.Add(this.pictureBox1);
-            this.menuPanel.Controls.Add(this.lblUsuario);
-            this.menuPanel.Controls.Add(this.button6);
-            this.menuPanel.Controls.Add(this.btnArticulosMenu);
-            this.menuPanel.Controls.Add(this.button5);
-            this.menuPanel.Controls.Add(this.button8);
-            this.menuPanel.Controls.Add(this.button4);
-            this.menuPanel.Controls.Add(this.button7);
-            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
-            this.menuPanel.Location = new System.Drawing.Point(0, 30);
-            this.menuPanel.Name = "menuPanel";
-            this.menuPanel.Size = new System.Drawing.Size(182, 596);
-            this.menuPanel.TabIndex = 18;
-            // 
-            // mainPanel
-            // 
-            this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mainPanel.Location = new System.Drawing.Point(182, 30);
-            this.mainPanel.Name = "mainPanel";
-            this.mainPanel.Size = new System.Drawing.Size(1170, 596);
-            this.mainPanel.TabIndex = 19;
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblUsuario.Location = new System.Drawing.Point(3, 553);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(92, 21);
-            this.lblUsuario.TabIndex = 18;
-            this.lblUsuario.Text = "Juan perez";
-            // 
-            // imageryService1
-            // 
-            this.imageryService1.Credentials = null;
-            this.imageryService1.Url = "http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc";
-            this.imageryService1.UseDefaultCredentials = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MenuGerman.Properties.Resources.user_black30px;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 515);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
@@ -235,6 +170,72 @@
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             this.btnCerrar.MouseLeave += new System.EventHandler(this.btnCerrar_MouseLeave);
             this.btnCerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnCerrar_MouseMove);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(12, 4);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(153, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Sistema Inventario";
+            // 
+            // menuPanel
+            // 
+            this.menuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.menuPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.menuPanel.Controls.Add(this.pictureBox1);
+            this.menuPanel.Controls.Add(this.lblUsuario);
+            this.menuPanel.Controls.Add(this.btnIngresoMenu);
+            this.menuPanel.Controls.Add(this.btnArticulosMenu);
+            this.menuPanel.Controls.Add(this.button5);
+            this.menuPanel.Controls.Add(this.button8);
+            this.menuPanel.Controls.Add(this.button4);
+            this.menuPanel.Controls.Add(this.button7);
+            this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.menuPanel.Location = new System.Drawing.Point(0, 30);
+            this.menuPanel.Name = "menuPanel";
+            this.menuPanel.Size = new System.Drawing.Size(182, 596);
+            this.menuPanel.TabIndex = 18;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MenuGerman.Properties.Resources.user_black30px;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 515);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblUsuario.Location = new System.Drawing.Point(3, 553);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(92, 21);
+            this.lblUsuario.TabIndex = 18;
+            this.lblUsuario.Text = "Juan perez";
+            // 
+            // mainPanel
+            // 
+            this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mainPanel.Location = new System.Drawing.Point(182, 30);
+            this.mainPanel.Name = "mainPanel";
+            this.mainPanel.Size = new System.Drawing.Size(1170, 596);
+            this.mainPanel.TabIndex = 19;
+            // 
+            // imageryService1
+            // 
+            this.imageryService1.Credentials = null;
+            this.imageryService1.Url = "http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc";
+            this.imageryService1.UseDefaultCredentials = false;
             // 
             // MenuPrincipal
             // 
@@ -266,7 +267,7 @@
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button btnArticulosMenu;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnIngresoMenu;
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel upPanel;

@@ -114,11 +114,7 @@ namespace MenuGerman
               
         }
 
-        private void button6_Click(object sender, EventArgs e)
-        {
-            frmIngreso frmIngreso = new frmIngreso();
-            frmIngreso.ShowDialog();
-        }
+      
 
         private void MenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
@@ -155,6 +151,12 @@ namespace MenuGerman
         private void btnCerrar_MouseLeave(object sender, EventArgs e)
         {
             btnCerrar.BackColor = Color.Transparent;
+        }
+
+        private void btnIngresoMenu_Click(object sender, EventArgs e)
+        {
+            frmIngreso frmIngreso = new frmIngreso();
+            frmIngreso.ShowDialog();
         }
     }
 }
