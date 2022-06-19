@@ -61,7 +61,18 @@ namespace Utilidades
             dgv.Rows.Clear();
         }
 
-       
+        public static void limpiar(GroupBox gb)
+        {
+            foreach (Control c in gb.Controls)
+            {
+                if (c is TextBox || c is RichTextBox)
+                {
+                    c.Text = string.Empty;
+                }
+            }
+
+        }
+
         public static string numeroComprobante(string serie, string tipo)
         {
 

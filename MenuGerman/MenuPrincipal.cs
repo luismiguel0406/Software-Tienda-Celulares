@@ -61,12 +61,7 @@ namespace MenuGerman
             //label1.Text = GlobalClass.Usuario;
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-      
-                FrmArticulos frmarticulos = new FrmArticulos();
-                frmarticulos.ShowDialog();                                        
-        }
+        
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -132,8 +127,9 @@ namespace MenuGerman
 
         private void btnArticulosMenu_Click(object sender, EventArgs e)
         {
-            cuArticulo cu = new cuArticulo();
-            this.mainPanel.Controls.Add(cu);
+            cuArticulo articulos = new cuArticulo();
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(articulos);
            
         }
 
@@ -157,6 +153,13 @@ namespace MenuGerman
         {
             frmIngreso frmIngreso = new frmIngreso();
             frmIngreso.ShowDialog();
+        }
+
+        private void btnUsuarioMenu_Click(object sender, EventArgs e)
+        {
+            cuUsuarios usuario = new cuUsuarios();
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(usuario);
         }
     }
 }

@@ -68,14 +68,14 @@
     <Compile Include="ControlesUser\cuArticulo.Designer.cs">
       <DependentUpon>cuArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlesUser\cuUsuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesUser\cuUsuarios.Designer.cs">
+      <DependentUpon>cuUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="customButton.cs">
       <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="FrmArticulos.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmArticulos.Designer.cs">
-      <DependentUpon>FrmArticulos.cs</DependentUpon>
     </Compile>
     <Compile Include="frmCategoria.cs">
       <SubType>Form</SubType>
@@ -136,8 +136,8 @@
     <EmbeddedResource Include="ControlesUser\cuArticulo.resx">
       <DependentUpon>cuArticulo.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmArticulos.resx">
-      <DependentUpon>FrmArticulos.cs</DependentUpon>
+    <EmbeddedResource Include="ControlesUser\cuUsuarios.resx">
+      <DependentUpon>cuUsuarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmCategoria.resx">
       <DependentUpon>frmCategoria.cs</DependentUpon>
@@ -257,6 +257,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Close_thin2_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancel_purple_30px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

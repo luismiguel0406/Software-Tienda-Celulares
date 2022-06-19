@@ -40,12 +40,12 @@
             this.dgvCategoria = new System.Windows.Forms.DataGridView();
             this.upperPanelCategoria = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblDataGridView = new System.Windows.Forms.Label();
             this.btnCerrar = new MenuGerman.customButton();
             this.btnBuscar = new MenuGerman.customButton();
             this.btnGuardar = new MenuGerman.customButton();
             this.btnEliminar = new MenuGerman.customButton();
             this.btnEditar = new MenuGerman.customButton();
-            this.lblDataGridView = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
             this.upperPanelCategoria.SuspendLayout();
             this.SuspendLayout();
@@ -169,6 +169,17 @@
             this.label1.TabIndex = 49;
             this.label1.Text = "Agregar Categoria";
             // 
+            // lblDataGridView
+            // 
+            this.lblDataGridView.AutoSize = true;
+            this.lblDataGridView.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataGridView.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblDataGridView.Location = new System.Drawing.Point(163, 286);
+            this.lblDataGridView.Name = "lblDataGridView";
+            this.lblDataGridView.Size = new System.Drawing.Size(303, 17);
+            this.lblDataGridView.TabIndex = 58;
+            this.lblDataGridView.Text = "Agregue Categorias para organizar sus articulos";
+            // 
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
@@ -279,17 +290,6 @@
             this.btnEditar.TextColor = System.Drawing.Color.White;
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // lblDataGridView
-            // 
-            this.lblDataGridView.AutoSize = true;
-            this.lblDataGridView.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataGridView.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblDataGridView.Location = new System.Drawing.Point(163, 286);
-            this.lblDataGridView.Name = "lblDataGridView";
-            this.lblDataGridView.Size = new System.Drawing.Size(303, 17);
-            this.lblDataGridView.TabIndex = 58;
-            this.lblDataGridView.Text = "Agregue Categorias para organizar sus articulos";
             // 
             // frmCategoria
             // 
