@@ -96,19 +96,7 @@ namespace MenuGerman
           
         }
 
-        private void button5_Click(object sender, EventArgs e)
-        {
-            if (GlobalClass.administrador(GlobalClass.idRol, GlobalClass.rol))
-            {
-                frmUsuario frmUsuario = new frmUsuario();
-                frmUsuario.ShowDialog();
-                return;
-            }
-            MessageBox.Show("Debe ser administrador para usar esta opcion", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-              
-        }
-
+       
       
 
         private void MenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)

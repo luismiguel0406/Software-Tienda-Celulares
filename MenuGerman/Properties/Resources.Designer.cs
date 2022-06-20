@@ -163,6 +163,16 @@ namespace MenuGerman.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap eye_30px {
+            get {
+                object obj = ResourceManager.GetObject("eye_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap key_24px {
             get {
                 object obj = ResourceManager.GetObject("key_24px", resourceCulture);

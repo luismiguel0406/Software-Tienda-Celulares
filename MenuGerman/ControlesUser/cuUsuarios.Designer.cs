@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
@@ -52,9 +51,10 @@
             this.btnBuscar = new MenuGerman.customButton();
             this.btnEliminar = new MenuGerman.customButton();
             this.btnEditar = new MenuGerman.customButton();
-            this.timerEdicion = new System.Windows.Forms.Timer(this.components);
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.gbUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvUsuarios
@@ -116,9 +116,10 @@
             // txtContrasena
             // 
             this.txtContrasena.AccessibleName = "";
-            this.txtContrasena.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContrasena.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContrasena.Location = new System.Drawing.Point(6, 191);
             this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.PasswordChar = '.';
             this.txtContrasena.Size = new System.Drawing.Size(226, 25);
             this.txtContrasena.TabIndex = 15;
             // 
@@ -237,6 +238,7 @@
             // 
             // gbUsuario
             // 
+            this.gbUsuario.Controls.Add(this.pictureBox1);
             this.gbUsuario.Controls.Add(this.btnCancelar);
             this.gbUsuario.Controls.Add(this.txtNombre);
             this.gbUsuario.Controls.Add(this.txtContrasena);
@@ -375,6 +377,15 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MenuGerman.Properties.Resources.eye_30px;
+            this.pictureBox1.Location = new System.Drawing.Point(238, 191);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(34, 25);
+            this.pictureBox1.TabIndex = 28;
+            this.pictureBox1.TabStop = false;
+            // 
             // cuUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,6 +404,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.gbUsuario.ResumeLayout(false);
             this.gbUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,6 +433,6 @@
         private System.Windows.Forms.TextBox txtIdUsuario;
         private System.Windows.Forms.GroupBox gbUsuario;
         private customButton btnCancelar;
-        private System.Windows.Forms.Timer timerEdicion;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

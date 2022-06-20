@@ -18,6 +18,9 @@ namespace MenuGerman.ControlesUser
         Rol rolModel = new Rol();
         Usuario usuarioModel = new Usuario();
         bool editar = false;
+
+    
+
         public cuUsuarios()
         {
             InitializeComponent();
@@ -52,12 +55,14 @@ namespace MenuGerman.ControlesUser
         private void cuUsuarios_Load(object sender, EventArgs e)
         {
             comboBoxRol();
+            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             DatosFormulario();
             dgvUsuarios.DataSource = UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.Select);
+            dgvUsuarios.Columns["PASSWORD"].Visible = false;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -68,6 +73,8 @@ namespace MenuGerman.ControlesUser
                 txtIdUsuario.Enabled = false;
                 gbUsuario.Text = "Editando...";
                 editar = true;
+                
+                
             }
         }
 
@@ -81,6 +88,7 @@ namespace MenuGerman.ControlesUser
                     dgvUsuarios.DataSource = UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.Update);
                     txtIdUsuario.Enabled = true;
                     gbUsuario.Text = "Nuevo Usuario";
+                    
                 }
                 else
                 {
@@ -97,6 +105,7 @@ namespace MenuGerman.ControlesUser
             finally
             {
                 editar = false;
+                
             }
         }
 
@@ -107,6 +116,7 @@ namespace MenuGerman.ControlesUser
             editar = false;
             txtIdUsuario.Enabled = true;
             gbUsuario.Text = "Nuevo Usuario";
+
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -135,5 +145,7 @@ namespace MenuGerman.ControlesUser
         {
             Validaciones.soloNumeros(e);
         }
+
+       
     }
 }

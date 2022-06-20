@@ -68,6 +68,12 @@
     <Compile Include="ControlesUser\cuArticulo.Designer.cs">
       <DependentUpon>cuArticulo.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlesUser\cuIngreso.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesUser\cuIngreso.Designer.cs">
+      <DependentUpon>cuIngreso.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlesUser\cuUsuarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -107,12 +113,6 @@
     <Compile Include="frmRol.Designer.cs">
       <DependentUpon>frmRol.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmUsuario.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmUsuario.Designer.cs">
-      <DependentUpon>frmUsuario.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmVisorReporteIngresocs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +136,9 @@
     <EmbeddedResource Include="ControlesUser\cuArticulo.resx">
       <DependentUpon>cuArticulo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ControlesUser\cuIngreso.resx">
+      <DependentUpon>cuIngreso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlesUser\cuUsuarios.resx">
       <DependentUpon>cuUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -153,9 +156,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRol.resx">
       <DependentUpon>frmRol.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmUsuario.resx">
-      <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVisorReporteIngresocs.resx">
       <DependentUpon>frmVisorReporteIngresocs.cs</DependentUpon>
@@ -260,6 +260,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\cancel_purple_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\eye_30px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
