@@ -25,13 +25,16 @@ namespace MenuGerman.ControlesUser
         {
             InitializeComponent();
         }
+
+        
         private void DatosFormulario()
         {
 
             usuarioModel.idUsuario = string.IsNullOrEmpty(txtIdUsuario.Text) ? 0 : Convert.ToInt32(txtIdUsuario.Text);
             usuarioModel.idRol = string.IsNullOrEmpty(cbRol.Text) ? 0 : Convert.ToInt32(cbRol.SelectedValue);
             usuarioModel.usuario = string.IsNullOrEmpty(txtUsuario.Text) ? string.Empty : txtUsuario.Text;
-            usuarioModel.password = string.IsNullOrEmpty(txtContrasena.Text) ? string.Empty : txtContrasena.Text;
+            usuarioModel.password = Encryptar.encrypta(string.IsNullOrEmpty(txtContrasena.Text) ? string.Empty : txtContrasena.Text);
+            usuarioModel.nombre = string.IsNullOrEmpty(txtNombre.Text) ? string.Empty : txtNombre.Text;
             usuarioModel.email = string.IsNullOrEmpty(txtEmail.Text) ? string.Empty : txtEmail.Text;
             usuarioModel.estado = string.IsNullOrEmpty(cbEstado.Text) ? 1 : Convert.ToInt32(cbEstado.Text);
         }
@@ -39,9 +42,10 @@ namespace MenuGerman.ControlesUser
         {
             txtIdUsuario.Text = dgvUsuarios.CurrentRow.Cells["IDUSUARIO"].Value.ToString();
             cbRol.SelectedValue = dgvUsuarios.CurrentRow.Cells["IDROL"].Value;
-            txtUsuario.Text = dgvUsuarios.CurrentRow.Cells["USUARIO"].Value.ToString();      
+            txtUsuario.Text = dgvUsuarios.CurrentRow.Cells["USUARIO"].Value.ToString();
+            txtNombre.Text = dgvUsuarios.CurrentRow.Cells["NOMBRE"].Value.ToString();
             txtEmail.Text = dgvUsuarios.CurrentRow.Cells["EMAIL"].Value.ToString();
-            txtContrasena.Text = dgvUsuarios.CurrentRow.Cells["PASSWORD"].Value.ToString();
+            txtContrasena.Text = Encryptar.desencrypta(dgvUsuarios.CurrentRow.Cells["PASSWORD"].Value.ToString());
 
         }
         private void comboBoxRol()
@@ -96,7 +100,9 @@ namespace MenuGerman.ControlesUser
                     dgvUsuarios.DataSource = UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.Insert);
                 }
                 MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GlobalClass.limpiar(gbUsuario);
                 GlobalClass.limpiar(this);
+
             }
             catch (Exception ex)
             {
@@ -104,6 +110,7 @@ namespace MenuGerman.ControlesUser
             }
             finally
             {
+               
                 editar = false;
                 
             }

@@ -94,5 +94,11 @@
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Utilidades\Utilidades.csproj">
+      <Project>{EA04011F-B7D0-46DE-89D4-00963FD6D524}</Project>
+      <Name>Utilidades</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
