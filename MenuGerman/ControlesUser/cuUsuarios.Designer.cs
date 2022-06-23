@@ -46,7 +46,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.gbUsuario = new System.Windows.Forms.GroupBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbVerContrasena = new System.Windows.Forms.PictureBox();
             this.btnCancelar = new MenuGerman.customButton();
             this.btnGuardar = new MenuGerman.customButton();
             this.btnBuscar = new MenuGerman.customButton();
@@ -54,7 +54,7 @@
             this.btnEditar = new MenuGerman.customButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.gbUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVerContrasena)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvUsuarios
@@ -91,6 +91,7 @@
             this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUsuarios.Size = new System.Drawing.Size(1109, 223);
             this.dgvUsuarios.TabIndex = 14;
+            this.dgvUsuarios.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvUsuarios_RowsAdded);
             // 
             // label5
             // 
@@ -238,7 +239,7 @@
             // 
             // gbUsuario
             // 
-            this.gbUsuario.Controls.Add(this.pictureBox1);
+            this.gbUsuario.Controls.Add(this.pbVerContrasena);
             this.gbUsuario.Controls.Add(this.btnCancelar);
             this.gbUsuario.Controls.Add(this.txtNombre);
             this.gbUsuario.Controls.Add(this.txtContrasena);
@@ -262,14 +263,15 @@
             this.gbUsuario.TabStop = false;
             this.gbUsuario.Text = "Nuevo Usuario";
             // 
-            // pictureBox1
+            // pbVerContrasena
             // 
-            this.pictureBox1.Image = global::MenuGerman.Properties.Resources.eye_30px;
-            this.pictureBox1.Location = new System.Drawing.Point(238, 197);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(34, 25);
-            this.pictureBox1.TabIndex = 28;
-            this.pictureBox1.TabStop = false;
+            this.pbVerContrasena.Image = global::MenuGerman.Properties.Resources.eye_30px;
+            this.pbVerContrasena.Location = new System.Drawing.Point(238, 197);
+            this.pbVerContrasena.Name = "pbVerContrasena";
+            this.pbVerContrasena.Size = new System.Drawing.Size(34, 25);
+            this.pbVerContrasena.TabIndex = 28;
+            this.pbVerContrasena.TabStop = false;
+            this.pbVerContrasena.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbVerContrasena_MouseDown);
             // 
             // btnCancelar
             // 
@@ -404,7 +406,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
             this.gbUsuario.ResumeLayout(false);
             this.gbUsuario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbVerContrasena)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -433,6 +435,6 @@
         private System.Windows.Forms.TextBox txtIdUsuario;
         private System.Windows.Forms.GroupBox gbUsuario;
         private customButton btnCancelar;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbVerContrasena;
     }
 }

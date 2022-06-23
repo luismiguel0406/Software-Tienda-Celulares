@@ -58,15 +58,15 @@ namespace MenuGerman.ControlesUser
 
         private void cuUsuarios_Load(object sender, EventArgs e)
         {
-            comboBoxRol();
-            
+            comboBoxRol();       
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             DatosFormulario();
             dgvUsuarios.DataSource = UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.Select);
-            dgvUsuarios.Columns["PASSWORD"].Visible = false;
+           
+            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -153,6 +153,17 @@ namespace MenuGerman.ControlesUser
             Validaciones.soloNumeros(e);
         }
 
-       
+        private void pbVerContrasena_MouseDown(object sender, MouseEventArgs e)
+        {
+            txtContrasena.PasswordChar = (char)48;
+        }
+
+        private void dgvUsuarios_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            if (dgvUsuarios.Columns.Contains("PASSWORD"))
+            {
+                dgvUsuarios.Columns["PASSWORD"].Visible = false;
+            }
+        }
     }
 }

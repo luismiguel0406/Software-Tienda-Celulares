@@ -69,6 +69,7 @@ namespace MenuGerman.ControlesUser
 
                 }
                 MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                GlobalClass.limpiar(gbArticulo);
                 GlobalClass.limpiar(this);
 
             }
@@ -84,7 +85,7 @@ namespace MenuGerman.ControlesUser
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            GlobalClass.limpiar(this);
+            GlobalClass.limpiar(gbArticulo);
             GlobalClass.limpiar(dgvArticulo);
             editar = false;
             txtIdArticulo.Enabled = true;

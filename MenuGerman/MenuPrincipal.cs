@@ -139,8 +139,9 @@ namespace MenuGerman
 
         private void btnIngresoMenu_Click(object sender, EventArgs e)
         {
-            frmIngreso frmIngreso = new frmIngreso();
-            frmIngreso.ShowDialog();
+            cuIngreso ingreso = new cuIngreso();
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(ingreso);
         }
 
         private void btnUsuarioMenu_Click(object sender, EventArgs e)
