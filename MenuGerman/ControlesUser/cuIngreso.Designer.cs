@@ -35,11 +35,11 @@
             this.tcIngresos = new System.Windows.Forms.TabControl();
             this.tpRealizarIngresos = new System.Windows.Forms.TabPage();
             this.tpVerIngresos = new System.Windows.Forms.TabPage();
-            this.dgvUsuarios = new System.Windows.Forms.DataGridView();
+            this.dgvVerIngreso = new System.Windows.Forms.DataGridView();
             this.dgvIngreso = new System.Windows.Forms.DataGridView();
             this.gbIngreso = new System.Windows.Forms.GroupBox();
-            this.txtContrasena = new System.Windows.Forms.TextBox();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtComprobante = new System.Windows.Forms.TextBox();
+            this.txtIdUsuario = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -52,10 +52,12 @@
             this.btnEliminar = new MenuGerman.customButton();
             this.label4 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
+            this.txtIdIngreso = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.tcIngresos.SuspendLayout();
             this.tpRealizarIngresos.SuspendLayout();
             this.tpVerIngresos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVerIngreso)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngreso)).BeginInit();
             this.gbIngreso.SuspendLayout();
             this.SuspendLayout();
@@ -91,7 +93,9 @@
             // 
             // tpVerIngresos
             // 
-            this.tpVerIngresos.Controls.Add(this.dgvUsuarios);
+            this.tpVerIngresos.Controls.Add(this.txtIdIngreso);
+            this.tpVerIngresos.Controls.Add(this.label6);
+            this.tpVerIngresos.Controls.Add(this.dgvVerIngreso);
             this.tpVerIngresos.Location = new System.Drawing.Point(4, 30);
             this.tpVerIngresos.Name = "tpVerIngresos";
             this.tpVerIngresos.Padding = new System.Windows.Forms.Padding(3);
@@ -100,13 +104,13 @@
             this.tpVerIngresos.Text = "Ver Ingresos";
             this.tpVerIngresos.UseVisualStyleBackColor = true;
             // 
-            // dgvUsuarios
+            // dgvVerIngreso
             // 
-            this.dgvUsuarios.AllowUserToAddRows = false;
-            this.dgvUsuarios.AllowUserToDeleteRows = false;
-            this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvUsuarios.BackgroundColor = System.Drawing.Color.White;
-            this.dgvUsuarios.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvVerIngreso.AllowUserToAddRows = false;
+            this.dgvVerIngreso.AllowUserToDeleteRows = false;
+            this.dgvVerIngreso.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVerIngreso.BackgroundColor = System.Drawing.Color.White;
+            this.dgvVerIngreso.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumSlateBlue;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -114,9 +118,9 @@
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvUsuarios.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvUsuarios.ColumnHeadersHeight = 35;
-            this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dgvVerIngreso.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvVerIngreso.ColumnHeadersHeight = 35;
+            this.dgvVerIngreso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -124,16 +128,16 @@
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvUsuarios.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvUsuarios.EnableHeadersVisualStyles = false;
-            this.dgvUsuarios.GridColor = System.Drawing.Color.MediumSlateBlue;
-            this.dgvUsuarios.Location = new System.Drawing.Point(6, 222);
-            this.dgvUsuarios.Name = "dgvUsuarios";
-            this.dgvUsuarios.ReadOnly = true;
-            this.dgvUsuarios.RowHeadersVisible = false;
-            this.dgvUsuarios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvUsuarios.Size = new System.Drawing.Size(1132, 302);
-            this.dgvUsuarios.TabIndex = 15;
+            this.dgvVerIngreso.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvVerIngreso.EnableHeadersVisualStyles = false;
+            this.dgvVerIngreso.GridColor = System.Drawing.Color.MediumSlateBlue;
+            this.dgvVerIngreso.Location = new System.Drawing.Point(6, 222);
+            this.dgvVerIngreso.Name = "dgvVerIngreso";
+            this.dgvVerIngreso.ReadOnly = true;
+            this.dgvVerIngreso.RowHeadersVisible = false;
+            this.dgvVerIngreso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVerIngreso.Size = new System.Drawing.Size(1132, 302);
+            this.dgvVerIngreso.TabIndex = 15;
             // 
             // dgvIngreso
             // 
@@ -177,8 +181,8 @@
             this.gbIngreso.Controls.Add(this.rtDescripcion);
             this.gbIngreso.Controls.Add(this.dtpFecha);
             this.gbIngreso.Controls.Add(this.btnCancelar);
-            this.gbIngreso.Controls.Add(this.txtContrasena);
-            this.gbIngreso.Controls.Add(this.txtUsuario);
+            this.gbIngreso.Controls.Add(this.txtComprobante);
+            this.gbIngreso.Controls.Add(this.txtIdUsuario);
             this.gbIngreso.Controls.Add(this.label5);
             this.gbIngreso.Controls.Add(this.label1);
             this.gbIngreso.Controls.Add(this.label2);
@@ -192,25 +196,25 @@
             this.gbIngreso.TabIndex = 28;
             this.gbIngreso.TabStop = false;
             // 
-            // txtContrasena
+            // txtComprobante
             // 
-            this.txtContrasena.AccessibleName = "";
-            this.txtContrasena.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtContrasena.Location = new System.Drawing.Point(461, 58);
-            this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.PasswordChar = '.';
-            this.txtContrasena.Size = new System.Drawing.Size(197, 27);
-            this.txtContrasena.TabIndex = 15;
+            this.txtComprobante.AccessibleName = "";
+            this.txtComprobante.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtComprobante.Location = new System.Drawing.Point(461, 58);
+            this.txtComprobante.Name = "txtComprobante";
+            this.txtComprobante.PasswordChar = '.';
+            this.txtComprobante.Size = new System.Drawing.Size(197, 27);
+            this.txtComprobante.TabIndex = 15;
             // 
-            // txtUsuario
+            // txtIdUsuario
             // 
-            this.txtUsuario.AccessibleName = "";
-            this.txtUsuario.Enabled = false;
-            this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(10, 58);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(197, 27);
-            this.txtUsuario.TabIndex = 15;
+            this.txtIdUsuario.AccessibleName = "";
+            this.txtIdUsuario.Enabled = false;
+            this.txtIdUsuario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdUsuario.Location = new System.Drawing.Point(10, 58);
+            this.txtIdUsuario.Name = "txtIdUsuario";
+            this.txtIdUsuario.Size = new System.Drawing.Size(197, 27);
+            this.txtIdUsuario.TabIndex = 15;
             // 
             // label5
             // 
@@ -308,6 +312,7 @@
             this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.TextColor = System.Drawing.Color.White;
             this.btnGuardar.UseVisualStyleBackColor = false;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // rtDescripcion
             // 
@@ -361,6 +366,7 @@
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // label4
             // 
@@ -384,6 +390,27 @@
             this.lblTotal.TabIndex = 31;
             this.lblTotal.Text = "0.00";
             // 
+            // txtIdIngreso
+            // 
+            this.txtIdIngreso.AccessibleName = "";
+            this.txtIdIngreso.Enabled = false;
+            this.txtIdIngreso.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdIngreso.Location = new System.Drawing.Point(18, 65);
+            this.txtIdIngreso.Name = "txtIdIngreso";
+            this.txtIdIngreso.Size = new System.Drawing.Size(197, 27);
+            this.txtIdIngreso.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(14, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 20);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Id Ingreso";
+            // 
             // cuIngreso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -394,7 +421,8 @@
             this.tcIngresos.ResumeLayout(false);
             this.tpRealizarIngresos.ResumeLayout(false);
             this.tpVerIngresos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).EndInit();
+            this.tpVerIngresos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVerIngreso)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvIngreso)).EndInit();
             this.gbIngreso.ResumeLayout(false);
             this.gbIngreso.PerformLayout();
@@ -407,12 +435,12 @@
         private System.Windows.Forms.TabControl tcIngresos;
         private System.Windows.Forms.TabPage tpRealizarIngresos;
         private System.Windows.Forms.TabPage tpVerIngresos;
-        private System.Windows.Forms.DataGridView dgvUsuarios;
+        private System.Windows.Forms.DataGridView dgvVerIngreso;
         private System.Windows.Forms.DataGridView dgvIngreso;
         private System.Windows.Forms.GroupBox gbIngreso;
         private customButton btnCancelar;
-        private System.Windows.Forms.TextBox txtContrasena;
-        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtComprobante;
+        private System.Windows.Forms.TextBox txtIdUsuario;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
@@ -424,5 +452,7 @@
         private customButton btnEliminar;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtIdIngreso;
+        private System.Windows.Forms.Label label6;
     }
 }

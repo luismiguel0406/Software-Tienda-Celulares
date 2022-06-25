@@ -66,8 +66,10 @@ namespace MenuGerman
                         detalle.Add(new DetalleIngreso
                         {
                             idArticulo = Convert.ToInt32(row.Cells["ID"].Value),
+                          //  nombre = Convert.ToString(row.Cells["NOMBRE"].Value),
                             cantidad = Convert.ToInt32(row.Cells["CANTIDAD"].Value),
-                            precio = Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value)
+                            precio = Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value),
+                            subTotal = Convert.ToInt32(row.Cells["CANTIDAD"].Value) * Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value)
                             //COLOCAR CALCULO DE SUBTOTAL Y DEMAS ENEL MODELO DIRECTAMENTE
                         });
                     }

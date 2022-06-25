@@ -13,6 +13,7 @@ namespace CapaDeDatos.Models
         public int idArticulo { get; set; }
         public int cantidad { get; set; }
         public float precio { get; set; }
+        public float subTotal { get; set; }
         public int estado { get; set; }
 
         public DetalleIngreso()
