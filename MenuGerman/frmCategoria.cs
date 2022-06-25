@@ -20,7 +20,6 @@ namespace MenuGerman
         private void DatosFormulario()
         {
             categoriaModel.nombre = string.IsNullOrEmpty(txtNombre.Text) ? string.Empty : txtNombre.Text;
-           // categoriaModel.descripcion = string.IsNullOrEmpty(rtDescripcion.Text) ? string.Empty : rtDescripcion.Text;
             categoriaModel.idCategoria = string.IsNullOrEmpty(txtIdcategoria.Text) ? 0 : Convert.ToInt32(txtIdcategoria.Text);
             categoriaModel.estado = string.IsNullOrEmpty(cbEstado.Text) ? 1 : Convert.ToInt32(cbEstado.Text);
         }
@@ -29,7 +28,6 @@ namespace MenuGerman
         {
             txtIdcategoria.Text = dgvCategoria.CurrentRow.Cells["IDCATEGORIA"].Value.ToString();
             txtNombre.Text = dgvCategoria.CurrentRow.Cells["NOMBRE"].Value.ToString();
-           // rtDescripcion.Text = dgvCategoria.CurrentRow.Cells["DESCRIPCION"].Value.ToString();
             cbEstado.Text = dgvCategoria.CurrentRow.Cells["ESTADO"].Value.ToString();
              
         }
@@ -38,6 +36,10 @@ namespace MenuGerman
         {
             DatosFormulario();
             dgvCategoria.DataSource = CategoriaDTO.MantenimientoCategoria(categoriaModel, GlobalClass.Select);
+            if (dgvCategoria.Rows.Count == 0)
+            {
+                MessageBox.Show("Sin datos para Mostrar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

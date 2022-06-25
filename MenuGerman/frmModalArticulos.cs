@@ -1,6 +1,7 @@
 ﻿using CapaDeDatos;
 using CapaDeDatos.Models;
 using CapaNegocio.DTO;
+using MenuGerman.ControlesUser;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,20 +18,40 @@ namespace MenuGerman
     public partial class frmModalArticulos : Form       
     {
          Articulo articulo = new Articulo();
-         private frmIngreso frmIngreso;
+        private cuIngreso _cuIngreso;
 
-        public frmModalArticulos(frmIngreso frmIngreso)
+        public frmModalArticulos(cuIngreso cuIngreso)
         {
-            this.frmIngreso = frmIngreso;
+            _cuIngreso = cuIngreso;
             InitializeComponent();
         }
-
+        
         private void frmModalArticulos_Load(object sender, EventArgs e)
         {
-            dgvModalArticulo.DataSource = ArticuloDTO.MantenimientoArticulo(articulo, GlobalClass.Select);
-            dgvModalArticulo.Columns["ESTADO"].Visible = false;
-            dgvModalArticulo.Columns["DESCRIPCION"].Visible = false;
+            var dt = ArticuloDTO.MantenimientoArticulo(articulo, GlobalClass.Select);
+            try
+            {
+                dgvModalArticulo.DataSource = dt;
+                //USUARIO NO NECESITA VER ESTAS CELDAS
+                dgvModalArticulo.Columns["ESTADO"].Visible = false;
+                dgvModalArticulo.Columns["DESCRIPCION"].Visible = false;
+                dgvModalArticulo.Columns["IDCATEGORIA"].Visible = false;
+                dgvModalArticulo.Columns["PRECIO_VENTA"].Visible = false;
+                
+               
 
+                //USUARIO NO PUEDE EDITAR ESTAS CELDAS, LAS DEMAS SI
+                dgvModalArticulo.Columns["CATEGORIA"].ReadOnly = true;
+                dgvModalArticulo.Columns["CODIGO"].ReadOnly = true;
+                dgvModalArticulo.Columns["NOMBRE"].ReadOnly = true;
+                dgvModalArticulo.Columns["STOCK"].ReadOnly = true;
+
+            }
+            catch (Exception)
+            {
+               return;
+            }
+ 
         }
 
         private void btnProcesar_Click(object sender, EventArgs e)
@@ -44,24 +65,38 @@ namespace MenuGerman
                     {
                         detalle.Add(new DetalleIngreso
                         {
-                            idArticulo = Convert.ToInt32(row.Cells["IDARTICULO"].Value),
+                            idArticulo = Convert.ToInt32(row.Cells["ID"].Value),
                             cantidad = Convert.ToInt32(row.Cells["CANTIDAD"].Value),
                             precio = Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value)
+                            //COLOCAR CALCULO DE SUBTOTAL Y DEMAS ENEL MODELO DIRECTAMENTE
                         });
                     }
 
                 }
 
-                frmIngreso.RecibirListaArticulos(detalle);
-                this.Close();
+                _cuIngreso.RecibirListaArticulos(detalle);
+                Close();
             }
             catch (Exception ex)
             {
 
                 MessageBox.Show($"Ha ocurrido un error,{ex}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-           
-            
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
+
+        private void btnCerrar_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnCerrar.BackColor = Color.Crimson;
+        }
+
+        private void btnCerrar_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrar.BackColor = Color.Transparent;
         }
     }
 }

@@ -5,7 +5,6 @@
         public int? numQuery { get; set; }
         public int idCategoria { get; set; }
         public string nombre { get; set; }
-        public string descripcion { get; set; }
         public int estado { get; set; }
 
         public Categoria()

@@ -18,9 +18,13 @@ namespace MenuGerman.ControlesUser
         private void comboBoxCategoria()
         {
             var dt = CategoriaDTO.MantenimientoCategoria(categoriaModel, GlobalClass.Select);
-            cbCategoria.DataSource = dt;
-            cbCategoria.DisplayMember = dt.Columns["NOMBRE"].ToString();
-            cbCategoria.ValueMember = dt.Columns["IDCATEGORIA"].ToString();
+            if (dt.Columns.Contains("NOMBRE") && dt.Columns.Contains("IDCATEGORIA"))
+            {
+                cbCategoria.DataSource = dt;
+                cbCategoria.DisplayMember = dt.Columns["NOMBRE"].ToString();
+                cbCategoria.ValueMember = dt.Columns["IDCATEGORIA"].ToString();
+            }
+            
         }
 
         public void DatosFormulario()
@@ -37,7 +41,7 @@ namespace MenuGerman.ControlesUser
         }
         public void DatosdataGridView()
         {
-            txtIdArticulo.Text = dgvArticulo.CurrentRow.Cells["IDARTICULO"].Value.ToString();
+            txtIdArticulo.Text = dgvArticulo.CurrentRow.Cells["ID"].Value.ToString();
             cbCategoria.SelectedValue = (int)dgvArticulo.CurrentRow.Cells["IDCATEGORIA"].Value;
             cbCategoria.SelectedText = dgvArticulo.CurrentRow.Cells["CATEGORIA"].Value.ToString();
             txtCodigo.Text = dgvArticulo.CurrentRow.Cells["CODIGO"].Value.ToString();
@@ -119,7 +123,7 @@ namespace MenuGerman.ControlesUser
                 DialogResult dialogo = MessageBox.Show("Esta seguro que desea eliminar?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogo == DialogResult.Yes)
                 {
-                    articuloModel.idArticulo = Convert.ToInt32(dgvArticulo.CurrentRow.Cells["IDARTICULO"].Value);
+                    articuloModel.idArticulo = Convert.ToInt32(dgvArticulo.CurrentRow.Cells["ID"].Value);
                     dgvArticulo.DataSource = ArticuloDTO.MantenimientoArticulo(articuloModel, GlobalClass.Delete);
                 }
                 else

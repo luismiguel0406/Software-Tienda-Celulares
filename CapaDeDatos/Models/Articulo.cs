@@ -3,7 +3,7 @@
     public class Articulo
     {
         public int? numQuery { get; set; }
-        public int? idArticulo { get; set; }
+        public int idArticulo { get; set; }
         public int idCategoria { get; set; }
         public int codigo { get; set; }
         public string nombre { get; set; }

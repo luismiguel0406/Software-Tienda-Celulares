@@ -80,8 +80,8 @@ namespace MenuGerman
         
         private void btnAgregar_Click_1(object sender, EventArgs e)
         {
-            frmModalArticulos frmModalArticulos = new frmModalArticulos(this);
-            frmModalArticulos.ShowDialog();
+            //frmModalArticulos frmModalArticulos = new frmModalArticulos(this);
+            //frmModalArticulos.ShowDialog();
         }
 
         private void txtTotal_TextChanged(object sender, EventArgs e)

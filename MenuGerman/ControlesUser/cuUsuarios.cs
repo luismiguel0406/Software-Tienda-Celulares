@@ -65,8 +65,12 @@ namespace MenuGerman.ControlesUser
         {
             DatosFormulario();
             dgvUsuarios.DataSource = UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.Select);
-           
-            
+            if (dgvUsuarios.Rows.Count == 0)
+            {
+                MessageBox.Show("Sin datos para Mostrar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
