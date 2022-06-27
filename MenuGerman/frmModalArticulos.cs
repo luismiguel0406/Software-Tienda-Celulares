@@ -100,5 +100,12 @@ namespace MenuGerman
         {
             btnCerrar.BackColor = Color.Transparent;
         }
+
+        private void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+            //busqueda por lo que se escriba
+            GlobalClass.buscarEnVivoDatagrid(txtBuscar, dgvModalArticulo);
+         
+        }
     }
 }

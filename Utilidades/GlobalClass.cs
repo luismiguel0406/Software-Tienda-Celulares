@@ -101,5 +101,40 @@ namespace Utilidades
                 return true;
             }
         }
+
+        public static void buscarEnVivoDatagrid(TextBox txtBuscador, DataGridView tabla)
+        {  //busqueda por lo que se escriba
+            try
+            {
+                if (txtBuscador.Text != "")
+                {
+                    tabla.CurrentCell = null;
+                    foreach (DataGridViewRow r in tabla.Rows)
+                    {
+                        r.Visible = false;
+                    }
+                    foreach (DataGridViewRow r in tabla.Rows)
+                    {
+                        foreach (DataGridViewCell c in r.Cells)
+                        {
+                            if ((c.Value) != null)
+                            {
+                                if (c.Value.ToString().ToUpper().IndexOf(txtBuscador.Text.ToUpper()) == 0)
+                                {
+                                    r.Visible = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                return;
+            }
+          
+            
+        }
     }
 }

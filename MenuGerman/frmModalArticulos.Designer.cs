@@ -39,7 +39,7 @@
             this.seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnProcesar = new MenuGerman.customButton();
-            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new MenuGerman.customButton();
             this.upperPanelCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModalArticulo)).BeginInit();
@@ -174,14 +174,15 @@
             this.btnProcesar.UseVisualStyleBackColor = false;
             this.btnProcesar.Click += new System.EventHandler(this.btnProcesar_Click);
             // 
-            // txtUsuario
+            // txtBuscar
             // 
-            this.txtUsuario.AccessibleName = "";
-            this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsuario.Location = new System.Drawing.Point(483, 95);
-            this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(303, 27);
-            this.txtUsuario.TabIndex = 66;
+            this.txtBuscar.AccessibleName = "";
+            this.txtBuscar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBuscar.Location = new System.Drawing.Point(483, 95);
+            this.txtBuscar.Name = "txtBuscar";
+            this.txtBuscar.Size = new System.Drawing.Size(303, 27);
+            this.txtBuscar.TabIndex = 66;
+            this.txtBuscar.TextChanged += new System.EventHandler(this.txtBuscar_TextChanged);
             // 
             // btnBuscar
             // 
@@ -212,7 +213,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(862, 443);
             this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnProcesar);
             this.Controls.Add(this.dgvModalArticulo);
             this.Controls.Add(this.upperPanelCategoria);
@@ -241,7 +242,7 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn seleccionar;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private customButton btnProcesar;
-        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.TextBox txtBuscar;
         private customButton btnBuscar;
     }
 }

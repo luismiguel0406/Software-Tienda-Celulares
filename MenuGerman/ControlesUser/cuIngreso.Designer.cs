@@ -45,15 +45,17 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
-            this.btnCancelar = new MenuGerman.customButton();
-            this.btnGuardar = new MenuGerman.customButton();
-            this.rtDescripcion = new System.Windows.Forms.RichTextBox();
-            this.btnNuevoIngreso = new MenuGerman.customButton();
-            this.btnEliminar = new MenuGerman.customButton();
+            this.rtComentario = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.txtIdIngreso = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btnEliminar = new MenuGerman.customButton();
+            this.btnNuevoIngreso = new MenuGerman.customButton();
+            this.btnCancelar = new MenuGerman.customButton();
+            this.btnGuardar = new MenuGerman.customButton();
+            this.btnEliminarIngreso = new MenuGerman.customButton();
+            this.btnBuscar = new MenuGerman.customButton();
             this.tcIngresos.SuspendLayout();
             this.tpRealizarIngresos.SuspendLayout();
             this.tpVerIngresos.SuspendLayout();
@@ -90,9 +92,12 @@
             this.tpRealizarIngresos.Size = new System.Drawing.Size(1144, 530);
             this.tpRealizarIngresos.TabIndex = 0;
             this.tpRealizarIngresos.Text = "Ingresos";
+            this.tpRealizarIngresos.Click += new System.EventHandler(this.tpRealizarIngresos_Click);
             // 
             // tpVerIngresos
             // 
+            this.tpVerIngresos.Controls.Add(this.btnEliminarIngreso);
+            this.tpVerIngresos.Controls.Add(this.btnBuscar);
             this.tpVerIngresos.Controls.Add(this.txtIdIngreso);
             this.tpVerIngresos.Controls.Add(this.label6);
             this.tpVerIngresos.Controls.Add(this.dgvVerIngreso);
@@ -131,12 +136,12 @@
             this.dgvVerIngreso.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvVerIngreso.EnableHeadersVisualStyles = false;
             this.dgvVerIngreso.GridColor = System.Drawing.Color.MediumSlateBlue;
-            this.dgvVerIngreso.Location = new System.Drawing.Point(6, 222);
+            this.dgvVerIngreso.Location = new System.Drawing.Point(18, 159);
             this.dgvVerIngreso.Name = "dgvVerIngreso";
             this.dgvVerIngreso.ReadOnly = true;
             this.dgvVerIngreso.RowHeadersVisible = false;
             this.dgvVerIngreso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVerIngreso.Size = new System.Drawing.Size(1132, 302);
+            this.dgvVerIngreso.Size = new System.Drawing.Size(1109, 338);
             this.dgvVerIngreso.TabIndex = 15;
             // 
             // dgvIngreso
@@ -148,7 +153,7 @@
             this.dgvIngreso.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -159,7 +164,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.MediumSlateBlue;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
@@ -178,7 +183,7 @@
             // 
             this.gbIngreso.Controls.Add(this.lblTotal);
             this.gbIngreso.Controls.Add(this.label4);
-            this.gbIngreso.Controls.Add(this.rtDescripcion);
+            this.gbIngreso.Controls.Add(this.rtComentario);
             this.gbIngreso.Controls.Add(this.dtpFecha);
             this.gbIngreso.Controls.Add(this.btnCancelar);
             this.gbIngreso.Controls.Add(this.txtComprobante);
@@ -200,7 +205,7 @@
             // 
             this.txtComprobante.AccessibleName = "";
             this.txtComprobante.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComprobante.Location = new System.Drawing.Point(461, 58);
+            this.txtComprobante.Location = new System.Drawing.Point(460, 58);
             this.txtComprobante.Name = "txtComprobante";
             this.txtComprobante.PasswordChar = '.';
             this.txtComprobante.Size = new System.Drawing.Size(197, 27);
@@ -215,6 +220,7 @@
             this.txtIdUsuario.Name = "txtIdUsuario";
             this.txtIdUsuario.Size = new System.Drawing.Size(197, 27);
             this.txtIdUsuario.TabIndex = 15;
+            this.txtIdUsuario.Text = "2";
             // 
             // label5
             // 
@@ -264,10 +270,107 @@
             // 
             this.dtpFecha.CalendarForeColor = System.Drawing.Color.MediumSlateBlue;
             this.dtpFecha.CalendarTitleForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.dtpFecha.Location = new System.Drawing.Point(238, 56);
+            this.dtpFecha.Location = new System.Drawing.Point(235, 56);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(197, 29);
             this.dtpFecha.TabIndex = 29;
+            // 
+            // rtComentario
+            // 
+            this.rtComentario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtComentario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rtComentario.Location = new System.Drawing.Point(10, 129);
+            this.rtComentario.Name = "rtComentario";
+            this.rtComentario.Size = new System.Drawing.Size(728, 81);
+            this.rtComentario.TabIndex = 29;
+            this.rtComentario.Text = "";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label4.Location = new System.Drawing.Point(6, 236);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 20);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "Total:";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblTotal.Location = new System.Drawing.Point(56, 236);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(40, 20);
+            this.lblTotal.TabIndex = 31;
+            this.lblTotal.Text = "0.00";
+            // 
+            // txtIdIngreso
+            // 
+            this.txtIdIngreso.AccessibleName = "";
+            this.txtIdIngreso.Enabled = false;
+            this.txtIdIngreso.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIdIngreso.Location = new System.Drawing.Point(18, 65);
+            this.txtIdIngreso.Name = "txtIdIngreso";
+            this.txtIdIngreso.Size = new System.Drawing.Size(197, 27);
+            this.txtIdIngreso.TabIndex = 17;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label6.Location = new System.Drawing.Point(14, 41);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 20);
+            this.label6.TabIndex = 18;
+            this.label6.Text = "Id Ingreso";
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.BackColor = System.Drawing.Color.Crimson;
+            this.btnEliminar.BackGroundColor = System.Drawing.Color.Crimson;
+            this.btnEliminar.BorderColor = System.Drawing.Color.Crimson;
+            this.btnEliminar.BorderRadius = 4;
+            this.btnEliminar.BorderSize = 0;
+            this.btnEliminar.FlatAppearance.BorderSize = 0;
+            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnEliminar.ForeColor = System.Drawing.Color.White;
+            this.btnEliminar.Image = global::MenuGerman.Properties.Resources.Delete_30px;
+            this.btnEliminar.Location = new System.Drawing.Point(716, 69);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(57, 40);
+            this.btnEliminar.TabIndex = 31;
+            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminar.TextColor = System.Drawing.Color.White;
+            this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnNuevoIngreso
+            // 
+            this.btnNuevoIngreso.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnNuevoIngreso.BackGroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnNuevoIngreso.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnNuevoIngreso.BorderRadius = 4;
+            this.btnNuevoIngreso.BorderSize = 0;
+            this.btnNuevoIngreso.FlatAppearance.BorderSize = 0;
+            this.btnNuevoIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoIngreso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnNuevoIngreso.ForeColor = System.Drawing.Color.White;
+            this.btnNuevoIngreso.Image = global::MenuGerman.Properties.Resources.add_30px;
+            this.btnNuevoIngreso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoIngreso.Location = new System.Drawing.Point(18, 23);
+            this.btnNuevoIngreso.Name = "btnNuevoIngreso";
+            this.btnNuevoIngreso.Size = new System.Drawing.Size(163, 40);
+            this.btnNuevoIngreso.TabIndex = 30;
+            this.btnNuevoIngreso.Text = "Nuevo ingreso";
+            this.btnNuevoIngreso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnNuevoIngreso.TextColor = System.Drawing.Color.White;
+            this.btnNuevoIngreso.UseVisualStyleBackColor = false;
+            this.btnNuevoIngreso.Click += new System.EventHandler(this.btnNuevoIngreso_Click);
             // 
             // btnCancelar
             // 
@@ -314,102 +417,51 @@
             this.btnGuardar.UseVisualStyleBackColor = false;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // rtDescripcion
+            // btnEliminarIngreso
             // 
-            this.rtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.rtDescripcion.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rtDescripcion.Location = new System.Drawing.Point(10, 129);
-            this.rtDescripcion.Name = "rtDescripcion";
-            this.rtDescripcion.Size = new System.Drawing.Size(728, 81);
-            this.rtDescripcion.TabIndex = 29;
-            this.rtDescripcion.Text = "";
+            this.btnEliminarIngreso.BackColor = System.Drawing.Color.Crimson;
+            this.btnEliminarIngreso.BackGroundColor = System.Drawing.Color.Crimson;
+            this.btnEliminarIngreso.BorderColor = System.Drawing.Color.Crimson;
+            this.btnEliminarIngreso.BorderRadius = 15;
+            this.btnEliminarIngreso.BorderSize = 0;
+            this.btnEliminarIngreso.FlatAppearance.BorderSize = 0;
+            this.btnEliminarIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarIngreso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnEliminarIngreso.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarIngreso.Image = global::MenuGerman.Properties.Resources.Delete_30px;
+            this.btnEliminarIngreso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarIngreso.Location = new System.Drawing.Point(1008, 113);
+            this.btnEliminarIngreso.Name = "btnEliminarIngreso";
+            this.btnEliminarIngreso.Size = new System.Drawing.Size(119, 40);
+            this.btnEliminarIngreso.TabIndex = 69;
+            this.btnEliminarIngreso.Text = "Eliminar";
+            this.btnEliminarIngreso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEliminarIngreso.TextColor = System.Drawing.Color.White;
+            this.btnEliminarIngreso.UseVisualStyleBackColor = false;
+            this.btnEliminarIngreso.Click += new System.EventHandler(this.btnEliminarIngreso_Click);
             // 
-            // btnNuevoIngreso
+            // btnBuscar
             // 
-            this.btnNuevoIngreso.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnNuevoIngreso.BackGroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnNuevoIngreso.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnNuevoIngreso.BorderRadius = 4;
-            this.btnNuevoIngreso.BorderSize = 0;
-            this.btnNuevoIngreso.FlatAppearance.BorderSize = 0;
-            this.btnNuevoIngreso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoIngreso.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnNuevoIngreso.ForeColor = System.Drawing.Color.White;
-            this.btnNuevoIngreso.Image = global::MenuGerman.Properties.Resources.add_30px;
-            this.btnNuevoIngreso.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoIngreso.Location = new System.Drawing.Point(18, 23);
-            this.btnNuevoIngreso.Name = "btnNuevoIngreso";
-            this.btnNuevoIngreso.Size = new System.Drawing.Size(163, 40);
-            this.btnNuevoIngreso.TabIndex = 30;
-            this.btnNuevoIngreso.Text = "Nuevo ingreso";
-            this.btnNuevoIngreso.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnNuevoIngreso.TextColor = System.Drawing.Color.White;
-            this.btnNuevoIngreso.UseVisualStyleBackColor = false;
-            this.btnNuevoIngreso.Click += new System.EventHandler(this.btnNuevoIngreso_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.BackColor = System.Drawing.Color.Crimson;
-            this.btnEliminar.BackGroundColor = System.Drawing.Color.Crimson;
-            this.btnEliminar.BorderColor = System.Drawing.Color.Crimson;
-            this.btnEliminar.BorderRadius = 4;
-            this.btnEliminar.BorderSize = 0;
-            this.btnEliminar.FlatAppearance.BorderSize = 0;
-            this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnEliminar.ForeColor = System.Drawing.Color.White;
-            this.btnEliminar.Image = global::MenuGerman.Properties.Resources.Delete_30px;
-            this.btnEliminar.Location = new System.Drawing.Point(716, 69);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(57, 40);
-            this.btnEliminar.TabIndex = 31;
-            this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEliminar.TextColor = System.Drawing.Color.White;
-            this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label4.Location = new System.Drawing.Point(6, 236);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 20);
-            this.label4.TabIndex = 30;
-            this.label4.Text = "Total:";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTotal.Location = new System.Drawing.Point(56, 236);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(40, 20);
-            this.lblTotal.TabIndex = 31;
-            this.lblTotal.Text = "0.00";
-            // 
-            // txtIdIngreso
-            // 
-            this.txtIdIngreso.AccessibleName = "";
-            this.txtIdIngreso.Enabled = false;
-            this.txtIdIngreso.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIdIngreso.Location = new System.Drawing.Point(18, 65);
-            this.txtIdIngreso.Name = "txtIdIngreso";
-            this.txtIdIngreso.Size = new System.Drawing.Size(197, 27);
-            this.txtIdIngreso.TabIndex = 17;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label6.Location = new System.Drawing.Point(14, 41);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 20);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "Id Ingreso";
+            this.btnBuscar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnBuscar.BackGroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnBuscar.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnBuscar.BorderRadius = 4;
+            this.btnBuscar.BorderSize = 0;
+            this.btnBuscar.Enabled = false;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Image = global::MenuGerman.Properties.Resources.search_30px;
+            this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscar.Location = new System.Drawing.Point(221, 64);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(43, 27);
+            this.btnBuscar.TabIndex = 68;
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.TextColor = System.Drawing.Color.White;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // cuIngreso
             // 
@@ -447,12 +499,14 @@
         private customButton btnGuardar;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker dtpFecha;
-        private System.Windows.Forms.RichTextBox rtDescripcion;
+        private System.Windows.Forms.RichTextBox rtComentario;
         private customButton btnNuevoIngreso;
         private customButton btnEliminar;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtIdIngreso;
         private System.Windows.Forms.Label label6;
+        private customButton btnBuscar;
+        private customButton btnEliminarIngreso;
     }
 }

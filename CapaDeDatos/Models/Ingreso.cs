@@ -14,6 +14,7 @@ namespace CapaDeDatos.Models
         public string  numeroComprobante { get; set; }
         public DateTime fecha { get; set; }
         public double impuesto { get; set; }
+        public string comentario { get; set; }
         public double total { get; set; }
         public int estado { get; set; }
         public List<DetalleIngreso> detalleIngreso  { get; set; }
