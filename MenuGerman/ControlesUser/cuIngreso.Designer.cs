@@ -310,7 +310,6 @@
             // txtIdIngreso
             // 
             this.txtIdIngreso.AccessibleName = "";
-            this.txtIdIngreso.Enabled = false;
             this.txtIdIngreso.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdIngreso.Location = new System.Drawing.Point(18, 65);
             this.txtIdIngreso.Name = "txtIdIngreso";
@@ -447,7 +446,6 @@
             this.btnBuscar.BorderColor = System.Drawing.Color.MediumSlateBlue;
             this.btnBuscar.BorderRadius = 4;
             this.btnBuscar.BorderSize = 0;
-            this.btnBuscar.Enabled = false;
             this.btnBuscar.FlatAppearance.BorderSize = 0;
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
