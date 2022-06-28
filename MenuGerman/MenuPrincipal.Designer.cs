@@ -30,19 +30,18 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuPrincipal));
             this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnVentasMenu = new System.Windows.Forms.Button();
             this.btnArticulosMenu = new System.Windows.Forms.Button();
             this.btnIngresoMenu = new System.Windows.Forms.Button();
             this.btnUsuarioMenu = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.upPanel = new System.Windows.Forms.Panel();
+            this.btnCerrar = new MenuGerman.customButton();
             this.label1 = new System.Windows.Forms.Label();
             this.menuPanel = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.imageryService1 = new Microsoft.Reporting.Map.WebForms.VirtualEarth.ImageryService();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnCerrar = new MenuGerman.customButton();
             this.upPanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -55,26 +54,27 @@
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(0, 130);
+            this.button8.Location = new System.Drawing.Point(0, 65);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(180, 65);
             this.button8.TabIndex = 17;
             this.button8.Text = "Reportes";
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // button7
+            // btnVentasMenu
             // 
-            this.button7.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(0, 0);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(180, 65);
-            this.button7.TabIndex = 16;
-            this.button7.Text = "Ventas";
-            this.button7.UseVisualStyleBackColor = false;
+            this.btnVentasMenu.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnVentasMenu.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVentasMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btnVentasMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentasMenu.ForeColor = System.Drawing.Color.White;
+            this.btnVentasMenu.Location = new System.Drawing.Point(0, 0);
+            this.btnVentasMenu.Name = "btnVentasMenu";
+            this.btnVentasMenu.Size = new System.Drawing.Size(180, 65);
+            this.btnVentasMenu.TabIndex = 16;
+            this.btnVentasMenu.Text = "Ventas";
+            this.btnVentasMenu.UseVisualStyleBackColor = false;
+            this.btnVentasMenu.Click += new System.EventHandler(this.btnVentasMenu_Click);
             // 
             // btnArticulosMenu
             // 
@@ -83,7 +83,7 @@
             this.btnArticulosMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnArticulosMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnArticulosMenu.ForeColor = System.Drawing.Color.White;
-            this.btnArticulosMenu.Location = new System.Drawing.Point(0, 260);
+            this.btnArticulosMenu.Location = new System.Drawing.Point(0, 195);
             this.btnArticulosMenu.Name = "btnArticulosMenu";
             this.btnArticulosMenu.Size = new System.Drawing.Size(180, 65);
             this.btnArticulosMenu.TabIndex = 11;
@@ -98,7 +98,7 @@
             this.btnIngresoMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIngresoMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresoMenu.ForeColor = System.Drawing.Color.White;
-            this.btnIngresoMenu.Location = new System.Drawing.Point(0, 325);
+            this.btnIngresoMenu.Location = new System.Drawing.Point(0, 260);
             this.btnIngresoMenu.Name = "btnIngresoMenu";
             this.btnIngresoMenu.Size = new System.Drawing.Size(180, 65);
             this.btnIngresoMenu.TabIndex = 15;
@@ -113,27 +113,13 @@
             this.btnUsuarioMenu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUsuarioMenu.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUsuarioMenu.ForeColor = System.Drawing.Color.White;
-            this.btnUsuarioMenu.Location = new System.Drawing.Point(0, 195);
+            this.btnUsuarioMenu.Location = new System.Drawing.Point(0, 130);
             this.btnUsuarioMenu.Name = "btnUsuarioMenu";
             this.btnUsuarioMenu.Size = new System.Drawing.Size(180, 65);
             this.btnUsuarioMenu.TabIndex = 14;
             this.btnUsuarioMenu.Text = "Usuarios";
             this.btnUsuarioMenu.UseVisualStyleBackColor = false;
             this.btnUsuarioMenu.Click += new System.EventHandler(this.btnUsuarioMenu_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.button4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(0, 65);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(180, 65);
-            this.button4.TabIndex = 13;
-            this.button4.Text = "Rol";
-            this.button4.UseVisualStyleBackColor = false;
             // 
             // upPanel
             // 
@@ -147,6 +133,30 @@
             this.upPanel.Size = new System.Drawing.Size(1352, 30);
             this.upPanel.TabIndex = 3;
             this.upPanel.MouseDown += new System.Windows.Forms.MouseEventHandler(this.upPanel_MouseDown);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.BackGroundColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.BorderColor = System.Drawing.Color.Crimson;
+            this.btnCerrar.BorderRadius = 0;
+            this.btnCerrar.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.Image = global::MenuGerman.Properties.Resources.Close_thin2_30px;
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrar.Location = new System.Drawing.Point(1302, 4);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(37, 20);
+            this.btnCerrar.TabIndex = 2;
+            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrar.TextColor = System.Drawing.Color.White;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
+            this.btnCerrar.MouseLeave += new System.EventHandler(this.btnCerrar_MouseLeave);
+            this.btnCerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnCerrar_MouseMove);
             // 
             // label1
             // 
@@ -169,13 +179,22 @@
             this.menuPanel.Controls.Add(this.btnArticulosMenu);
             this.menuPanel.Controls.Add(this.btnUsuarioMenu);
             this.menuPanel.Controls.Add(this.button8);
-            this.menuPanel.Controls.Add(this.button4);
-            this.menuPanel.Controls.Add(this.button7);
+            this.menuPanel.Controls.Add(this.btnVentasMenu);
             this.menuPanel.Dock = System.Windows.Forms.DockStyle.Left;
             this.menuPanel.Location = new System.Drawing.Point(0, 30);
             this.menuPanel.Name = "menuPanel";
             this.menuPanel.Size = new System.Drawing.Size(182, 596);
             this.menuPanel.TabIndex = 18;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::MenuGerman.Properties.Resources.user_black30px;
+            this.pictureBox1.Location = new System.Drawing.Point(3, 515);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(32, 35);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 0;
+            this.pictureBox1.TabStop = false;
             // 
             // lblUsuario
             // 
@@ -203,40 +222,6 @@
             this.imageryService1.Credentials = null;
             this.imageryService1.Url = "http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc";
             this.imageryService1.UseDefaultCredentials = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::MenuGerman.Properties.Resources.user_black30px;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 515);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 35);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 0;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.BackGroundColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.BorderColor = System.Drawing.Color.Crimson;
-            this.btnCerrar.BorderRadius = 0;
-            this.btnCerrar.BorderSize = 0;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Image = global::MenuGerman.Properties.Resources.Close_thin2_30px;
-            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrar.Location = new System.Drawing.Point(1302, 4);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(37, 20);
-            this.btnCerrar.TabIndex = 2;
-            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCerrar.TextColor = System.Drawing.Color.White;
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
-            this.btnCerrar.MouseLeave += new System.EventHandler(this.btnCerrar_MouseLeave);
-            this.btnCerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnCerrar_MouseMove);
             // 
             // MenuPrincipal
             // 
@@ -266,11 +251,10 @@
 
         #endregion
         private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnVentasMenu;
         private System.Windows.Forms.Button btnArticulosMenu;
         private System.Windows.Forms.Button btnIngresoMenu;
         private System.Windows.Forms.Button btnUsuarioMenu;
-        private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Panel upPanel;
         private System.Windows.Forms.Panel menuPanel;
         private System.Windows.Forms.Panel mainPanel;

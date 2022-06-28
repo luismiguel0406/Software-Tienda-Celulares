@@ -80,6 +80,12 @@
     <Compile Include="ControlesUser\cuUsuarios.Designer.cs">
       <DependentUpon>cuUsuarios.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlesUser\cuVenta.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesUser\cuVenta.Designer.cs">
+      <DependentUpon>cuVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="customButton.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -88,12 +94,6 @@
     </Compile>
     <Compile Include="frmCategoria.Designer.cs">
       <DependentUpon>frmCategoria.cs</DependentUpon>
-    </Compile>
-    <Compile Include="frmIngreso.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmIngreso.Designer.cs">
-      <DependentUpon>frmIngreso.cs</DependentUpon>
     </Compile>
     <Compile Include="frmModalArticulos.cs">
       <SubType>Form</SubType>
@@ -142,11 +142,11 @@
     <EmbeddedResource Include="ControlesUser\cuUsuarios.resx">
       <DependentUpon>cuUsuarios.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ControlesUser\cuVenta.resx">
+      <DependentUpon>cuVenta.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmCategoria.resx">
       <DependentUpon>frmCategoria.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmIngreso.resx">
-      <DependentUpon>frmIngreso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmModalArticulos.resx">
       <DependentUpon>frmModalArticulos.cs</DependentUpon>
@@ -263,6 +263,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\eye_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\deposit_64px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

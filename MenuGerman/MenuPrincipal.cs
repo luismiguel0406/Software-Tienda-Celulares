@@ -61,44 +61,6 @@ namespace MenuGerman
             //label1.Text = GlobalClass.Usuario;
         }
 
-        
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            
-            frmCategoria frmCategoria = new frmCategoria();
-            frmCategoria.ShowDialog();
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-            if (GlobalClass.administrador(GlobalClass.idRol, GlobalClass.rol))
-            {
-                frmPersona frmPersona = new frmPersona();
-                frmPersona.ShowDialog();
-                return;
-            }
-            MessageBox.Show("Debe ser administrador para usar esta opcion", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-            
-        }
-
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-            if (GlobalClass.administrador(GlobalClass.idRol, GlobalClass.rol))
-            {
-                frmRol frmRol = new frmRol();
-                frmRol.ShowDialog();
-                return;
-            }
-            MessageBox.Show("Debe ser administrador para usar esta opcion", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-          
-        }
-
-       
-      
-
         private void MenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
         {
             _frmLogin.Show();
@@ -126,7 +88,6 @@ namespace MenuGerman
             Close();
 
         }
-
         private void btnCerrar_MouseMove(object sender, MouseEventArgs e)
         {
             btnCerrar.BackColor = Color.Crimson;
@@ -149,6 +110,11 @@ namespace MenuGerman
             cuUsuarios usuario = new cuUsuarios();
             mainPanel.Controls.Clear();
             mainPanel.Controls.Add(usuario);
+        }
+
+        private void btnVentasMenu_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

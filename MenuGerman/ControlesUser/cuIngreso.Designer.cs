@@ -143,6 +143,7 @@
             this.dgvVerIngreso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVerIngreso.Size = new System.Drawing.Size(1109, 338);
             this.dgvVerIngreso.TabIndex = 15;
+            this.dgvVerIngreso.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVerIngreso_CellDoubleClick);
             // 
             // dgvIngreso
             // 
@@ -207,7 +208,6 @@
             this.txtComprobante.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComprobante.Location = new System.Drawing.Point(460, 58);
             this.txtComprobante.Name = "txtComprobante";
-            this.txtComprobante.PasswordChar = '.';
             this.txtComprobante.Size = new System.Drawing.Size(197, 27);
             this.txtComprobante.TabIndex = 15;
             // 
@@ -392,6 +392,7 @@
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.TextColor = System.Drawing.Color.MediumSlateBlue;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnGuardar
             // 

@@ -95,7 +95,7 @@ namespace MenuGerman.ControlesUser
 
                 }
                 MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                GlobalClass.limpiar(tcIngresos);
+                GlobalClass.limpiar(gbIngreso);
                 GlobalClass.limpiar(dgvIngreso);
             }
             catch (Exception ex)
@@ -115,8 +115,9 @@ namespace MenuGerman.ControlesUser
                 DialogResult dialogo = MessageBox.Show("Esta seguro que desea eliminar?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogo == DialogResult.Yes)
                 {
-                    ingresoModel.idIngreso = Convert.ToInt32(dgvVerIngreso.CurrentRow.Cells["IDINGRESO"].Value);
+                    ingresoModel.idIngreso = Convert.ToInt32(dgvVerIngreso.CurrentRow.Cells["ID"].Value);
                     dgvVerIngreso.DataSource = IngresoDTO.MantenimientoIngreso(ingresoModel, GlobalClass.Delete);
+                    MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -134,6 +135,29 @@ namespace MenuGerman.ControlesUser
         private void tpRealizarIngresos_Click(object sender, EventArgs e)
         {
             txtIdUsuario.Text = string.IsNullOrEmpty(GlobalClass.idUsuario.ToString()) ? string.Empty : GlobalClass.idUsuario.ToString();
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            GlobalClass.limpiar(tcIngresos);
+            GlobalClass.limpiar(dgvIngreso);
+            editar = false;
+            txtIdIngreso.Enabled = true;
+            txtIdUsuario.Text = GlobalClass.idUsuario.ToString();
+        }
+
+        private void dgvVerIngreso_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (GlobalClass.validaDgv(dgvVerIngreso))
+            {
+                ingresoModel.idIngreso = Convert.ToInt32(dgvVerIngreso.CurrentRow.Cells["IDINGRESO"].Value);
+                ingresoModel.impuesto = Convert.ToDouble(dgvVerIngreso.CurrentRow.Cells["IMPUESTO"].Value);
+                ingresoModel.total = Convert.ToDouble(dgvVerIngreso.CurrentRow.Cells["TOTAL"].Value);
+                ingresoModel.numeroComprobante = dgvVerIngreso.CurrentRow.Cells["NUM_COMPROBANTE"].Value.ToString();
+                DataTable dt = IngresoDTO.MantenimientoIngreso(ingresoModel, GlobalClass.detalleIngreso);
+                frmVisorReporteIngresocs frmDetalle = new frmVisorReporteIngresocs(dt, ingresoModel);
+                frmDetalle.ShowDialog();
+            }
         }
     }
 }

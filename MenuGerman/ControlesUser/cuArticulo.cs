@@ -125,6 +125,7 @@ namespace MenuGerman.ControlesUser
                 {
                     articuloModel.idArticulo = Convert.ToInt32(dgvArticulo.CurrentRow.Cells["ID"].Value);
                     dgvArticulo.DataSource = ArticuloDTO.MantenimientoArticulo(articuloModel, GlobalClass.Delete);
+                    MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -145,11 +146,6 @@ namespace MenuGerman.ControlesUser
             comboBoxCategoria();
         }
 
-       
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Validaciones.soloLetras(e);
-        }
 
         private void txtPrecioVenta_KeyPress(object sender, KeyPressEventArgs e)
         {
