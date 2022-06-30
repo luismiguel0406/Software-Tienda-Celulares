@@ -19,13 +19,23 @@ namespace MenuGerman
     {
          Articulo articulo = new Articulo();
         private cuIngreso _cuIngreso;
+        private cuVenta _cuVenta;
 
         public frmModalArticulos(cuIngreso cuIngreso)
         {
             _cuIngreso = cuIngreso;
             InitializeComponent();
         }
-        
+        public frmModalArticulos()
+        {
+            InitializeComponent();
+        }
+        public frmModalArticulos(cuVenta venta)
+        {
+            _cuVenta = venta;      
+            InitializeComponent();
+        }
+
         private void frmModalArticulos_Load(object sender, EventArgs e)
         {
             var dt = ArticuloDTO.MantenimientoArticulo(articulo, GlobalClass.Select);
@@ -58,25 +68,32 @@ namespace MenuGerman
         {
             try
             {
-                List<IDetalleIngresoDetails> detalle = new List<IDetalleIngresoDetails>();
-                foreach (DataGridViewRow row in dgvModalArticulo.Rows)
+                if (_cuIngreso != null)
                 {
-                    if (Convert.ToBoolean(row.Cells["Seleccionar"].Value))
+                    List<IDetalleIngresoDetails> detalle = new List<IDetalleIngresoDetails>();
+                    foreach (DataGridViewRow row in dgvModalArticulo.Rows)
                     {
-                        detalle.Add(new DetalleIngreso
+                        if (Convert.ToBoolean(row.Cells["Seleccionar"].Value))
                         {
-                            idArticulo = Convert.ToInt32(row.Cells["ID"].Value),
-                          //  nombre = Convert.ToString(row.Cells["NOMBRE"].Value),
-                            cantidad = Convert.ToInt32(row.Cells["CANTIDAD"].Value),
-                            precio = Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value),
-                            subTotal = Convert.ToInt32(row.Cells["CANTIDAD"].Value) * Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value)
-                            //COLOCAR CALCULO DE SUBTOTAL Y DEMAS ENEL MODELO DIRECTAMENTE
-                        });
+                            detalle.Add(new DetalleIngreso
+                            {
+                                idArticulo = Convert.ToInt32(row.Cells["ID"].Value),
+                                //  nombre = Convert.ToString(row.Cells["NOMBRE"].Value),
+                                cantidad = Convert.ToInt32(row.Cells["CANTIDAD"].Value),
+                                precio = Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value),
+                                subTotal = Convert.ToInt32(row.Cells["CANTIDAD"].Value) * Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value)
+
+                            });
+                        }
+
                     }
+                    _cuIngreso.RecibirListaArticulos(detalle);
+                }
+                if (_cuVenta != null)
+                {
 
                 }
-
-                _cuIngreso.RecibirListaArticulos(detalle);
+               
                 Close();
             }
             catch (Exception ex)

@@ -114,7 +114,9 @@ namespace MenuGerman
 
         private void btnVentasMenu_Click(object sender, EventArgs e)
         {
-
+            cuVenta venta = new cuVenta();
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(venta);
         }
     }
 }
