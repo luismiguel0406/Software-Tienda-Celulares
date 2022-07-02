@@ -12,6 +12,7 @@
         public string telefono { get; set; }
         public string email { get; set; }
         public int estado { get; set; }
+        public int empresa { get; set; }
         public Persona()
         {
             estado = 1;

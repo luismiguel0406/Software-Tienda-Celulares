@@ -25,11 +25,10 @@ namespace MenuGerman.ControlesUser
         private void calcularTotal()
         {
             float total = 0;
-            float subTotal = 0;
             foreach (DataGridViewRow row in dgvIngreso.Rows)
             {
-                subTotal = (float)row.Cells["SUBTOTAL"].Value;
-                total = total + subTotal;
+                float subTotal = (float)row.Cells["SUBTOTAL"].Value;
+                total += subTotal;
 
             }
             lblTotal.Text = total.ToString();

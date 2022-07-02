@@ -63,6 +63,7 @@
     <Compile Include="DTO\PersonaDTO.cs" />
     <Compile Include="DTO\RolDTO.cs" />
     <Compile Include="DTO\UsuariosDTO.cs" />
+    <Compile Include="DTO\VentaDTO.cs" />
     <Compile Include="loginDTO.cs" />
     <Compile Include="menuDinamicoDTO.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

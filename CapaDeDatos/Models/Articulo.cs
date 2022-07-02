@@ -11,6 +11,7 @@
         public int stock { get; set; }
         public string descripcion { get; set; }
         public int estado { get; set; }
+        public int empresa { get; set; }
 
         public Articulo()
         {

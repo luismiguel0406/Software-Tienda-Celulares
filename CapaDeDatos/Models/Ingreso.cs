@@ -17,6 +17,7 @@ namespace CapaDeDatos.Models
         public string comentario { get; set; }
         public double total { get; set; }
         public int estado { get; set; }
+        public int empresa { get; set; }
         public List<DetalleIngreso> detalleIngreso  { get; set; }
 
         public Ingreso()
