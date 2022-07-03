@@ -89,6 +89,9 @@
     <Compile Include="customButton.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="customDateTimePicker.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="frmCategoria.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -275,6 +278,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\enterprise_resource_planning_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendarWhite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendarDark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
