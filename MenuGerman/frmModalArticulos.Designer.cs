@@ -224,6 +224,7 @@
             this.MinimizeBox = false;
             this.Name = "frmModalArticulos";
             this.Text = "Añadir Articulos";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmModalArticulos_FormClosed);
             this.Load += new System.EventHandler(this.frmModalArticulos_Load);
             this.upperPanelCategoria.ResumeLayout(false);
             this.upperPanelCategoria.PerformLayout();

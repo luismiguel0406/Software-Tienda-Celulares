@@ -1,4 +1,5 @@
 ﻿using CapaDeDatos;
+using CapaDeDatos.Interfaces;
 using CapaDeDatos.Models;
 using CapaNegocio.DTO;
 using MenuGerman.ControlesUser;
@@ -91,7 +92,25 @@ namespace MenuGerman
                 }
                 if (_cuVenta != null)
                 {
+                    
+                    List<IDetalleVentaDetails> detalle = new List<IDetalleVentaDetails>();
+                    foreach (DataGridViewRow row in dgvModalArticulo.Rows)
+                    {
+                        if (Convert.ToBoolean(row.Cells["Seleccionar"].Value))
+                        {
+                            detalle.Add(new DetalleVenta
+                            {
+                                idArticulo = Convert.ToInt32(row.Cells["ID"].Value),
+                                descripcion = Convert.ToString(row.Cells["NOMBRE"].Value),
+                                cantidad = Convert.ToInt32(row.Cells["CANTIDAD"].Value),
+                                precio = Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value),
+                                subTotal = Convert.ToInt32(row.Cells["CANTIDAD"].Value) * Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value)
 
+                            });
+                        }
+                        
+                    }
+                    _cuVenta.RecibirListaArticulos(detalle);
                 }
                
                 Close();
@@ -123,6 +142,12 @@ namespace MenuGerman
             //busqueda por lo que se escriba
             GlobalClass.buscarEnVivoDatagrid(txtBuscar, dgvModalArticulo);
          
+        }
+
+        private void frmModalArticulos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _cuVenta = null;
+            _cuIngreso = null;
         }
     }
 }

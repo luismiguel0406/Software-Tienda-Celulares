@@ -23,12 +23,32 @@ namespace MenuGerman
            
         }
 
+
+
+        private void btnInicioSesion_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnInicioSesion.BackColor = Color.Green;
+            btnInicioSesion.ForeColor = Color.White;
+        }
+
+        private void btnInicioSesion_MouseLeave(object sender, EventArgs e)
+        {
+            btnInicioSesion.BackColor = Color.White;
+            btnInicioSesion.ForeColor = Color.Black;
+        }
+
+        private void login_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
+        }
+
         private void btnInicioSesion_Click(object sender, EventArgs e)
         {
+
             usuarioModel.password = txtContraseña.Text.Trim();
             usuarioModel.usuario = txtUsuario.Text.Trim();
             var usuarioValido = UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.Login);
-           
+
             if (usuarioValido.Rows.Count == 0)
             {
                 MessageBox.Show("Usuario Invalido, intente de nuevo", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -51,23 +71,6 @@ namespace MenuGerman
             MenuPrincipal frmMenu = new MenuPrincipal(frmLogin);
             frmMenu.ShowDialog();
 
-        }
-
-        private void btnInicioSesion_MouseMove(object sender, MouseEventArgs e)
-        {
-            btnInicioSesion.BackColor = Color.Green;
-            btnInicioSesion.ForeColor = Color.White;
-        }
-
-        private void btnInicioSesion_MouseLeave(object sender, EventArgs e)
-        {
-            btnInicioSesion.BackColor = Color.White;
-            btnInicioSesion.ForeColor = Color.Black;
-        }
-
-        private void login_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            Application.Exit();
         }
     }
 }

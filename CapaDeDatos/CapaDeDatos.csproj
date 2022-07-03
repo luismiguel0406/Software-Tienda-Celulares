@@ -69,8 +69,9 @@
     <Compile Include="CRUDS\rolDAO.cs" />
     <Compile Include="CRUDS\usuarioDAO.cs" />
     <Compile Include="CRUDS\ventaDAO.cs" />
-    <Compile Include="IDetalleIngresoDetails.cs" />
-    <Compile Include="IDetalleIngresoHeader.cs" />
+    <Compile Include="Interfaces\IDetalleIngresoDetails.cs" />
+    <Compile Include="Interfaces\IDetalleIngresoHeader.cs" />
+    <Compile Include="Interfaces\IDetalleVentaDetails.cs" />
     <Compile Include="login.cs" />
     <Compile Include="menuDinamico.cs" />
     <Compile Include="Models\Articulo.cs" />

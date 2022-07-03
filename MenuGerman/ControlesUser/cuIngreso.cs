@@ -65,15 +65,16 @@ namespace MenuGerman.ControlesUser
         public void RecibirListaArticulos(IEnumerable<IDetalleIngresoDetails> detalle)
         {
             dgvIngreso.DataSource = detalle;
-            calcularTotal();
+            
         }
+        
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvIngreso.Rows.Count >0)
             {
                 dgvIngreso.Rows.Remove(dgvIngreso.CurrentRow);
-                calcularTotal();
+                
             }
             
         }
@@ -157,6 +158,16 @@ namespace MenuGerman.ControlesUser
                 frmVisorReporteIngresocs frmDetalle = new frmVisorReporteIngresocs(dt, ingresoModel);
                 frmDetalle.ShowDialog();
             }
+        }
+
+        private void dgvIngreso_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            calcularTotal();
+        }
+
+        private void dgvIngreso_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            calcularTotal();
         }
     }
 }

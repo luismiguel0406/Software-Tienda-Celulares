@@ -1,4 +1,6 @@
 ﻿using CapaDeDatos;
+using CapaDeDatos.Interfaces;
+using CapaDeDatos.Models;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +10,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utilidades;
 
 namespace MenuGerman.ControlesUser
 {
@@ -20,7 +23,7 @@ namespace MenuGerman.ControlesUser
 
         private void btnAgregarArticulo_Click(object sender, EventArgs e)
         {
-            frmModalArticulos modalArticulos = new frmModalArticulos();
+            frmModalArticulos modalArticulos = new frmModalArticulos(this);
             modalArticulos.ShowDialog();
         }
 
@@ -40,24 +43,36 @@ namespace MenuGerman.ControlesUser
             return new Totales { subtotal = subTotal, total = total, itbis = itbis, descuento = descuento };
 
         }
-
+        public void RecibirListaArticulos(IEnumerable<IDetalleVentaDetails> detalle)
+        {
+            dgvVenta.DataSource = detalle;
+        }
         private void dgvVenta_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {
            var totales = CalculoTotales(dgvVenta);
-            lblSubTotal.Text =totales.subtotal.ToString();
-            lblItbis.Text = totales.itbis.ToString();
-            lblDescuentos.Text = totales.descuento.ToString();
-            lblTotal.Text = totales.total.ToString();
+            lblSubTotal.Text = GlobalClass.money(totales.subtotal);
+            lblItbis.Text = GlobalClass.money( totales.itbis);
+            lblDescuentos.Text = GlobalClass.money(totales.descuento);
+            lblTotal.Text =  GlobalClass.money(totales.total);
         }
 
         private void dgvVenta_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             var totales = CalculoTotales(dgvVenta);
-            lblSubTotal.Text = totales.subtotal.ToString();
-            lblItbis.Text = totales.itbis.ToString();
-            lblDescuentos.Text = totales.descuento.ToString();
-            lblTotal.Text = totales.total.ToString();
+            lblSubTotal.Text = GlobalClass.money(totales.subtotal);
+            lblItbis.Text = GlobalClass.money(totales.itbis);
+            lblDescuentos.Text = GlobalClass.money(totales.descuento);
+            lblTotal.Text = GlobalClass.money(totales.total);
 
+        }
+
+        private void btnEliminarArticulo_Click(object sender, EventArgs e)
+        {
+            if (dgvVenta.Rows.Count > 0)
+            {
+                dgvVenta.Rows.Remove(dgvVenta.CurrentRow);
+               
+            }
         }
     }
 }

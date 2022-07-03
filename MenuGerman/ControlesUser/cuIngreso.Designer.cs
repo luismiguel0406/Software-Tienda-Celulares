@@ -179,6 +179,8 @@
             this.dgvIngreso.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvIngreso.Size = new System.Drawing.Size(683, 171);
             this.dgvIngreso.TabIndex = 15;
+            this.dgvIngreso.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvIngreso_RowsAdded);
+            this.dgvIngreso.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvIngreso_RowsRemoved);
             // 
             // gbIngreso
             // 

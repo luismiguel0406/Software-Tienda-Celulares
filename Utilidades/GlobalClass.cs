@@ -136,5 +136,10 @@ namespace Utilidades
           
             
         }
+
+        public static string money(float stringToMoney)
+        {
+           return stringToMoney.ToString("N2");
+        }
     }
 }
