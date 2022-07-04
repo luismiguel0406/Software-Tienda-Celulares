@@ -3,12 +3,7 @@ using CapaDeDatos.Models;
 using CapaNegocio.DTO;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilidades;
 
@@ -31,7 +26,7 @@ namespace MenuGerman.ControlesUser
                 total += subTotal;
 
             }
-            lblTotal.Text = total.ToString();
+            lblTotal.Text = GlobalClass.money(total);
         }
         private void DatosFormulario()
         {
@@ -39,9 +34,11 @@ namespace MenuGerman.ControlesUser
             ingresoModel.idUsuario = string.IsNullOrEmpty(txtIdUsuario.Text) ? 0 : Convert.ToInt32(txtIdUsuario.Text);
             ingresoModel.comentario = string.IsNullOrEmpty(rtComentario.Text)? string.Empty : rtComentario.Text;
             ingresoModel.numeroComprobante = string.IsNullOrEmpty(txtComprobante.Text) ? string.Empty : txtComprobante.Text;
-            ingresoModel.fecha = string.IsNullOrEmpty(dtpFecha.Text) ? DateTime.Now : Convert.ToDateTime(dtpFecha.Value.ToString("yyyy-MM-dd"));
+            ingresoModel.fecha = string.IsNullOrEmpty(cdtpFecha.Text) ? DateTime.Now : Convert.ToDateTime(cdtpFecha.Value.ToString("yyyy-MM-dd"));
+            ingresoModel.fechaDesde = chkFechas.Checked ? Convert.ToDateTime(cdtpFechaDesde.Value.ToString("yyyy-MM-dd")):DateTime.MinValue;
+            ingresoModel.fechaHasta = chkFechas.Checked ? Convert.ToDateTime(cdtpFechaHasta.Value.ToString("yyyy-MM-dd")) : DateTime.MinValue;
             ingresoModel.total = string.IsNullOrEmpty(lblTotal.Text) ? 0 : Convert.ToDouble(lblTotal.Text);
-
+            
             List<DetalleIngreso> detalle = new List<DetalleIngreso>();
             foreach (DataGridViewRow row in dgvIngreso.Rows)
             {
@@ -68,39 +65,55 @@ namespace MenuGerman.ControlesUser
             
         }
         
-
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvIngreso.Rows.Count >0)
             {
-                dgvIngreso.Rows.Remove(dgvIngreso.CurrentRow);
+                dgvIngreso.Rows.RemoveAt(dgvIngreso.CurrentRow.Index);
                 
             }
             
         }
-
+        private bool camposVacios()
+        {
+            if (dgvIngreso.Rows.Count == 0)
+            {
+                MessageBox.Show("Debe agregar articulos para poder hacer un ingreso.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return true;
+            }
+            else
+            {
+                
+                return false;
+            }
+            
+        }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                if (editar)
+                if (!camposVacios())
                 {
-                    DatosFormulario();
-                    dgvVerIngreso.DataSource = IngresoDTO.MantenimientoIngreso(ingresoModel, GlobalClass.Update);
-                }
-                else
-                {
-                    DatosFormulario();
-                    dgvVerIngreso.DataSource = IngresoDTO.MantenimientoIngreso(ingresoModel, GlobalClass.Insert);
+                    if (editar)
+                    {
+                        DatosFormulario();
+                        dgvVerIngreso.DataSource = IngresoDTO.MantenimientoIngreso(ingresoModel, GlobalClass.Update);
+                    }
+                    else
+                    {
+                        DatosFormulario();
+                        dgvVerIngreso.DataSource = IngresoDTO.MantenimientoIngreso(ingresoModel, GlobalClass.Insert);
 
+                    }
+                    MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GlobalClass.limpiar(gbIngreso);
+                    GlobalClass.limpiar(dgvIngreso);
                 }
-                MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                GlobalClass.limpiar(gbIngreso);
-                GlobalClass.limpiar(dgvIngreso);
+                
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show($"Ha ocurrido un error,{ex}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show($"Ha ocurrido un error", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
@@ -168,6 +181,19 @@ namespace MenuGerman.ControlesUser
         private void dgvIngreso_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             calcularTotal();
+        }
+
+        private void chkFechas_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkFechas.Checked)
+            {
+                gbFechas.Enabled = true;
+
+            }
+            else
+            {
+                gbFechas.Enabled = false;
+            }
         }
     }
 }

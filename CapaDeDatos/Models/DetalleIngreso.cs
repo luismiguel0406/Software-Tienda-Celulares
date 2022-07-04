@@ -11,6 +11,7 @@ namespace CapaDeDatos.Models
         public int idDetalle { get; set; }
         public int idIngreso  { get; set; }
         public int idArticulo { get; set; }
+        public string descripcion { get; set; }
         public int cantidad { get; set; }
         public float precio { get; set; }
         public float subTotal { get; set; }

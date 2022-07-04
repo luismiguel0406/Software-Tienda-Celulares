@@ -34,13 +34,13 @@
             this.label7 = new System.Windows.Forms.Label();
             this.upperPanelCategoria = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnCerrar = new MenuGerman.customButton();
             this.dgvModalArticulo = new System.Windows.Forms.DataGridView();
             this.seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnProcesar = new MenuGerman.customButton();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new MenuGerman.customButton();
+            this.btnProcesar = new MenuGerman.customButton();
+            this.btnCerrar = new MenuGerman.customButton();
             this.upperPanelCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModalArticulo)).BeginInit();
             this.SuspendLayout();
@@ -50,7 +50,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label7.Location = new System.Drawing.Point(157, 47);
+            this.label7.Location = new System.Drawing.Point(215, 48);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(486, 21);
             this.label7.TabIndex = 62;
@@ -64,8 +64,9 @@
             this.upperPanelCategoria.Dock = System.Windows.Forms.DockStyle.Top;
             this.upperPanelCategoria.Location = new System.Drawing.Point(0, 0);
             this.upperPanelCategoria.Name = "upperPanelCategoria";
-            this.upperPanelCategoria.Size = new System.Drawing.Size(862, 26);
+            this.upperPanelCategoria.Size = new System.Drawing.Size(1000, 26);
             this.upperPanelCategoria.TabIndex = 63;
+            this.upperPanelCategoria.MouseDown += new System.Windows.Forms.MouseEventHandler(this.upperPanelCategoria_MouseDown);
             // 
             // label1
             // 
@@ -77,30 +78,6 @@
             this.label1.Size = new System.Drawing.Size(113, 17);
             this.label1.TabIndex = 49;
             this.label1.Text = "Lista de articulos";
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.BackGroundColor = System.Drawing.Color.Transparent;
-            this.btnCerrar.BorderColor = System.Drawing.Color.Crimson;
-            this.btnCerrar.BorderRadius = 0;
-            this.btnCerrar.BorderSize = 0;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCerrar.ForeColor = System.Drawing.Color.White;
-            this.btnCerrar.Image = global::MenuGerman.Properties.Resources.Close_thin2_30px;
-            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrar.Location = new System.Drawing.Point(822, 3);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(37, 20);
-            this.btnCerrar.TabIndex = 1;
-            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCerrar.TextColor = System.Drawing.Color.White;
-            this.btnCerrar.UseVisualStyleBackColor = false;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            this.btnCerrar.MouseLeave += new System.EventHandler(this.btnCerrar_MouseLeave);
-            this.btnCerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnCerrar_MouseMove);
             // 
             // dgvModalArticulo
             // 
@@ -136,8 +113,9 @@
             this.dgvModalArticulo.Name = "dgvModalArticulo";
             this.dgvModalArticulo.RowHeadersVisible = false;
             this.dgvModalArticulo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvModalArticulo.Size = new System.Drawing.Size(838, 222);
+            this.dgvModalArticulo.Size = new System.Drawing.Size(976, 222);
             this.dgvModalArticulo.TabIndex = 64;
+            this.dgvModalArticulo.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModalArticulo_CellValueChanged);
             // 
             // seleccionar
             // 
@@ -151,34 +129,11 @@
             this.cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.cantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
-            // btnProcesar
-            // 
-            this.btnProcesar.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnProcesar.BackGroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnProcesar.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnProcesar.BorderRadius = 15;
-            this.btnProcesar.BorderSize = 0;
-            this.btnProcesar.FlatAppearance.BorderSize = 0;
-            this.btnProcesar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProcesar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnProcesar.ForeColor = System.Drawing.Color.White;
-            this.btnProcesar.Image = global::MenuGerman.Properties.Resources.process_30px;
-            this.btnProcesar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProcesar.Location = new System.Drawing.Point(731, 377);
-            this.btnProcesar.Name = "btnProcesar";
-            this.btnProcesar.Size = new System.Drawing.Size(119, 40);
-            this.btnProcesar.TabIndex = 65;
-            this.btnProcesar.Text = "Procesar";
-            this.btnProcesar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnProcesar.TextColor = System.Drawing.Color.White;
-            this.btnProcesar.UseVisualStyleBackColor = false;
-            this.btnProcesar.Click += new System.EventHandler(this.btnProcesar_Click);
-            // 
             // txtBuscar
             // 
             this.txtBuscar.AccessibleName = "";
             this.txtBuscar.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBuscar.Location = new System.Drawing.Point(483, 95);
+            this.txtBuscar.Location = new System.Drawing.Point(636, 97);
             this.txtBuscar.Name = "txtBuscar";
             this.txtBuscar.Size = new System.Drawing.Size(303, 27);
             this.txtBuscar.TabIndex = 66;
@@ -198,7 +153,7 @@
             this.btnBuscar.ForeColor = System.Drawing.Color.White;
             this.btnBuscar.Image = global::MenuGerman.Properties.Resources.search_30px;
             this.btnBuscar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscar.Location = new System.Drawing.Point(792, 95);
+            this.btnBuscar.Location = new System.Drawing.Point(945, 97);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(43, 27);
             this.btnBuscar.TabIndex = 67;
@@ -206,12 +161,59 @@
             this.btnBuscar.TextColor = System.Drawing.Color.White;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
+            // btnProcesar
+            // 
+            this.btnProcesar.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnProcesar.BackGroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnProcesar.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnProcesar.BorderRadius = 15;
+            this.btnProcesar.BorderSize = 0;
+            this.btnProcesar.FlatAppearance.BorderSize = 0;
+            this.btnProcesar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProcesar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnProcesar.ForeColor = System.Drawing.Color.White;
+            this.btnProcesar.Image = global::MenuGerman.Properties.Resources.process_30px;
+            this.btnProcesar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProcesar.Location = new System.Drawing.Point(866, 376);
+            this.btnProcesar.Name = "btnProcesar";
+            this.btnProcesar.Size = new System.Drawing.Size(122, 46);
+            this.btnProcesar.TabIndex = 65;
+            this.btnProcesar.Text = "Procesar";
+            this.btnProcesar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnProcesar.TextColor = System.Drawing.Color.White;
+            this.btnProcesar.UseVisualStyleBackColor = false;
+            this.btnProcesar.Click += new System.EventHandler(this.btnProcesar_Click);
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.BackGroundColor = System.Drawing.Color.Transparent;
+            this.btnCerrar.BorderColor = System.Drawing.Color.Crimson;
+            this.btnCerrar.BorderRadius = 0;
+            this.btnCerrar.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCerrar.ForeColor = System.Drawing.Color.White;
+            this.btnCerrar.Image = global::MenuGerman.Properties.Resources.Close_thin2_30px;
+            this.btnCerrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrar.Location = new System.Drawing.Point(963, 3);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(37, 20);
+            this.btnCerrar.TabIndex = 1;
+            this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrar.TextColor = System.Drawing.Color.White;
+            this.btnCerrar.UseVisualStyleBackColor = false;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.btnCerrar.MouseLeave += new System.EventHandler(this.btnCerrar_MouseLeave);
+            this.btnCerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnCerrar_MouseMove);
+            // 
             // frmModalArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(862, 443);
+            this.ClientSize = new System.Drawing.Size(1000, 443);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtBuscar);
             this.Controls.Add(this.btnProcesar);

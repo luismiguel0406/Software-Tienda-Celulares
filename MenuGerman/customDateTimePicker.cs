@@ -94,14 +94,14 @@ namespace MenuGerman
         }
         protected override void OnPaint(PaintEventArgs e)
         {
-            using (Graphics graphics = this.CreateGraphics())
+            using (Graphics graphics = CreateGraphics())
             using (Pen penBorder = new Pen(borderColor, borderSize))
             using (SolidBrush skinBrush = new SolidBrush(skinColor))
             using (SolidBrush openIconBrush = new SolidBrush(Color.FromArgb(50, 64, 64, 64)))
             using (SolidBrush textBrush = new SolidBrush(textColor))
             using (StringFormat textFormat = new StringFormat())
             {
-                RectangleF clientArea = new RectangleF(0, 0, this.Width - 0.5F, this.Height - 0.5F);
+                RectangleF clientArea = new RectangleF(0, 0, Width - 0.5F, Height - 0.5F);
                 RectangleF iconArea = new RectangleF(clientArea.Width - calendarIconWidth, 0, calendarIconWidth, clientArea.Height);
                 penBorder.Alignment = PenAlignment.Inset;
                 textFormat.LineAlignment = StringAlignment.Center;

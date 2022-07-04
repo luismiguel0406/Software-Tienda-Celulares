@@ -5,14 +5,10 @@ using CapaNegocio.DTO;
 using MenuGerman.ControlesUser;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilidades;
+using System.Runtime.InteropServices;
 
 namespace MenuGerman
 {
@@ -22,6 +18,10 @@ namespace MenuGerman
         private cuIngreso _cuIngreso;
         private cuVenta _cuVenta;
 
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         public frmModalArticulos(cuIngreso cuIngreso)
         {
             _cuIngreso = cuIngreso;
@@ -79,7 +79,7 @@ namespace MenuGerman
                             detalle.Add(new DetalleIngreso
                             {
                                 idArticulo = Convert.ToInt32(row.Cells["ID"].Value),
-                                //  nombre = Convert.ToString(row.Cells["NOMBRE"].Value),
+                                descripcion = Convert.ToString(row.Cells["NOMBRE"].Value),
                                 cantidad = Convert.ToInt32(row.Cells["CANTIDAD"].Value),
                                 precio = Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value),
                                 subTotal = Convert.ToInt32(row.Cells["CANTIDAD"].Value) * Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value)
@@ -115,10 +115,10 @@ namespace MenuGerman
                
                 Close();
             }
-            catch (Exception ex)
+            catch (Exception )
             {
 
-                MessageBox.Show($"Ha ocurrido un error,{ex}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ha ocurrido un error", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
@@ -148,6 +148,21 @@ namespace MenuGerman
         {
             _cuVenta = null;
             _cuIngreso = null;
+        }
+
+        private void upperPanelCategoria_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, 0x112, 0xf012, 0);
+        }
+
+        private void dgvModalArticulo_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+          /*  if (dgvModalArticulo.Columns["SEL"].Equals(true))
+            {
+                dgvModalArticulo.CurrentRow.Cells["CANTIDAD"].Selected = true;
+            }
+          */
         }
     }
 }
