@@ -9,7 +9,7 @@ namespace Utilidades
         public static string Usuario { get; set; }
         public static string rol { get; set; }
         public static int idRol { get; set; }
-
+        public static int empresa { get; set; }
         public static int Select { get { return 1; } }
         public static int Insert { get { return 2; } }
         public static int Delete { get { return 3; } }

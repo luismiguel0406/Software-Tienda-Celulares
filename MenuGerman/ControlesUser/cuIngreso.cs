@@ -36,8 +36,9 @@ namespace MenuGerman.ControlesUser
             ingresoModel.numeroComprobante = string.IsNullOrEmpty(txtComprobante.Text) ? string.Empty : txtComprobante.Text;
             ingresoModel.fecha = string.IsNullOrEmpty(cdtpFecha.Text) ? DateTime.Now : Convert.ToDateTime(cdtpFecha.Value.ToString("yyyy-MM-dd"));
             ingresoModel.fechaDesde = chkFechas.Checked ? Convert.ToDateTime(cdtpFechaDesde.Value.ToString("yyyy-MM-dd")):DateTime.MinValue;
-            ingresoModel.fechaHasta = chkFechas.Checked ? Convert.ToDateTime(cdtpFechaHasta.Value.ToString("yyyy-MM-dd")) : DateTime.MinValue;
+            ingresoModel.fechaHasta = chkFechas.Checked ? Convert.ToDateTime(cdtpFechaHasta.Value.ToString("yyyy-MM-dd")) : DateTime.Now;
             ingresoModel.total = string.IsNullOrEmpty(lblTotal.Text) ? 0 : Convert.ToDouble(lblTotal.Text);
+            ingresoModel.empresa = GlobalClass.empresa;
             
             List<DetalleIngreso> detalle = new List<DetalleIngreso>();
             foreach (DataGridViewRow row in dgvIngreso.Rows)

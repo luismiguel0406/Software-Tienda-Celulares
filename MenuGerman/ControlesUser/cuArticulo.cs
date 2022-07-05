@@ -26,6 +26,20 @@ namespace MenuGerman.ControlesUser
             }
             
         }
+        private bool camposVacios()
+        {
+            /*if (dgvIngreso.Rows.Count == 0)
+            {
+                MessageBox.Show("Debe agregar articulos para poder hacer un ingreso.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return true;
+            }
+            else
+            {
+
+                return false;
+            }
+            */
+        }
 
         public void DatosFormulario()
         {
@@ -37,7 +51,7 @@ namespace MenuGerman.ControlesUser
             articuloModel.stock = string.IsNullOrEmpty(txtStock.Text) ? 0 : Convert.ToInt32(txtStock.Text);
             articuloModel.descripcion = string.IsNullOrEmpty(rtDescripcion.Text) ? string.Empty : rtDescripcion.Text;
             articuloModel.estado = string.IsNullOrEmpty(cbEstado.Text) ? 1 : Convert.ToInt32(cbEstado.Text);
-
+            articuloModel.empresa = GlobalClass.empresa;
         }
         public void DatosdataGridView()
         {
