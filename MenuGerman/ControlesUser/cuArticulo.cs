@@ -1,6 +1,7 @@
 ﻿using CapaDeDatos.Models;
 using CapaNegocio.DTO;
 using System;
+using System.Text;
 using System.Windows.Forms;
 using Utilidades;
 
@@ -28,29 +29,49 @@ namespace MenuGerman.ControlesUser
         }
         private bool camposVacios()
         {
-            /*if (dgvIngreso.Rows.Count == 0)
+            StringBuilder stringBuilder = new StringBuilder();
+            if (string.IsNullOrWhiteSpace(txtCodigo.Text))
             {
-                MessageBox.Show("Debe agregar articulos para poder hacer un ingreso.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                stringBuilder.AppendLine("El CODIGO es requerido.");
+            }
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                stringBuilder.AppendLine("El NOMBRE es requerido.");
+            }
+            if (string.IsNullOrWhiteSpace(txtPrecioVenta.Text))
+            {
+                stringBuilder.AppendLine("El PRECIO es requerido.");
+            }
+            if (string.IsNullOrWhiteSpace(txtStock.Text))
+            {
+                stringBuilder.AppendLine("EL STOCK es requerido.");
+            }
+            if (string.IsNullOrEmpty(cbCategoria.Text))
+            {
+                stringBuilder.AppendLine("La CATEGORIA es requerida.");
+            }
+            if (stringBuilder.Length > 0)
+            {
+                MessageBox.Show(stringBuilder.ToString(), "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return true;
             }
             else
             {
-
                 return false;
             }
-            */
-        }
+           
+           }
 
         public void DatosFormulario()
         {
-            articuloModel.idArticulo = string.IsNullOrEmpty(txtIdArticulo.Text) ? 0 : Convert.ToInt32(txtIdArticulo.Text);
-            articuloModel.codigo = string.IsNullOrEmpty(txtCodigo.Text) ? 0 : Convert.ToInt32(txtCodigo.Text);
-            articuloModel.nombre = string.IsNullOrEmpty(txtNombre.Text) ? string.Empty : txtNombre.Text;
-            articuloModel.idCategoria = string.IsNullOrEmpty(cbCategoria.Text) ? 0 : Convert.ToInt32(cbCategoria.SelectedValue);
-            articuloModel.precioVenta = string.IsNullOrEmpty(txtPrecioVenta.Text) ? 0 : (float)Convert.ToDouble(txtPrecioVenta.Text);
-            articuloModel.stock = string.IsNullOrEmpty(txtStock.Text) ? 0 : Convert.ToInt32(txtStock.Text);
-            articuloModel.descripcion = string.IsNullOrEmpty(rtDescripcion.Text) ? string.Empty : rtDescripcion.Text;
-            articuloModel.estado = string.IsNullOrEmpty(cbEstado.Text) ? 1 : Convert.ToInt32(cbEstado.Text);
+            articuloModel.idArticulo = string.IsNullOrWhiteSpace(txtIdArticulo.Text) ? 0 : Convert.ToInt32(txtIdArticulo.Text);
+            articuloModel.codigo = string.IsNullOrWhiteSpace(txtCodigo.Text) ? 0 : Convert.ToInt32(txtCodigo.Text);
+            articuloModel.nombre = string.IsNullOrWhiteSpace(txtNombre.Text) ? string.Empty : txtNombre.Text;
+            articuloModel.idCategoria = string.IsNullOrWhiteSpace(cbCategoria.Text) ? 0 : Convert.ToInt32(cbCategoria.SelectedValue);
+            articuloModel.precioVenta = string.IsNullOrWhiteSpace(txtPrecioVenta.Text) ? 0 : (float)Convert.ToDouble(txtPrecioVenta.Text);
+            articuloModel.stock = string.IsNullOrWhiteSpace(txtStock.Text) ? 0 : Convert.ToInt32(txtStock.Text);
+            articuloModel.descripcion = string.IsNullOrWhiteSpace(rtDescripcion.Text) ? string.Empty : rtDescripcion.Text;
+            articuloModel.estado = string.IsNullOrWhiteSpace(cbEstado.Text) ? 1 : Convert.ToInt32(cbEstado.Text);
             articuloModel.empresa = GlobalClass.empresa;
         }
         public void DatosdataGridView()
@@ -71,29 +92,28 @@ namespace MenuGerman.ControlesUser
         {
             try
             {
-                if (editar)
+                if (!camposVacios())
                 {
-                    DatosFormulario();
-                    dgvArticulo.DataSource = ArticuloDTO.MantenimientoArticulo(articuloModel, GlobalClass.Update);
-                    txtIdArticulo.Enabled = true;
-
-
-                }
-                else
-                {//EVITAR GUARDAR SI LOS CAMPOS ESTAN VACIOS
-
-                    DatosFormulario();
-                    dgvArticulo.DataSource = ArticuloDTO.MantenimientoArticulo(articuloModel, GlobalClass.Insert);
-
-                }
-                MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                GlobalClass.limpiar(gbArticulo);
-                GlobalClass.limpiar(this);
+                    if (editar)
+                    {
+                        DatosFormulario();
+                        dgvArticulo.DataSource = ArticuloDTO.MantenimientoArticulo(articuloModel, GlobalClass.Update);
+                        txtIdArticulo.Enabled = true;
+                    }
+                    else
+                    {
+                        DatosFormulario();
+                        dgvArticulo.DataSource = ArticuloDTO.MantenimientoArticulo(articuloModel, GlobalClass.Insert);
+                    }
+                    MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GlobalClass.limpiar(gbArticulo);
+                    GlobalClass.limpiar(this);
+                }         
 
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show($"Ha ocurrido un error,{ex}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ha ocurrido un error", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             finally
             {

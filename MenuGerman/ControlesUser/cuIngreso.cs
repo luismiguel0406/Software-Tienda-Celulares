@@ -30,14 +30,14 @@ namespace MenuGerman.ControlesUser
         }
         private void DatosFormulario()
         {
-            ingresoModel.idIngreso = string.IsNullOrEmpty(txtIdIngreso.Text) ? 0 : Convert.ToInt32(txtIdIngreso.Text);
-            ingresoModel.idUsuario = string.IsNullOrEmpty(txtIdUsuario.Text) ? 0 : Convert.ToInt32(txtIdUsuario.Text);
-            ingresoModel.comentario = string.IsNullOrEmpty(rtComentario.Text)? string.Empty : rtComentario.Text;
-            ingresoModel.numeroComprobante = string.IsNullOrEmpty(txtComprobante.Text) ? string.Empty : txtComprobante.Text;
-            ingresoModel.fecha = string.IsNullOrEmpty(cdtpFecha.Text) ? DateTime.Now : Convert.ToDateTime(cdtpFecha.Value.ToString("yyyy-MM-dd"));
+            ingresoModel.idIngreso = string.IsNullOrWhiteSpace(txtIdIngreso.Text) ? 0 : Convert.ToInt32(txtIdIngreso.Text);
+            ingresoModel.idUsuario = string.IsNullOrWhiteSpace(txtIdUsuario.Text) ? 0 : Convert.ToInt32(txtIdUsuario.Text);
+            ingresoModel.comentario = string.IsNullOrWhiteSpace(rtComentario.Text)? string.Empty : rtComentario.Text;
+            ingresoModel.numeroComprobante = string.IsNullOrWhiteSpace(txtComprobante.Text) ? string.Empty : txtComprobante.Text;
+            ingresoModel.fecha = string.IsNullOrWhiteSpace(cdtpFecha.Text) ? DateTime.Now : Convert.ToDateTime(cdtpFecha.Value.ToString("yyyy-MM-dd"));
             ingresoModel.fechaDesde = chkFechas.Checked ? Convert.ToDateTime(cdtpFechaDesde.Value.ToString("yyyy-MM-dd")):DateTime.MinValue;
             ingresoModel.fechaHasta = chkFechas.Checked ? Convert.ToDateTime(cdtpFechaHasta.Value.ToString("yyyy-MM-dd")) : DateTime.Now;
-            ingresoModel.total = string.IsNullOrEmpty(lblTotal.Text) ? 0 : Convert.ToDouble(lblTotal.Text);
+            ingresoModel.total = string.IsNullOrWhiteSpace(lblTotal.Text) ? 0 : Convert.ToDouble(lblTotal.Text);
             ingresoModel.empresa = GlobalClass.empresa;
             
             List<DetalleIngreso> detalle = new List<DetalleIngreso>();
@@ -114,7 +114,7 @@ namespace MenuGerman.ControlesUser
             }
             catch (Exception)
             {
-                MessageBox.Show($"Ha ocurrido un error", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Ha ocurrido un error", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             finally
             {
