@@ -146,6 +146,8 @@ namespace MenuGerman.ControlesUser
                 DatosdataGridView();
                 txtIdArticulo.Enabled = false;
                 editar = true;
+
+                
             }
 
         }
