@@ -27,6 +27,23 @@ namespace MenuGerman.ControlesUser
             }
             
         }
+        private void modoEdicion(bool activado )
+        {
+            if (activado)
+            {
+                editar = true;
+                gbArticulo.Text = "Editando...";
+                btnBuscar.Enabled = false;
+                txtIdArticulo.Enabled = false;
+            }
+            if (!activado)
+            {
+                editar = false;
+                gbArticulo.Text = "Nuevo Articulo";
+                btnBuscar.Enabled = true;
+                txtIdArticulo.Enabled = true;
+            }
+        }
         private bool camposVacios()
         {
             StringBuilder stringBuilder = new StringBuilder();
@@ -98,7 +115,7 @@ namespace MenuGerman.ControlesUser
                     {
                         DatosFormulario();
                         dgvArticulo.DataSource = ArticuloDTO.MantenimientoArticulo(articuloModel, GlobalClass.Update);
-                        txtIdArticulo.Enabled = true;
+                        modoEdicion(false);
                     }
                     else
                     {
@@ -115,18 +132,13 @@ namespace MenuGerman.ControlesUser
             {
                 MessageBox.Show("Ha ocurrido un error", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            finally
-            {
-                editar = false;
-            }
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             GlobalClass.limpiar(gbArticulo);
             GlobalClass.limpiar(dgvArticulo);
-            editar = false;
-            txtIdArticulo.Enabled = true;
+            modoEdicion(false);
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)
@@ -144,9 +156,8 @@ namespace MenuGerman.ControlesUser
             if (Validaciones.validaDgv(dgvArticulo))
             {
                 DatosdataGridView();
-                txtIdArticulo.Enabled = false;
-                editar = true;
 
+                modoEdicion(true);
                 
             }
 

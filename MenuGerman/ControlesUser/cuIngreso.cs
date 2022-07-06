@@ -12,7 +12,6 @@ namespace MenuGerman.ControlesUser
     public partial class cuIngreso : UserControl
     {
         Ingreso ingresoModel = new Ingreso();
-        bool editar = false;
         public cuIngreso()
         {
             InitializeComponent();
@@ -72,8 +71,7 @@ namespace MenuGerman.ControlesUser
             {
                 dgvIngreso.Rows.RemoveAt(dgvIngreso.CurrentRow.Index);
                 
-            }
-            
+            }           
         }
         private bool camposVacios()
         {
@@ -83,29 +81,19 @@ namespace MenuGerman.ControlesUser
                 return true;
             }
             else
-            {
-                
+            {          
                 return false;
-            }
-            
+            }           
         }
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
                 if (!camposVacios())
-                {
-                    if (editar)
-                    {
-                        DatosFormulario();
-                        dgvVerIngreso.DataSource = IngresoDTO.MantenimientoIngreso(ingresoModel, GlobalClass.Update);
-                    }
-                    else
-                    {
-                        DatosFormulario();
-                        dgvVerIngreso.DataSource = IngresoDTO.MantenimientoIngreso(ingresoModel, GlobalClass.Insert);
-
-                    }
+                {                 
+                    DatosFormulario();
+                    dgvVerIngreso.DataSource = IngresoDTO.MantenimientoIngreso(ingresoModel, GlobalClass.Insert);
+                 
                     MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GlobalClass.limpiar(gbIngreso);
                     GlobalClass.limpiar(dgvIngreso);
@@ -116,10 +104,7 @@ namespace MenuGerman.ControlesUser
             {
                 MessageBox.Show("Ha ocurrido un error", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                editar = false;
-            }
+          
         }
 
         private void btnEliminarIngreso_Click(object sender, EventArgs e)
@@ -155,8 +140,6 @@ namespace MenuGerman.ControlesUser
         {
             GlobalClass.limpiar(tcIngresos);
             GlobalClass.limpiar(dgvIngreso);
-            editar = false;
-            txtIdIngreso.Enabled = true;
             txtIdUsuario.Text = GlobalClass.idUsuario.ToString();
         }
 
