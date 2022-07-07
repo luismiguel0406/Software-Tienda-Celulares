@@ -52,6 +52,7 @@
             this.btnBuscar = new MenuGerman.customButton();
             this.btnEliminar = new MenuGerman.customButton();
             this.btnEditar = new MenuGerman.customButton();
+            this.lblDataGridView = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.gbUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbVerContrasena)).BeginInit();
@@ -76,7 +77,7 @@
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -92,6 +93,7 @@
             this.dgvUsuarios.Size = new System.Drawing.Size(1109, 223);
             this.dgvUsuarios.TabIndex = 14;
             this.dgvUsuarios.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.dgvUsuarios_RowsAdded);
+            this.dgvUsuarios.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.dgvUsuarios_RowsRemoved);
             // 
             // label5
             // 
@@ -112,7 +114,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(226, 27);
             this.txtNombre.TabIndex = 15;
-            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // txtContrasena
             // 
@@ -271,6 +272,7 @@
             this.pbVerContrasena.Size = new System.Drawing.Size(34, 25);
             this.pbVerContrasena.TabIndex = 28;
             this.pbVerContrasena.TabStop = false;
+            this.pbVerContrasena.Visible = false;
             this.pbVerContrasena.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pbVerContrasena_MouseDown);
             // 
             // btnCancelar
@@ -388,11 +390,24 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // lblDataGridView
+            // 
+            this.lblDataGridView.AutoSize = true;
+            this.lblDataGridView.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataGridView.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblDataGridView.Location = new System.Drawing.Point(185, 438);
+            this.lblDataGridView.Name = "lblDataGridView";
+            this.lblDataGridView.Size = new System.Drawing.Size(791, 17);
+            this.lblDataGridView.TabIndex = 28;
+            this.lblDataGridView.Text = "Agregue usuarios para poder visualizarlos aqui debajo, Utilice el formulario y a " +
+    "continuacion haga click en el boton  \"Guardar\"";
+            // 
             // cuUsuarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.Controls.Add(this.lblDataGridView);
             this.Controls.Add(this.gbUsuario);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.txtIdUsuario);
@@ -436,5 +451,6 @@
         private System.Windows.Forms.GroupBox gbUsuario;
         private customButton btnCancelar;
         private System.Windows.Forms.PictureBox pbVerContrasena;
+        private System.Windows.Forms.Label lblDataGridView;
     }
 }

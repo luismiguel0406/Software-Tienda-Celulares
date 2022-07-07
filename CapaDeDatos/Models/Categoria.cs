@@ -1,4 +1,6 @@
-﻿namespace CapaDeDatos.Models
+﻿using Utilidades;
+
+namespace CapaDeDatos.Models
 {
     public class Categoria
     {
@@ -11,6 +13,7 @@
         public Categoria()
         { 
             estado = 1;
+            empresa = GlobalClass.empresa;
         }
     }
 }

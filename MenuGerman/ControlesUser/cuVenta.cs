@@ -16,6 +16,7 @@ namespace MenuGerman.ControlesUser
 {
     public partial class cuVenta : UserControl
     {
+        Venta ventaModel = new Venta();
         public cuVenta()
         {
             InitializeComponent();
@@ -73,6 +74,40 @@ namespace MenuGerman.ControlesUser
                 dgvVenta.Rows.Remove(dgvVenta.CurrentRow);
                
             }
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            if (GlobalClass.validaDgv(dgvVenta))
+            {
+                DialogResult dialogo = MessageBox.Show("Esta seguro que desea cancelar esta venta?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogo == DialogResult.Yes)
+                {
+                    GlobalClass.limpiar(dgvVenta);
+                    GlobalClass.limpiar(this);
+                }
+                else
+                {
+                    return;
+                }
+            }
+           
+        }
+
+        private void btnFacturar_Click(object sender, EventArgs e)
+        {
+           
+           
+            ventaModel.fecha = DateTime.Now;
+            ventaModel.comentario = rtComentario.Text;
+            ventaModel.idUsuario = GlobalClass.idUsuario;
+
+            ventaModel.subtotal = Convert.ToSingle(lblSubTotal.Text);
+            ventaModel.descuento = Convert.ToSingle(lblDescuentos.Text);
+            ventaModel.itbis = Convert.ToSingle(lblItbis.Text);
+            ventaModel.total = Convert.ToSingle(lblTotal.Text);
+            //pendiente detalle
+
         }
     }
 }

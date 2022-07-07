@@ -89,7 +89,6 @@ namespace MenuGerman.ControlesUser
             articuloModel.stock = string.IsNullOrWhiteSpace(txtStock.Text) ? 0 : Convert.ToInt32(txtStock.Text);
             articuloModel.descripcion = string.IsNullOrWhiteSpace(rtDescripcion.Text) ? string.Empty : rtDescripcion.Text;
             articuloModel.estado = string.IsNullOrWhiteSpace(cbEstado.Text) ? 1 : Convert.ToInt32(cbEstado.Text);
-            articuloModel.empresa = GlobalClass.empresa;
         }
         public void DatosdataGridView()
         {

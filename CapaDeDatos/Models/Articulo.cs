@@ -1,4 +1,6 @@
-﻿namespace CapaDeDatos.Models
+﻿using Utilidades;
+
+namespace CapaDeDatos.Models
 {
     public class Articulo
     {
@@ -16,6 +18,7 @@
         public Articulo()
         {
             estado = 1;
+            empresa = GlobalClass.empresa;
         }
     }
     

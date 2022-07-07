@@ -1,6 +1,7 @@
 ﻿
 using System;
 using System.Collections.Generic;
+using Utilidades;
 
 namespace CapaDeDatos.Models
 {
@@ -26,6 +27,7 @@ namespace CapaDeDatos.Models
         public Ingreso()
         {
            estado = 1;
+            empresa = GlobalClass.empresa;
         }
     }
 }

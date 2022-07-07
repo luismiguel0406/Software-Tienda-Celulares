@@ -34,20 +34,20 @@
             this.btnFacturar = new MenuGerman.customButton();
             this.btnCancelar = new MenuGerman.customButton();
             this.gbTotales = new System.Windows.Forms.GroupBox();
-            this.btnAgregarArticulo = new MenuGerman.customButton();
-            this.btnEliminarArticulo = new MenuGerman.customButton();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.lblItbis = new System.Windows.Forms.Label();
             this.lblDescuentos = new System.Windows.Forms.Label();
             this.lblSubTotal = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnAgregarArticulo = new MenuGerman.customButton();
+            this.btnEliminarArticulo = new MenuGerman.customButton();
             this.rtComentario = new System.Windows.Forms.RichTextBox();
             this.label14 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVenta)).BeginInit();
@@ -112,6 +112,7 @@
             this.btnFacturar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnFacturar.TextColor = System.Drawing.Color.White;
             this.btnFacturar.UseVisualStyleBackColor = false;
+            this.btnFacturar.Click += new System.EventHandler(this.btnFacturar_Click);
             // 
             // btnCancelar
             // 
@@ -134,6 +135,7 @@
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.TextColor = System.Drawing.Color.MediumSlateBlue;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // gbTotales
             // 
@@ -159,6 +161,129 @@
             this.gbTotales.TabIndex = 25;
             this.gbTotales.TabStop = false;
             this.gbTotales.Text = "Detalle";
+            // 
+            // lblTotal
+            // 
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblTotal.Location = new System.Drawing.Point(172, 146);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(41, 21);
+            this.lblTotal.TabIndex = 27;
+            this.lblTotal.Text = "0.00";
+            // 
+            // lblItbis
+            // 
+            this.lblItbis.AutoSize = true;
+            this.lblItbis.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblItbis.Location = new System.Drawing.Point(172, 109);
+            this.lblItbis.Name = "lblItbis";
+            this.lblItbis.Size = new System.Drawing.Size(40, 21);
+            this.lblItbis.TabIndex = 28;
+            this.lblItbis.Text = "0.00";
+            // 
+            // lblDescuentos
+            // 
+            this.lblDescuentos.AutoSize = true;
+            this.lblDescuentos.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblDescuentos.Location = new System.Drawing.Point(172, 72);
+            this.lblDescuentos.Name = "lblDescuentos";
+            this.lblDescuentos.Size = new System.Drawing.Size(40, 21);
+            this.lblDescuentos.TabIndex = 29;
+            this.lblDescuentos.Text = "0.00";
+            // 
+            // lblSubTotal
+            // 
+            this.lblSubTotal.AutoSize = true;
+            this.lblSubTotal.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblSubTotal.Location = new System.Drawing.Point(172, 35);
+            this.lblSubTotal.Name = "lblSubTotal";
+            this.lblSubTotal.Size = new System.Drawing.Size(40, 21);
+            this.lblSubTotal.TabIndex = 30;
+            this.lblSubTotal.Text = "0.00";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.label9.Location = new System.Drawing.Point(126, 146);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 21);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "RD$";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label8.Location = new System.Drawing.Point(126, 109);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(40, 21);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "RD$";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label7.Location = new System.Drawing.Point(126, 72);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(40, 21);
+            this.label7.TabIndex = 26;
+            this.label7.Text = "RD$";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label6.Location = new System.Drawing.Point(126, 35);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 21);
+            this.label6.TabIndex = 26;
+            this.label6.Text = "RD$";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.label4.Location = new System.Drawing.Point(6, 146);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(48, 21);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "Total";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(6, 109);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 21);
+            this.label3.TabIndex = 25;
+            this.label3.Text = "Itbis";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(6, 72);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(90, 21);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Descuentos";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(6, 35);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 21);
+            this.label1.TabIndex = 25;
+            this.label1.Text = "Sub Total";
             // 
             // btnAgregarArticulo
             // 
@@ -203,129 +328,6 @@
             this.btnEliminarArticulo.TextColor = System.Drawing.Color.White;
             this.btnEliminarArticulo.UseVisualStyleBackColor = false;
             this.btnEliminarArticulo.Click += new System.EventHandler(this.btnEliminarArticulo_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(6, 35);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 21);
-            this.label1.TabIndex = 25;
-            this.label1.Text = "Sub Total";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(6, 72);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(90, 21);
-            this.label2.TabIndex = 25;
-            this.label2.Text = "Descuentos";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(6, 109);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(39, 21);
-            this.label3.TabIndex = 25;
-            this.label3.Text = "Itbis";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label4.Location = new System.Drawing.Point(6, 146);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(48, 21);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "Total";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label6.Location = new System.Drawing.Point(126, 35);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 21);
-            this.label6.TabIndex = 26;
-            this.label6.Text = "RD$";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(126, 72);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(40, 21);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "RD$";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(126, 109);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(40, 21);
-            this.label8.TabIndex = 26;
-            this.label8.Text = "RD$";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label9.Location = new System.Drawing.Point(126, 146);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(41, 21);
-            this.label9.TabIndex = 26;
-            this.label9.Text = "RD$";
-            // 
-            // lblTotal
-            // 
-            this.lblTotal.AutoSize = true;
-            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblTotal.Location = new System.Drawing.Point(172, 146);
-            this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(41, 21);
-            this.lblTotal.TabIndex = 27;
-            this.lblTotal.Text = "0.00";
-            // 
-            // lblItbis
-            // 
-            this.lblItbis.AutoSize = true;
-            this.lblItbis.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblItbis.Location = new System.Drawing.Point(172, 109);
-            this.lblItbis.Name = "lblItbis";
-            this.lblItbis.Size = new System.Drawing.Size(40, 21);
-            this.lblItbis.TabIndex = 28;
-            this.lblItbis.Text = "0.00";
-            // 
-            // lblDescuentos
-            // 
-            this.lblDescuentos.AutoSize = true;
-            this.lblDescuentos.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblDescuentos.Location = new System.Drawing.Point(172, 72);
-            this.lblDescuentos.Name = "lblDescuentos";
-            this.lblDescuentos.Size = new System.Drawing.Size(40, 21);
-            this.lblDescuentos.TabIndex = 29;
-            this.lblDescuentos.Text = "0.00";
-            // 
-            // lblSubTotal
-            // 
-            this.lblSubTotal.AutoSize = true;
-            this.lblSubTotal.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblSubTotal.Location = new System.Drawing.Point(172, 35);
-            this.lblSubTotal.Name = "lblSubTotal";
-            this.lblSubTotal.Size = new System.Drawing.Size(40, 21);
-            this.lblSubTotal.TabIndex = 30;
-            this.lblSubTotal.Text = "0.00";
             // 
             // rtComentario
             // 

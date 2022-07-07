@@ -40,12 +40,13 @@
             this.dgvCategoria = new System.Windows.Forms.DataGridView();
             this.upperPanelCategoria = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblDataGridView = new System.Windows.Forms.Label();
             this.btnCerrar = new MenuGerman.customButton();
+            this.lblDataGridView = new System.Windows.Forms.Label();
             this.btnBuscar = new MenuGerman.customButton();
             this.btnGuardar = new MenuGerman.customButton();
             this.btnEliminar = new MenuGerman.customButton();
             this.btnEditar = new MenuGerman.customButton();
+            this.btnCancelar = new MenuGerman.customButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategoria)).BeginInit();
             this.upperPanelCategoria.SuspendLayout();
             this.SuspendLayout();
@@ -95,7 +96,7 @@
             this.cbEstado.Items.AddRange(new object[] {
             "1",
             "0"});
-            this.cbEstado.Location = new System.Drawing.Point(351, 51);
+            this.cbEstado.Location = new System.Drawing.Point(355, 68);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(217, 25);
             this.cbEstado.TabIndex = 50;
@@ -104,7 +105,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(351, 31);
+            this.label5.Location = new System.Drawing.Point(352, 41);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(49, 17);
             this.label5.TabIndex = 49;
@@ -129,7 +130,7 @@
             this.dgvCategoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -169,17 +170,6 @@
             this.label1.TabIndex = 49;
             this.label1.Text = "Agregar Categoria";
             // 
-            // lblDataGridView
-            // 
-            this.lblDataGridView.AutoSize = true;
-            this.lblDataGridView.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataGridView.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblDataGridView.Location = new System.Drawing.Point(163, 286);
-            this.lblDataGridView.Name = "lblDataGridView";
-            this.lblDataGridView.Size = new System.Drawing.Size(303, 17);
-            this.lblDataGridView.TabIndex = 58;
-            this.lblDataGridView.Text = "Agregue Categorias para organizar sus articulos";
-            // 
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
@@ -203,6 +193,17 @@
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             this.btnCerrar.MouseLeave += new System.EventHandler(this.btnCerrar_MouseLeave);
             this.btnCerrar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnCerrar_MouseMove);
+            // 
+            // lblDataGridView
+            // 
+            this.lblDataGridView.AutoSize = true;
+            this.lblDataGridView.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDataGridView.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblDataGridView.Location = new System.Drawing.Point(163, 286);
+            this.lblDataGridView.Name = "lblDataGridView";
+            this.lblDataGridView.Size = new System.Drawing.Size(303, 17);
+            this.lblDataGridView.TabIndex = 58;
+            this.lblDataGridView.Text = "Agregue Categorias para organizar sus articulos";
             // 
             // btnBuscar
             // 
@@ -291,12 +292,36 @@
             this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancelar.BackGroundColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCancelar.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCancelar.BorderRadius = 15;
+            this.btnCancelar.BorderSize = 1;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCancelar.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCancelar.Image = global::MenuGerman.Properties.Resources.cancel_purple_30px;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(397, 128);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(119, 40);
+            this.btnCancelar.TabIndex = 59;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.TextColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(672, 414);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.lblDataGridView);
             this.Controls.Add(this.upperPanelCategoria);
             this.Controls.Add(this.txtIdcategoria);
@@ -342,5 +367,6 @@
         private customButton btnCerrar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblDataGridView;
+        private customButton btnCancelar;
     }
 }

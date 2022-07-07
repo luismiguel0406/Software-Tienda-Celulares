@@ -1,13 +1,8 @@
 ﻿using CapaDeDatos.Models;
 using CapaNegocio.DTO;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Utilidades;
 
@@ -19,14 +14,62 @@ namespace MenuGerman.ControlesUser
         Usuario usuarioModel = new Usuario();
         bool editar = false;
 
-    
-
         public cuUsuarios()
         {
             InitializeComponent();
         }
 
-        
+        private void modoEdicion(bool activado) 
+        {
+            if (activado)
+            {
+                txtIdUsuario.Enabled = false;
+                gbUsuario.Text = "Editando...";
+                btnBuscar.Enabled = false;
+                editar = true;
+            }
+            if (!activado)
+            {
+                txtIdUsuario.Enabled = true;
+                gbUsuario.Text = "Nuevo Usuario";
+                btnBuscar.Enabled = true;
+                editar = false;
+            }
+        }
+         private bool camposVacios()
+         {
+            StringBuilder stringBuilder = new StringBuilder();
+            if (string.IsNullOrWhiteSpace(txtUsuario.Text))
+            {
+                stringBuilder.AppendLine("El USUARIO es requerido.");
+                
+            }
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                stringBuilder.AppendLine("El NOMBRE es requerido.");
+                
+            }
+            if (string.IsNullOrWhiteSpace(txtContrasena.Text))
+            {
+                stringBuilder.AppendLine("La CONTRASEÑA es requerida.");
+                
+            }
+            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                stringBuilder.AppendLine("El EMAIL es requerido.");
+                
+            }
+
+            if (stringBuilder.Length > 0)
+            {
+                MessageBox.Show(stringBuilder.ToString(), "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void DatosFormulario()
         {
 
@@ -37,11 +80,12 @@ namespace MenuGerman.ControlesUser
             usuarioModel.nombre = string.IsNullOrEmpty(txtNombre.Text) ? string.Empty : txtNombre.Text;
             usuarioModel.email = string.IsNullOrEmpty(txtEmail.Text) ? string.Empty : txtEmail.Text;
             usuarioModel.estado = string.IsNullOrEmpty(cbEstado.Text) ? 1 : Convert.ToInt32(cbEstado.Text);
+            usuarioModel.empresa = GlobalClass.empresa;
         }
         private void DatosdataGridView()
         {
-            txtIdUsuario.Text = dgvUsuarios.CurrentRow.Cells["IDUSUARIO"].Value.ToString();
-            cbRol.SelectedValue = dgvUsuarios.CurrentRow.Cells["IDROL"].Value;
+            txtIdUsuario.Text = dgvUsuarios.CurrentRow.Cells["ID"].Value.ToString();
+            cbRol.SelectedValue = (int)dgvUsuarios.CurrentRow.Cells["IDROL"].Value;
             txtUsuario.Text = dgvUsuarios.CurrentRow.Cells["USUARIO"].Value.ToString();
             txtNombre.Text = dgvUsuarios.CurrentRow.Cells["NOMBRE"].Value.ToString();
             txtEmail.Text = dgvUsuarios.CurrentRow.Cells["EMAIL"].Value.ToString();
@@ -69,8 +113,6 @@ namespace MenuGerman.ControlesUser
             {
                 MessageBox.Show("Sin datos para Mostrar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-
-
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -78,11 +120,7 @@ namespace MenuGerman.ControlesUser
             if (GlobalClass.validaDgv(dgvUsuarios))
             {
                 DatosdataGridView();
-                txtIdUsuario.Enabled = false;
-                gbUsuario.Text = "Editando...";
-                editar = true;
-                
-                
+                modoEdicion(true);               
             }
         }
 
@@ -90,43 +128,36 @@ namespace MenuGerman.ControlesUser
         {
             try
             {
-                if (editar)
+                if (!camposVacios())
                 {
-                    DatosFormulario();
-                    dgvUsuarios.DataSource = UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.Update);
-                    txtIdUsuario.Enabled = true;
-                    gbUsuario.Text = "Nuevo Usuario";
-                    
-                }
-                else
-                {
-                    DatosFormulario();
-                    dgvUsuarios.DataSource = UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.Insert);
-                }
-                MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                GlobalClass.limpiar(gbUsuario);
-                GlobalClass.limpiar(this);
-
+                    if (editar)
+                    {
+                        DatosFormulario();
+                        dgvUsuarios.DataSource = UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.Update);
+                        modoEdicion(false);
+                    }
+                    else
+                    {
+                        DatosFormulario();
+                        dgvUsuarios.DataSource = UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.Insert);
+                    }
+                    MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GlobalClass.limpiar(gbUsuario);
+                    GlobalClass.limpiar(this);
+                }           
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                MessageBox.Show($"Ha ocurrido un error,{ex}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ha ocurrido un error", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            finally
-            {
-               
-                editar = false;
-                
-            }
+           
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             GlobalClass.limpiar(gbUsuario);
             GlobalClass.limpiar(dgvUsuarios);
-            editar = false;
-            txtIdUsuario.Enabled = true;
-            gbUsuario.Text = "Nuevo Usuario";
+            modoEdicion(false);
 
         }
 
@@ -147,10 +178,6 @@ namespace MenuGerman.ControlesUser
             }
         }
 
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            Validaciones.soloLetras(e);
-        }
 
         private void txtIdUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -168,6 +195,18 @@ namespace MenuGerman.ControlesUser
             {
                 dgvUsuarios.Columns["PASSWORD"].Visible = false;
             }
+            if (dgvUsuarios.Columns.Contains("IDROL"))
+            {
+                dgvUsuarios.Columns["IDROL"].Visible = false;
+            }
+
+            lblDataGridView.Visible = false;
+        }
+
+        private void dgvUsuarios_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            if (dgvUsuarios.Rows.Count == 0)
+                lblDataGridView.Visible = true;
         }
     }
 }

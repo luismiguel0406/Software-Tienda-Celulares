@@ -2,6 +2,7 @@
 using CapaNegocio.DTO;
 using System;
 using System.Drawing;
+using System.Text;
 using System.Windows.Forms;
 using Utilidades;
 
@@ -16,7 +17,40 @@ namespace MenuGerman
             InitializeComponent();
         }
 
-       
+       private void modoEdicion(bool activado)
+        {
+            if (activado)
+            {
+                editar = true;
+                btnBuscar.Enabled = false;
+                txtIdcategoria.Enabled = false;
+            }
+            if (!activado)
+            {
+                editar = false;
+                btnBuscar.Enabled = true;
+                txtIdcategoria.Enabled = true;
+            }
+
+        }
+
+        private bool camposVacios()
+        {
+            StringBuilder stringBuilder = new StringBuilder();
+            if (string.IsNullOrWhiteSpace(txtNombre.Text))
+            {
+                stringBuilder.AppendLine("El NOMBRE es requerido.");
+            }
+            if (stringBuilder.Length > 0)
+            {
+                MessageBox.Show(stringBuilder.ToString(), "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         private void DatosFormulario()
         {
             categoriaModel.nombre = string.IsNullOrEmpty(txtNombre.Text) ? string.Empty : txtNombre.Text;
@@ -47,8 +81,7 @@ namespace MenuGerman
             if (GlobalClass.validaDgv(dgvCategoria))
             {
                 DatosdataGridView();
-                editar = true;
-                txtIdcategoria.Enabled = false;
+                modoEdicion(true);                
             }
         }
 
@@ -74,29 +107,29 @@ namespace MenuGerman
         {
             try
             {
-                if (editar)
+                if (!camposVacios())
                 {
-                    DatosFormulario();
-                    dgvCategoria.DataSource = CategoriaDTO.MantenimientoCategoria(categoriaModel, GlobalClass.Update);
-                    txtIdcategoria.Enabled = true;
+                    if (editar)
+                    {
+                        DatosFormulario();
+                        dgvCategoria.DataSource = CategoriaDTO.MantenimientoCategoria(categoriaModel, GlobalClass.Update);
+                        modoEdicion(false);
+                    }
+                    else
+                    {
+                        DatosFormulario();
+                        dgvCategoria.DataSource = CategoriaDTO.MantenimientoCategoria(categoriaModel, GlobalClass.Insert);
+                    }
+                    MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    GlobalClass.limpiar(this);
                 }
-                else
-                {
-                    DatosFormulario();
-                    dgvCategoria.DataSource = CategoriaDTO.MantenimientoCategoria(categoriaModel, GlobalClass.Insert);
-                }
-                MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                GlobalClass.limpiar(this);
+               
             }
-            catch (Exception ex)
+            catch (Exception )
             {
-                MessageBox.Show($"Ha ocurrido un error,{ex}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show("Ha ocurrido un error", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
-            finally
-            {
-                editar = false;
-            }
-
+           
         }
 
         private void btnCerrar_MouseMove(object sender, MouseEventArgs e)
@@ -123,6 +156,13 @@ namespace MenuGerman
         {
             if (dgvCategoria.Rows.Count == 0)
                 lblDataGridView.Visible = true;
+        }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            GlobalClass.limpiar(this);
+            GlobalClass.limpiar(dgvCategoria);
+            modoEdicion(false);
         }
     }
 }

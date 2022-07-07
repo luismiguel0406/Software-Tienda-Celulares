@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Utilidades;
 
 namespace CapaDeDatos.Models
 {
@@ -26,6 +24,8 @@ namespace CapaDeDatos.Models
         {
             estado = 1;
             terminal = Environment.MachineName;
+            empresa = GlobalClass.empresa;
+           
         }
     }
 }

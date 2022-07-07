@@ -37,7 +37,6 @@ namespace MenuGerman.ControlesUser
             ingresoModel.fechaDesde = chkFechas.Checked ? Convert.ToDateTime(cdtpFechaDesde.Value.ToString("yyyy-MM-dd")):DateTime.MinValue;
             ingresoModel.fechaHasta = chkFechas.Checked ? Convert.ToDateTime(cdtpFechaHasta.Value.ToString("yyyy-MM-dd")) : DateTime.Now;
             ingresoModel.total = string.IsNullOrWhiteSpace(lblTotal.Text) ? 0 : Convert.ToDouble(lblTotal.Text);
-            ingresoModel.empresa = GlobalClass.empresa;
             
             List<DetalleIngreso> detalle = new List<DetalleIngreso>();
             foreach (DataGridViewRow row in dgvIngreso.Rows)
@@ -129,6 +128,10 @@ namespace MenuGerman.ControlesUser
         {
             DatosFormulario();
             dgvVerIngreso.DataSource = IngresoDTO.MantenimientoIngreso(ingresoModel, GlobalClass.Select);
+            if (dgvVerIngreso.Rows.Count == 0)
+            {
+                MessageBox.Show("Sin datos para Mostrar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
 
         private void tpRealizarIngresos_Click(object sender, EventArgs e)
