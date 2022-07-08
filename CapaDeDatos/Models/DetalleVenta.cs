@@ -19,7 +19,6 @@ namespace CapaDeDatos.Models
         public float subTotal { get; set; }
         public float descuento { get; set; }
         public float itbis { get; set; }
-        public float total { get; set; }
         public int estado { get; set; }
         public DetalleVenta()
         {
