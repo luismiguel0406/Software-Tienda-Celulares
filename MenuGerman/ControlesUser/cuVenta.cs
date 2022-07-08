@@ -144,8 +144,7 @@ namespace MenuGerman.ControlesUser
             }
             catch (Exception)
             {
-
-                throw;
+                MessageBox.Show("Ha ocurrido un error","Mensaje", MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
            
         }
