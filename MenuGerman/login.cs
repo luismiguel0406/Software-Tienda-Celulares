@@ -45,7 +45,7 @@ namespace MenuGerman
         private void btnInicioSesion_Click(object sender, EventArgs e)
         {
 
-            usuarioModel.password = txtContraseña.Text.Trim();
+            usuarioModel.password = Encryptar.encrypta(txtContraseña.Text.Trim());
             usuarioModel.usuario = txtUsuario.Text.Trim();
             var usuarioValido = UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.Login);
 
@@ -65,7 +65,7 @@ namespace MenuGerman
             }
 
             MessageBox.Show($"Bienvenido: {GlobalClass.Usuario}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            this.Hide();
+            Hide();
 
             login frmLogin = this;
             MenuPrincipal frmMenu = new MenuPrincipal(frmLogin);

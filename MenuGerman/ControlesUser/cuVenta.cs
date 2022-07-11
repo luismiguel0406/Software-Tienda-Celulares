@@ -138,6 +138,7 @@ namespace MenuGerman.ControlesUser
                 {
                     DatosVenta();
                     var dt = VentaDTO.MantenimientoVenta(ventaModel, GlobalClass.Insert);
+                    MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     GlobalClass.limpiar(dgvVenta);
                     GlobalClass.limpiar(this);
                 }
