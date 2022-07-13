@@ -58,7 +58,7 @@ namespace MenuGerman
         private void MenuPrincipal_Load(object sender, EventArgs e)
         {
            // MainMenuStrip = cargaMenuDinamico(msMenu, 1);
-            label1.Text = GlobalClass.Usuario;
+            lblUsuario.Text = GlobalClass.Usuario;
         }
 
         private void MenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)

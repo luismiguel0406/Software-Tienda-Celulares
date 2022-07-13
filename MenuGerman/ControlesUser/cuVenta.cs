@@ -123,11 +123,9 @@ namespace MenuGerman.ControlesUser
                     subTotal = (float)row.Cells["SUBTOTAL"].Value,
                     descuento = 0,
                     itbis = 0,
-
-
                 });
             }
-            ventaModel.Detalle = listDetalleVentaModel;
+            ventaModel.detalleVenta = listDetalleVentaModel;
 
         }
         private void btnFacturar_Click(object sender, EventArgs e)

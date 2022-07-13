@@ -19,7 +19,7 @@ namespace CapaDeDatos.Models
         public string terminal { get; set; }
         public int empresa { get; set; }
         public DateTime? fecha { get; set; }
-        public List<DetalleVenta> Detalle { get; set; }
+        public List<DetalleVenta> detalleVenta { get; set; }
         public Venta()
         {
             estado = 1;
