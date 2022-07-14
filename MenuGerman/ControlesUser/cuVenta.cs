@@ -4,6 +4,7 @@ using CapaDeDatos.Models;
 using CapaNegocio.DTO;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
 using Utilidades;
 
@@ -12,7 +13,8 @@ namespace MenuGerman.ControlesUser
     public partial class cuVenta : UserControl
     {
         Venta ventaModel = new Venta();
-       List<DetalleVenta> listDetalleVentaModel = new List<DetalleVenta>();
+        List<DetalleVenta> listDetalleVentaModel = new List<DetalleVenta>();
+        List<IDetalleVentaDetails> detalleActual;
         public cuVenta()
         {
             InitializeComponent();
@@ -51,9 +53,10 @@ namespace MenuGerman.ControlesUser
             return new Totales { subtotal = subTotal, total = total, itbis = itbis, descuento = descuento };
 
         }
-        public void RecibirListaArticulos(IEnumerable<IDetalleVentaDetails> detalle)
+        public void RecibirListaArticulos(List<IDetalleVentaDetails> detalle)
         {
-            dgvVenta.DataSource = detalle;
+            detalleActual = detalle;
+            dgvVenta.DataSource = detalleActual;
 
         }
         private void dgvVenta_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
@@ -77,12 +80,14 @@ namespace MenuGerman.ControlesUser
 
         private void btnEliminarArticulo_Click(object sender, EventArgs e)
         {
-            if (dgvVenta.Rows.Count > 0)
-            {
-                dgvVenta.Rows.Remove(dgvVenta.CurrentRow);
-               
-            }
-        }
+            int deleteId = (int)dgvVenta.CurrentRow.Cells["idArticulo"].Value;
+            
+            var query = from d in detalleActual.AsEnumerable()
+                        where d.idArticulo != deleteId
+                        select d;
+            detalleActual = query.ToList();
+            dgvVenta.DataSource = detalleActual;
+        }      
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -103,7 +108,7 @@ namespace MenuGerman.ControlesUser
         }
         private void DatosVenta()
         {
-            ventaModel.fecha = DateTime.Now;
+            ventaModel.fecha = Convert.ToDateTime( DateTime.Now.ToString("g"));
             ventaModel.comentario = rtComentario.Text;
             ventaModel.idUsuario = GlobalClass.idUsuario;
 
