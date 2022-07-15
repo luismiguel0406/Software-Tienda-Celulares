@@ -14,7 +14,7 @@ namespace MenuGerman.ControlesUser
     {
         Venta ventaModel = new Venta();
         List<DetalleVenta> listDetalleVentaModel = new List<DetalleVenta>();
-        List<IDetalleVentaDetails> detalleActual;
+        List<IDetalleVentaDetails> detalleActual = new List<IDetalleVentaDetails>();
         public cuVenta()
         {
             InitializeComponent();
@@ -55,9 +55,9 @@ namespace MenuGerman.ControlesUser
         }
         public void RecibirListaArticulos(List<IDetalleVentaDetails> detalle)
         {
-            detalleActual = detalle;
-            dgvVenta.DataSource = detalleActual;
-
+             detalleActual.AddRange(detalle);
+             dgvVenta.DataSource = null;
+             dgvVenta.DataSource = detalleActual;
         }
         private void dgvVenta_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
         {

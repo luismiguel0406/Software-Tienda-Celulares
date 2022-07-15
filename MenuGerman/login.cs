@@ -24,7 +24,6 @@ namespace MenuGerman
         }
 
 
-
         private void btnInicioSesion_MouseMove(object sender, MouseEventArgs e)
         {
             btnInicioSesion.BackColor = Color.Green;
