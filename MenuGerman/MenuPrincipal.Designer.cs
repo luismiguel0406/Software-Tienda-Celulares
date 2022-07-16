@@ -40,10 +40,13 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.mainPanel = new System.Windows.Forms.Panel();
             this.imageryService1 = new Microsoft.Reporting.Map.WebForms.VirtualEarth.ImageryService();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new MenuGerman.customButton();
             this.upPanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
+            this.mainPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -177,6 +180,7 @@
             // 
             this.mainPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.mainPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.mainPanel.Controls.Add(this.pictureBox2);
             this.mainPanel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.mainPanel.Location = new System.Drawing.Point(182, 30);
             this.mainPanel.Name = "mainPanel";
@@ -188,6 +192,16 @@
             this.imageryService1.Credentials = null;
             this.imageryService1.Url = "http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc";
             this.imageryService1.UseDefaultCredentials = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::MenuGerman.Properties.Resources.shutdown_127px;
+            this.pictureBox2.Location = new System.Drawing.Point(448, 174);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(261, 202);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 0;
+            this.pictureBox2.TabStop = false;
             // 
             // pictureBox1
             // 
@@ -244,6 +258,8 @@
             this.upPanel.PerformLayout();
             this.menuPanel.ResumeLayout(false);
             this.menuPanel.PerformLayout();
+            this.mainPanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
@@ -263,6 +279,7 @@
         private System.Windows.Forms.Label lblUsuario;
         private Microsoft.Reporting.Map.WebForms.VirtualEarth.ImageryService imageryService1;
         private customButton btnCerrar;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }
 

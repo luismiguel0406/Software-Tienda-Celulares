@@ -64,6 +64,7 @@
     <Compile Include="CRUDS\articulosDAO.cs" />
     <Compile Include="CRUDS\categoriaDAO.cs" />
     <Compile Include="CRUDS\Cruds.cs" />
+    <Compile Include="CRUDS\empresaDAO.cs" />
     <Compile Include="CRUDS\IngresoDAO.cs" />
     <Compile Include="CRUDS\personaDAO.cs" />
     <Compile Include="CRUDS\rolDAO.cs" />
@@ -78,6 +79,7 @@
     <Compile Include="Models\Categoria.cs" />
     <Compile Include="Models\DetalleIngreso.cs" />
     <Compile Include="Models\DetalleVenta.cs" />
+    <Compile Include="Models\Empresa.cs" />
     <Compile Include="Models\Ingreso.cs" />
     <Compile Include="Models\Persona.cs" />
     <Compile Include="Models\Rol.cs" />

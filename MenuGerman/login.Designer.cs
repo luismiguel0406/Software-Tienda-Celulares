@@ -35,7 +35,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.btnInicioSesion = new MenuGerman.customButton();
-            this.cbEstado = new System.Windows.Forms.ComboBox();
+            this.cbEmpresa = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbEmpresa = new System.Windows.Forms.PictureBox();
             this.pbContraseña = new System.Windows.Forms.PictureBox();
@@ -49,17 +49,19 @@
             // 
             // txtContraseña
             // 
+            this.txtContraseña.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña.Location = new System.Drawing.Point(77, 155);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
-            this.txtContraseña.Size = new System.Drawing.Size(241, 20);
+            this.txtContraseña.Size = new System.Drawing.Size(241, 27);
             this.txtContraseña.TabIndex = 1;
             // 
             // txtUsuario
             // 
+            this.txtUsuario.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.Location = new System.Drawing.Point(77, 102);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(241, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(241, 27);
             this.txtUsuario.TabIndex = 0;
             // 
             // label1
@@ -112,18 +114,18 @@
             this.btnInicioSesion.UseVisualStyleBackColor = false;
             this.btnInicioSesion.Click += new System.EventHandler(this.btnInicioSesion_Click);
             // 
-            // cbEstado
+            // cbEmpresa
             // 
-            this.cbEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbEstado.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Items.AddRange(new object[] {
+            this.cbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEmpresa.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEmpresa.FormattingEnabled = true;
+            this.cbEmpresa.Items.AddRange(new object[] {
             "1",
             "0"});
-            this.cbEstado.Location = new System.Drawing.Point(77, 212);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(241, 25);
-            this.cbEstado.TabIndex = 51;
+            this.cbEmpresa.Location = new System.Drawing.Point(77, 212);
+            this.cbEmpresa.Name = "cbEmpresa";
+            this.cbEmpresa.Size = new System.Drawing.Size(241, 28);
+            this.cbEmpresa.TabIndex = 51;
             // 
             // pictureBox1
             // 
@@ -141,7 +143,7 @@
             this.pbEmpresa.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbEmpresa.Location = new System.Drawing.Point(34, 212);
             this.pbEmpresa.Name = "pbEmpresa";
-            this.pbEmpresa.Size = new System.Drawing.Size(37, 25);
+            this.pbEmpresa.Size = new System.Drawing.Size(37, 28);
             this.pbEmpresa.TabIndex = 7;
             this.pbEmpresa.TabStop = false;
             // 
@@ -151,7 +153,7 @@
             this.pbContraseña.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbContraseña.Location = new System.Drawing.Point(34, 155);
             this.pbContraseña.Name = "pbContraseña";
-            this.pbContraseña.Size = new System.Drawing.Size(37, 20);
+            this.pbContraseña.Size = new System.Drawing.Size(37, 27);
             this.pbContraseña.TabIndex = 7;
             this.pbContraseña.TabStop = false;
             // 
@@ -161,7 +163,7 @@
             this.pbUsuario.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.pbUsuario.Location = new System.Drawing.Point(34, 102);
             this.pbUsuario.Name = "pbUsuario";
-            this.pbUsuario.Size = new System.Drawing.Size(37, 20);
+            this.pbUsuario.Size = new System.Drawing.Size(37, 27);
             this.pbUsuario.TabIndex = 7;
             this.pbUsuario.TabStop = false;
             // 
@@ -183,7 +185,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(380, 348);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.cbEstado);
+            this.Controls.Add(this.cbEmpresa);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnInicioSesion);
             this.Controls.Add(this.pbEmpresa);
@@ -202,6 +204,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "login";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.login_FormClosed);
+            this.Load += new System.EventHandler(this.login_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEmpresa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbContraseña)).EndInit();
@@ -222,7 +225,7 @@
         private System.Windows.Forms.PictureBox pbContraseña;
         private customButton btnInicioSesion;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.ComboBox cbEstado;
+        private System.Windows.Forms.ComboBox cbEmpresa;
         private System.Windows.Forms.PictureBox pbEmpresa;
         private System.Windows.Forms.Label label4;
     }

@@ -243,6 +243,16 @@ namespace MenuGerman.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap menu_principal_100px {
+            get {
+                object obj = ResourceManager.GetObject("menu principal_100px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ordenCompraFondo1 {
             get {
                 object obj = ResourceManager.GetObject("ordenCompraFondo1", resourceCulture);
@@ -286,6 +296,16 @@ namespace MenuGerman.Properties {
         internal static System.Drawing.Bitmap search_30px {
             get {
                 object obj = ResourceManager.GetObject("search_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap shutdown_127px {
+            get {
+                object obj = ResourceManager.GetObject("shutdown_127px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -17,6 +17,7 @@ namespace MenuGerman
 {
     public partial class login : Form
     { Usuario usuarioModel = new Usuario();
+        Empresa empresaModel = new Empresa();
         public login()
         {
             InitializeComponent();
@@ -46,6 +47,7 @@ namespace MenuGerman
 
             usuarioModel.password = Encryptar.encrypta(txtContraseña.Text.Trim());
             usuarioModel.usuario = txtUsuario.Text.Trim();
+            usuarioModel.empresa = Convert.ToInt32(cbEmpresa.SelectedValue);
             var usuarioValido = UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.Login);
 
             if (usuarioValido.Rows.Count == 0)
@@ -70,6 +72,18 @@ namespace MenuGerman
             MenuPrincipal frmMenu = new MenuPrincipal(frmLogin);
             frmMenu.ShowDialog();
 
+        }
+
+        private void login_Load(object sender, EventArgs e)
+        {
+            comboBoxEmpresa();
+        }
+        private void comboBoxEmpresa()
+        {
+            DataTable dt = EmpresaDTO.MantenimientoEmpresa(empresaModel, GlobalClass.Select);
+            cbEmpresa.DataSource = dt;
+            cbEmpresa.DisplayMember = dt.Columns["NOMBRE"].ToString();
+            cbEmpresa.ValueMember = dt.Columns["ID"].ToString();
         }
     }
 }

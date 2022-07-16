@@ -118,29 +118,23 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="edit_30px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagenes\edit_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="deposit_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\deposit_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="save_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagenes\save_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user_black30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_black30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\user_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Close_thin_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Close_thin_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ordenCompraFondo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\ordenCompraFondo2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="inicio" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\inicio.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="process_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagenes\process_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="ordenCompraFondo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\ordenCompraFondo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Delete_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\Delete_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="calendarDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\calendarDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,52 +142,64 @@
   <data name="cancel_purple_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cancel_purple_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ordenCompraFondo1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagenes\ordenCompraFondo1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="key_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagenes\key_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Delete_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagenes\Delete_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="user_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagenes\user_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="enterprise_resource_planning_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\enterprise_resource_planning_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="add_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagenes\add_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="edit_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagenes\edit_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="search_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\search_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Close_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Close_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="ordenCompraFondo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagenes\ordenCompraFondo2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Close_thin_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close_thin_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="search_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagenes\search_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="key_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\key_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Close_thin2_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Close_thin2_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="eye_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\eye_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="cancel_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Imagenes\cancel_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="deposit_64px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\deposit_64px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="enterprise_resource_planning_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\enterprise_resource_planning_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="calendarDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\calendarDark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="save_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\save_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="eye_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\eye_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_black30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\user_black30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="calendarWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\calendarWhite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="cancel_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\cancel_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menu principal_100px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menu principal_100px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_30px1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\edit_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Close_thin2_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Close_thin2_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="edit_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\edit_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="enterprise_resource_planning_32px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\enterprise_resource_planning_32px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="user_24px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\user_24px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="process_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\process_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="add_30px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes\add_30px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="shutdown_127px" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\shutdown_127px.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

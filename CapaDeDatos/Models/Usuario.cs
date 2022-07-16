@@ -10,6 +10,7 @@ namespace CapaDeDatos.Models
         public string nombre { get; set; }
         public string password { get; set; }  
         public string email { get; set; }
+        public int enLinea { get; set; }
         public int empresa { get; set; }
         public int estado { get; set; }
 

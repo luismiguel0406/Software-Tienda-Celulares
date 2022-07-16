@@ -4,6 +4,7 @@ using CapaNegocio.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
 using System.Windows.Forms;
 using Utilidades;
 
@@ -12,6 +13,7 @@ namespace MenuGerman.ControlesUser
     public partial class cuIngreso : UserControl
     {
         Ingreso ingresoModel = new Ingreso();
+        List<IDetalleIngresoDetails> detalleActual = new List<IDetalleIngresoDetails>();
         public cuIngreso()
         {
             InitializeComponent();
@@ -58,19 +60,23 @@ namespace MenuGerman.ControlesUser
             frmModalArticulos frmModalArticulos = new frmModalArticulos(this);
             frmModalArticulos.ShowDialog();
         }
-        public void RecibirListaArticulos(IEnumerable<IDetalleIngresoDetails> detalle)
+        public void RecibirListaArticulos(List<IDetalleIngresoDetails> detalle)
         {
-            dgvIngreso.DataSource = detalle;
+            detalleActual.AddRange(detalle);
+            dgvIngreso.DataSource = null;
+            dgvIngreso.DataSource = detalleActual;
             
         }
         
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            if (dgvIngreso.Rows.Count >0)
-            {
-                dgvIngreso.Rows.RemoveAt(dgvIngreso.CurrentRow.Index);
-                
-            }           
+            int deleteId = (int)dgvIngreso.CurrentRow.Cells["idArticulo"].Value;
+
+            var query = from d in detalleActual.AsEnumerable()
+                        where d.idArticulo != deleteId
+                        select d;
+            detalleActual = query.ToList();
+            dgvIngreso.DataSource = detalleActual;
         }
         private bool camposVacios()
         {
