@@ -32,7 +32,7 @@ namespace MenuGerman.ControlesUser
         private void DatosFormulario()
         {
             ingresoModel.idIngreso = string.IsNullOrWhiteSpace(txtIdIngreso.Text) ? 0 : Convert.ToInt32(txtIdIngreso.Text);
-            ingresoModel.idUsuario = string.IsNullOrWhiteSpace(txtIdUsuario.Text) ? 0 : Convert.ToInt32(txtIdUsuario.Text);
+            ingresoModel.idUsuario = GlobalClass.idUsuario;
             ingresoModel.comentario = string.IsNullOrWhiteSpace(rtComentario.Text)? string.Empty : rtComentario.Text;
             ingresoModel.numeroComprobante = string.IsNullOrWhiteSpace(txtComprobante.Text) ? string.Empty : txtComprobante.Text;
             ingresoModel.fecha = string.IsNullOrWhiteSpace(cdtpFecha.Text) ? DateTime.Now : Convert.ToDateTime(cdtpFecha.Value.ToString("yyyy-MM-dd"));
@@ -70,13 +70,17 @@ namespace MenuGerman.ControlesUser
         
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            int deleteId = (int)dgvIngreso.CurrentRow.Cells["idArticulo"].Value;
+            if (GlobalClass.validaDgv(dgvIngreso))
+            {
+                int deleteId = (int)dgvIngreso.CurrentRow.Cells["idArticulo"].Value;
 
-            var query = from d in detalleActual.AsEnumerable()
-                        where d.idArticulo != deleteId
-                        select d;
-            detalleActual = query.ToList();
-            dgvIngreso.DataSource = detalleActual;
+                var query = from d in detalleActual.AsEnumerable()
+                            where d.idArticulo != deleteId
+                            select d;
+                detalleActual = query.ToList();
+                dgvIngreso.DataSource = detalleActual;
+            }
+           
         }
         private bool camposVacios()
         {
@@ -140,11 +144,6 @@ namespace MenuGerman.ControlesUser
             }
         }
 
-        private void tpRealizarIngresos_Click(object sender, EventArgs e)
-        {
-            txtIdUsuario.Text = string.IsNullOrEmpty(GlobalClass.idUsuario.ToString()) ? string.Empty : GlobalClass.idUsuario.ToString();
-        }
-
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             GlobalClass.limpiar(tcIngresos);
@@ -156,10 +155,10 @@ namespace MenuGerman.ControlesUser
         {
             if (GlobalClass.validaDgv(dgvVerIngreso))
             {
-                ingresoModel.idIngreso = Convert.ToInt32(dgvVerIngreso.CurrentRow.Cells["IDINGRESO"].Value);
+                ingresoModel.idIngreso = Convert.ToInt32(dgvVerIngreso.CurrentRow.Cells["ID"].Value);
                 ingresoModel.impuesto = Convert.ToDouble(dgvVerIngreso.CurrentRow.Cells["IMPUESTO"].Value);
                 ingresoModel.total = Convert.ToDouble(dgvVerIngreso.CurrentRow.Cells["TOTAL"].Value);
-                ingresoModel.numeroComprobante = dgvVerIngreso.CurrentRow.Cells["NUM_COMPROBANTE"].Value.ToString();
+                ingresoModel.numeroComprobante = dgvVerIngreso.CurrentRow.Cells["NCF"].Value.ToString();
                 DataTable dt = IngresoDTO.MantenimientoIngreso(ingresoModel, GlobalClass.detalleIngreso);
                 frmVisorReporteIngresocs frmDetalle = new frmVisorReporteIngresocs(dt, ingresoModel);
                 frmDetalle.ShowDialog();
@@ -188,5 +187,7 @@ namespace MenuGerman.ControlesUser
                 gbFechas.Enabled = false;
             }
         }
+
+        
     }
 }

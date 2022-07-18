@@ -100,7 +100,7 @@
             this.tpRealizarIngresos.Size = new System.Drawing.Size(1144, 530);
             this.tpRealizarIngresos.TabIndex = 0;
             this.tpRealizarIngresos.Text = "Ingresos";
-            this.tpRealizarIngresos.Click += new System.EventHandler(this.tpRealizarIngresos_Click);
+//            this.tpRealizarIngresos.Click += new System.EventHandler(this.tpRealizarIngresos_Click);
             // 
             // btnEliminar
             // 
@@ -121,7 +121,6 @@
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEliminar.TextColor = System.Drawing.Color.White;
             this.btnEliminar.UseVisualStyleBackColor = false;
-            this.btnEliminar.Visible = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnNuevoIngreso

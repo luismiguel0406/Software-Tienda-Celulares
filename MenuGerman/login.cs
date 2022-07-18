@@ -60,9 +60,10 @@ namespace MenuGerman
             foreach (DataRow item in usuarioValido.Rows)
             {
                 GlobalClass.Usuario = item["USUARIO"].ToString();
-                GlobalClass.idUsuario = Convert.ToInt32(item["IDUSUARIO"].ToString());
+                GlobalClass.idUsuario = Convert.ToInt32(item["IDUSUARIO"]);
                 GlobalClass.rol = item["ROL"].ToString();
-                GlobalClass.idRol = Convert.ToInt32(item["IDROL"].ToString());
+                GlobalClass.idRol = Convert.ToInt32(item["IDROL"]);
+                GlobalClass.empresa = Convert.ToInt32(item["EMPRESA"]);
             }
 
             MessageBox.Show($"Bienvenido: {GlobalClass.Usuario}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);

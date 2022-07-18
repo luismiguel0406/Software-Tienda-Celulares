@@ -80,13 +80,17 @@ namespace MenuGerman.ControlesUser
 
         private void btnEliminarArticulo_Click(object sender, EventArgs e)
         {
-            int deleteId = (int)dgvVenta.CurrentRow.Cells["idArticulo"].Value;
-            
-            var query = from d in detalleActual.AsEnumerable()
-                        where d.idArticulo != deleteId
-                        select d;
-            detalleActual = query.ToList();
-            dgvVenta.DataSource = detalleActual;
+            if (GlobalClass.validaDgv(dgvVenta))
+            {
+                int deleteId = (int)dgvVenta.CurrentRow.Cells["idArticulo"].Value;
+
+                var query = from d in detalleActual.AsEnumerable()
+                            where d.idArticulo != deleteId
+                            select d;
+                detalleActual = query.ToList();
+                dgvVenta.DataSource = detalleActual;
+            }
+           
         }      
 
         private void btnCancelar_Click(object sender, EventArgs e)

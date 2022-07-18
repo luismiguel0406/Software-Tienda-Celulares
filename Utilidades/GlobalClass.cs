@@ -16,6 +16,7 @@ namespace Utilidades
         public static int Update { get { return 4; } }    
         public static int Login { get { return 5; } }
         public static int detalleIngreso { get { return 6; } }
+        public static int Logout { get { return 7; } }
 
 
         public static void limpiar(UserControl cu)

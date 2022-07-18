@@ -1,4 +1,6 @@
-﻿using CapaNegocio;
+﻿using CapaDeDatos.Models;
+using CapaNegocio;
+using CapaNegocio.DTO;
 using MenuGerman.ControlesUser;
 using System;
 using System.Data;
@@ -10,7 +12,7 @@ using Utilidades;
 namespace MenuGerman
 {
     public partial class MenuPrincipal : Form
-    {
+    {   Usuario usuarioModel = new Usuario();
         private login _frmLogin;
         public MenuPrincipal(login frmLogin )
         {   _frmLogin = frmLogin;
@@ -85,7 +87,17 @@ namespace MenuGerman
 
         private void btnCerrar_Click_1(object sender, EventArgs e)
         {
-            Close();
+            try
+            {
+                UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.Logout);
+                MessageBox.Show($"{ GlobalClass.Usuario} ha cerrado session", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Close();
+            }
+            catch (Exception)
+            {
+
+                return;
+            }   
 
         }
         private void btnCerrar_MouseMove(object sender, MouseEventArgs e)
