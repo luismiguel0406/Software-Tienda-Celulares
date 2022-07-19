@@ -66,6 +66,10 @@ namespace MenuGerman
                 GlobalClass.empresa = Convert.ToInt32(item["EMPRESA"]);
             }
 
+            usuarioModel.idUsuario = GlobalClass.idUsuario;
+            UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.setOnLine);
+
+
             MessageBox.Show($"Bienvenido: {GlobalClass.Usuario}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             Hide();
 

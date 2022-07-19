@@ -89,7 +89,9 @@ namespace MenuGerman
         {
             try
             {
-                UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.Logout);
+                usuarioModel.idUsuario = GlobalClass.idUsuario;
+                usuarioModel.empresa = GlobalClass.empresa;
+                UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.setOffLine);
                 MessageBox.Show($"{ GlobalClass.Usuario} ha cerrado session", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 Close();
             }
