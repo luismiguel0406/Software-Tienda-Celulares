@@ -132,5 +132,12 @@ namespace MenuGerman
             mainPanel.Controls.Clear();
             mainPanel.Controls.Add(venta);
         }
+
+        private void btnReportesMenu_Click(object sender, EventArgs e)
+        {
+            cuReportes reportes = new cuReportes();
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(reportes);
+        }
     }
 }

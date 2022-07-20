@@ -19,6 +19,8 @@ namespace CapaDeDatos.Models
         public string terminal { get; set; }
         public int empresa { get; set; }
         public DateTime? fecha { get; set; }
+        public DateTime?  fechaDesde { get; set; }
+        public DateTime? fechaHasta { get; set; }
         public List<DetalleVenta> detalleVenta { get; set; }
         public Venta()
         {

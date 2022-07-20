@@ -58,7 +58,7 @@
             // 
             this.lblImpuesto.AutoSize = true;
             this.lblImpuesto.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblImpuesto.Location = new System.Drawing.Point(166, 327);
+            this.lblImpuesto.Location = new System.Drawing.Point(158, 365);
             this.lblImpuesto.Name = "lblImpuesto";
             this.lblImpuesto.Size = new System.Drawing.Size(19, 21);
             this.lblImpuesto.TabIndex = 50;
@@ -68,7 +68,7 @@
             // 
             this.lblTotal.AutoSize = true;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(166, 377);
+            this.lblTotal.Location = new System.Drawing.Point(158, 415);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(19, 21);
             this.lblTotal.TabIndex = 50;
@@ -89,7 +89,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(26, 327);
+            this.label3.Location = new System.Drawing.Point(18, 365);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(82, 21);
             this.label3.TabIndex = 52;
@@ -100,7 +100,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.label4.Location = new System.Drawing.Point(26, 377);
+            this.label4.Location = new System.Drawing.Point(18, 415);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 21);
             this.label4.TabIndex = 53;
@@ -148,7 +148,7 @@
             this.dgvDetalle.ReadOnly = true;
             this.dgvDetalle.RowHeadersVisible = false;
             this.dgvDetalle.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDetalle.Size = new System.Drawing.Size(767, 197);
+            this.dgvDetalle.Size = new System.Drawing.Size(857, 240);
             this.dgvDetalle.TabIndex = 55;
             // 
             // upperPanelDetalleIngreso
@@ -160,7 +160,7 @@
             this.upperPanelDetalleIngreso.Dock = System.Windows.Forms.DockStyle.Top;
             this.upperPanelDetalleIngreso.Location = new System.Drawing.Point(0, 0);
             this.upperPanelDetalleIngreso.Name = "upperPanelDetalleIngreso";
-            this.upperPanelDetalleIngreso.Size = new System.Drawing.Size(816, 26);
+            this.upperPanelDetalleIngreso.Size = new System.Drawing.Size(906, 26);
             this.upperPanelDetalleIngreso.TabIndex = 64;
             this.upperPanelDetalleIngreso.MouseDown += new System.Windows.Forms.MouseEventHandler(this.upperPanelDetalleIngreso_MouseDown);
             // 
@@ -188,7 +188,7 @@
             this.btnClose.ForeColor = System.Drawing.Color.White;
             this.btnClose.Image = global::MenuGerman.Properties.Resources.Close_thin2_30px;
             this.btnClose.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnClose.Location = new System.Drawing.Point(776, 3);
+            this.btnClose.Location = new System.Drawing.Point(866, 3);
             this.btnClose.Name = "btnClose";
             this.btnClose.Size = new System.Drawing.Size(37, 20);
             this.btnClose.TabIndex = 50;
@@ -225,7 +225,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.ClientSize = new System.Drawing.Size(816, 476);
+            this.ClientSize = new System.Drawing.Size(906, 513);
             this.Controls.Add(this.upperPanelDetalleIngreso);
             this.Controls.Add(this.dgvDetalle);
             this.Controls.Add(this.lblComprobante);

@@ -27,7 +27,7 @@ namespace CapaDeDatos.Models
         public Ingreso()
         {
            estado = 1;
-            empresa = GlobalClass.empresa;
+           empresa = GlobalClass.empresa;
         }
     }
 }

@@ -159,7 +159,7 @@ namespace MenuGerman.ControlesUser
                 ingresoModel.impuesto = Convert.ToDouble(dgvVerIngreso.CurrentRow.Cells["IMPUESTO"].Value);
                 ingresoModel.total = Convert.ToDouble(dgvVerIngreso.CurrentRow.Cells["TOTAL"].Value);
                 ingresoModel.numeroComprobante = dgvVerIngreso.CurrentRow.Cells["NCF"].Value.ToString();
-                DataTable dt = IngresoDTO.MantenimientoIngreso(ingresoModel, GlobalClass.detalleIngreso);
+                DataTable dt = IngresoDTO.MantenimientoIngreso(ingresoModel, GlobalClass.detalle);
                 frmVisorReporteIngresocs frmDetalle = new frmVisorReporteIngresocs(dt, ingresoModel);
                 frmDetalle.ShowDialog();
             }

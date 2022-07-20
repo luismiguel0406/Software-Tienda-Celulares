@@ -15,9 +15,10 @@ namespace Utilidades
         public static int Delete { get { return 3; } }
         public static int Update { get { return 4; } }    
         public static int Login { get { return 5; } }
-        public static int detalleIngreso { get { return 6; } }
+        public static int detalle { get { return 6; } }
         public static int setOffLine { get { return 7; } }
         public static int setOnLine { get { return 8; } }
+        
 
 
         public static void limpiar(UserControl cu)
