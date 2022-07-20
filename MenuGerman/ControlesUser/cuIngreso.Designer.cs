@@ -100,7 +100,6 @@
             this.tpRealizarIngresos.Size = new System.Drawing.Size(1144, 530);
             this.tpRealizarIngresos.TabIndex = 0;
             this.tpRealizarIngresos.Text = "Ingresos";
-//            this.tpRealizarIngresos.Click += new System.EventHandler(this.tpRealizarIngresos_Click);
             // 
             // btnEliminar
             // 
@@ -356,7 +355,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
