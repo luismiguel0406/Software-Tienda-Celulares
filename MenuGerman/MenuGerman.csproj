@@ -74,6 +74,12 @@
     <Compile Include="ControlesUser\cuIngreso.Designer.cs">
       <DependentUpon>cuIngreso.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlesUser\cuReportes.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlesUser\cuReportes.Designer.cs">
+      <DependentUpon>cuReportes.cs</DependentUpon>
+    </Compile>
     <Compile Include="ControlesUser\cuUsuarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -116,6 +122,12 @@
     <Compile Include="frmRol.Designer.cs">
       <DependentUpon>frmRol.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmVisorDetalleVenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVisorDetalleVenta.Designer.cs">
+      <DependentUpon>frmVisorDetalleVenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmVisorReporteIngresocs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +154,9 @@
     <EmbeddedResource Include="ControlesUser\cuIngreso.resx">
       <DependentUpon>cuIngreso.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ControlesUser\cuReportes.resx">
+      <DependentUpon>cuReportes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ControlesUser\cuUsuarios.resx">
       <DependentUpon>cuUsuarios.cs</DependentUpon>
     </EmbeddedResource>
@@ -159,6 +174,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmRol.resx">
       <DependentUpon>frmRol.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVisorDetalleVenta.resx">
+      <DependentUpon>frmVisorDetalleVenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmVisorReporteIngresocs.resx">
       <DependentUpon>frmVisorReporteIngresocs.cs</DependentUpon>
