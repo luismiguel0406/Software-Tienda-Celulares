@@ -61,6 +61,12 @@ namespace MenuGerman
         {
            // MainMenuStrip = cargaMenuDinamico(msMenu, 1);
             lblUsuario.Text = GlobalClass.Usuario;
+            if (GlobalClass.idRol == 3)
+            {
+                btnUsuarioMenu.Enabled = false;
+                btnIngresoMenu.Enabled = false;
+                btnArticulosMenu.Enabled = false;
+            }
         }
 
         private void MenuPrincipal_FormClosed(object sender, FormClosedEventArgs e)
@@ -89,11 +95,16 @@ namespace MenuGerman
         {
             try
             {
-                usuarioModel.idUsuario = GlobalClass.idUsuario;
-                usuarioModel.empresa = GlobalClass.empresa;
-                UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.setOffLine);
-                MessageBox.Show($"{ GlobalClass.Usuario} ha cerrado session", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Close();
+                DialogResult dialogo = MessageBox.Show("Desea salir de la aplicación?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (dialogo == DialogResult.Yes)
+                {
+                    usuarioModel.idUsuario = GlobalClass.idUsuario;
+                    usuarioModel.empresa = GlobalClass.empresa;
+                    UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.setOffLine);
+                    MessageBox.Show($"{ GlobalClass.Usuario} ha cerrado sesión", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Close();
+                }
+               
             }
             catch (Exception)
             {

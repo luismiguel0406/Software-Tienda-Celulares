@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Media;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,7 +24,10 @@ namespace MenuGerman
             InitializeComponent();
            
         }
-
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
 
         private void btnInicioSesion_MouseMove(object sender, MouseEventArgs e)
         {
@@ -86,9 +90,26 @@ namespace MenuGerman
         private void comboBoxEmpresa()
         {
             DataTable dt = EmpresaDTO.MantenimientoEmpresa(empresaModel, GlobalClass.Select);
+            if (dt != null)
             cbEmpresa.DataSource = dt;
             cbEmpresa.DisplayMember = dt.Columns["NOMBRE"].ToString();
             cbEmpresa.ValueMember = dt.Columns["ID"].ToString();
+        }
+
+        private void btnCerrarLogin_MouseMove(object sender, MouseEventArgs e)
+        {
+            btnCerrarLogin.BackColor = Color.Crimson;
+        }
+
+        private void btnCerrarLogin_MouseLeave(object sender, EventArgs e)
+        {
+            btnCerrarLogin.BackColor = Color.Transparent;
+        }
+
+        private void upperPanelCategoria_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(Handle, 0x112, 0xf012, 0);
         }
     }
 }

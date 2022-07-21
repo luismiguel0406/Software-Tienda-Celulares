@@ -23,7 +23,9 @@ namespace MenuGerman.ControlesUser
         {
             if (dgvVenta.Rows.Count == 0)
             {
-             return true;
+                MessageBox.Show("Debe agregar articulos para poder hacer una venta.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return true;
+                
             }
             else
             {
@@ -143,11 +145,20 @@ namespace MenuGerman.ControlesUser
             {
                 if (!camposVacios())
                 {
-                    DatosVenta();
-                    var dt = VentaDTO.MantenimientoVenta(ventaModel, GlobalClass.Insert);
-                    MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    GlobalClass.limpiar(dgvVenta);
-                    GlobalClass.limpiar(this);
+                    DialogResult dialogo = MessageBox.Show("Desea realizar esta venta?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (dialogo == DialogResult.Yes)
+                    {
+                        DatosVenta();
+                        var dt = VentaDTO.MantenimientoVenta(ventaModel, GlobalClass.Insert);
+                        MessageBox.Show("Operacion exitosa", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        GlobalClass.limpiar(dgvVenta);
+                        GlobalClass.limpiar(this);
+                    }
+                    else
+                    {
+                        return;
+                    }
+                  
                 }
             }
             catch (Exception)

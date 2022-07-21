@@ -9,14 +9,16 @@ using System.Drawing;
 using System.Windows.Forms;
 using Utilidades;
 using System.Runtime.InteropServices;
+using System.Text;
 
 namespace MenuGerman
 {
     public partial class frmModalArticulos : Form       
     {
-         Articulo articulo = new Articulo();
+        Articulo articulo = new Articulo();
         private cuIngreso _cuIngreso;
         private cuVenta _cuVenta;
+        StringBuilder stringBuilder = new StringBuilder();
 
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -36,7 +38,25 @@ namespace MenuGerman
             _cuVenta = venta;      
             InitializeComponent();
         }
+        private bool cantidadesValidas(StringBuilder stringBuilder, string articulo,int cantidad, int stock)
+        {         
+            if (cantidad > stock)
+            {
+                stringBuilder.AppendLine($"El articulo {articulo} solo tiene una cantidad disponible de: {stock}");
+                
+            }
+            if (stringBuilder.Length > 0)
+            {
+                MessageBox.Show(stringBuilder.ToString(), "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                stringBuilder.Clear();
+                return false;
+            }
+            else
+            {
+                return true;
+            }
 
+        }
         private void frmModalArticulos_Load(object sender, EventArgs e)
         {
             var dt = ArticuloDTO.MantenimientoArticulo(articulo, GlobalClass.Select);
@@ -47,15 +67,15 @@ namespace MenuGerman
                 dgvModalArticulo.Columns["ESTADO"].Visible = false;
                 dgvModalArticulo.Columns["DESCRIPCION"].Visible = false;
                 dgvModalArticulo.Columns["IDCATEGORIA"].Visible = false;
-                dgvModalArticulo.Columns["PRECIO_VENTA"].Visible = false;
-                
-               
+                dgvModalArticulo.Columns["CODIGO"].Visible = false;
+
 
                 //USUARIO NO PUEDE EDITAR ESTAS CELDAS, LAS DEMAS SI
                 dgvModalArticulo.Columns["CATEGORIA"].ReadOnly = true;
                 dgvModalArticulo.Columns["CODIGO"].ReadOnly = true;
                 dgvModalArticulo.Columns["NOMBRE"].ReadOnly = true;
                 dgvModalArticulo.Columns["STOCK"].ReadOnly = true;
+                dgvModalArticulo.Columns["PRECIO_VENTA"].ReadOnly = true;
 
             }
             catch (Exception)
@@ -67,6 +87,9 @@ namespace MenuGerman
 
         private void btnProcesar_Click(object sender, EventArgs e)
         {
+            int cantidad = 0;
+            string articulo = "";
+            int stock = 0;
             try
             {
                 if (_cuIngreso != null)
@@ -76,17 +99,26 @@ namespace MenuGerman
                     {
                         if (Convert.ToBoolean(row.Cells["Seleccionar"].Value))
                         {
-                            detalle.Add(new DetalleIngreso
+                            cantidad = Convert.ToInt32(row.Cells["CANTIDAD"].Value);
+                            articulo = Convert.ToString(row.Cells["NOMBRE"].Value);
+                            stock = Convert.ToInt32(row.Cells["STOCK"].Value);
+
+                            if (cantidadesValidas(stringBuilder, articulo, cantidad, stock))
                             {
-                                idArticulo = Convert.ToInt32(row.Cells["ID"].Value),
-                                descripcion = Convert.ToString(row.Cells["NOMBRE"].Value),
-                                cantidad = Convert.ToInt32(row.Cells["CANTIDAD"].Value),
-                                precio = Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value),
-                                subTotal = Convert.ToInt32(row.Cells["CANTIDAD"].Value) * Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value)
+                                detalle.Add(new DetalleIngreso
+                                {
+                                    idArticulo = Convert.ToInt32(row.Cells["ID"].Value),
+                                    descripcion = Convert.ToString(row.Cells["NOMBRE"].Value),
+                                    cantidad = Convert.ToInt32(row.Cells["CANTIDAD"].Value),
+                                    precio = Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value),
+                                    subTotal = Convert.ToInt32(row.Cells["CANTIDAD"].Value) * Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value)
 
-                            });
+                                });
+                            }  else
+                            {
+                                return;
+                            }                         
                         }
-
                     }
                     _cuIngreso.RecibirListaArticulos(detalle);
                 }
@@ -98,15 +130,27 @@ namespace MenuGerman
                     {
                         if (Convert.ToBoolean(row.Cells["Seleccionar"].Value))
                         {
-                            detalle.Add(new DetalleVenta
-                            {
-                                idArticulo = Convert.ToInt32(row.Cells["ID"].Value),
-                                descripcion = Convert.ToString(row.Cells["NOMBRE"].Value),
-                                cantidad = Convert.ToInt32(row.Cells["CANTIDAD"].Value),
-                                precio = Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value),
-                                subTotal = Convert.ToInt32(row.Cells["CANTIDAD"].Value) * Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value)
+                            cantidad = Convert.ToInt32(row.Cells["CANTIDAD"].Value);
+                            articulo = Convert.ToString(row.Cells["NOMBRE"].Value);
+                            stock = Convert.ToInt32(row.Cells["STOCK"].Value);
 
-                            });
+                            if (cantidadesValidas(stringBuilder, articulo, cantidad, stock))
+                            {
+                                detalle.Add(new DetalleVenta
+                                {
+                                    idArticulo = Convert.ToInt32(row.Cells["ID"].Value),
+                                    descripcion = Convert.ToString(row.Cells["NOMBRE"].Value),
+                                    cantidad = Convert.ToInt32(row.Cells["CANTIDAD"].Value),
+                                    precio = Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value),
+                                    subTotal = Convert.ToInt32(row.Cells["CANTIDAD"].Value) * Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value)
+
+                                });
+                            }
+                            else
+                            {
+                                return;
+                            }
+                           
                         }
                         
                     }

@@ -131,13 +131,18 @@ namespace Utilidades
                         }
                     }
                 }
+                else
+                {
+                    foreach (DataGridViewRow r in tabla.Rows)
+                    {
+                        r.Visible = true;
+                    }
+                }
             }
             catch (Exception)
             {
                 return;
-            }
-          
-            
+            }         
         }
 
         public static string money(float stringToMoney)
