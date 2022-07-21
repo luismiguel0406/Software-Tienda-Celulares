@@ -1,1 +1,1 @@
-MenuGerman
+Manejo de inventario
