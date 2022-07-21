@@ -34,17 +34,17 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnInicioSesion = new MenuGerman.customButton();
             this.cbEmpresa = new System.Windows.Forms.ComboBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pbEmpresa = new System.Windows.Forms.PictureBox();
             this.pbContraseña = new System.Windows.Forms.PictureBox();
             this.pbUsuario = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.btnCerrarLogin = new MenuGerman.customButton();
             this.upperPanelCategoria = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.btnCerrarLogin = new MenuGerman.customButton();
             this.btnCerrar = new MenuGerman.customButton();
+            this.btnInicioSesion = new MenuGerman.customButton();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbEmpresa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbContraseña)).BeginInit();
@@ -97,27 +97,6 @@
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 25);
             this.label2.TabIndex = 6;
-            // 
-            // btnInicioSesion
-            // 
-            this.btnInicioSesion.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnInicioSesion.BackGroundColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnInicioSesion.BorderColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnInicioSesion.BorderRadius = 15;
-            this.btnInicioSesion.BorderSize = 0;
-            this.btnInicioSesion.FlatAppearance.BorderSize = 0;
-            this.btnInicioSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnInicioSesion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnInicioSesion.ForeColor = System.Drawing.Color.White;
-            this.btnInicioSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnInicioSesion.Location = new System.Drawing.Point(77, 326);
-            this.btnInicioSesion.Name = "btnInicioSesion";
-            this.btnInicioSesion.Size = new System.Drawing.Size(241, 40);
-            this.btnInicioSesion.TabIndex = 22;
-            this.btnInicioSesion.Text = "Inicio Sesion";
-            this.btnInicioSesion.TextColor = System.Drawing.Color.White;
-            this.btnInicioSesion.UseVisualStyleBackColor = false;
-            this.btnInicioSesion.Click += new System.EventHandler(this.btnInicioSesion_Click);
             // 
             // cbEmpresa
             // 
@@ -182,29 +161,6 @@
             this.label4.TabIndex = 52;
             this.label4.Text = "Empresa";
             // 
-            // btnCerrarLogin
-            // 
-            this.btnCerrarLogin.BackColor = System.Drawing.Color.Transparent;
-            this.btnCerrarLogin.BackGroundColor = System.Drawing.Color.Transparent;
-            this.btnCerrarLogin.BorderColor = System.Drawing.Color.Crimson;
-            this.btnCerrarLogin.BorderRadius = 0;
-            this.btnCerrarLogin.BorderSize = 0;
-            this.btnCerrarLogin.FlatAppearance.BorderSize = 0;
-            this.btnCerrarLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
-            this.btnCerrarLogin.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarLogin.Image = global::MenuGerman.Properties.Resources.Close_thin2_30px;
-            this.btnCerrarLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarLogin.Location = new System.Drawing.Point(337, 2);
-            this.btnCerrarLogin.Name = "btnCerrarLogin";
-            this.btnCerrarLogin.Size = new System.Drawing.Size(40, 27);
-            this.btnCerrarLogin.TabIndex = 53;
-            this.btnCerrarLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnCerrarLogin.TextColor = System.Drawing.Color.White;
-            this.btnCerrarLogin.UseVisualStyleBackColor = false;
-            this.btnCerrarLogin.MouseLeave += new System.EventHandler(this.btnCerrarLogin_MouseLeave);
-            this.btnCerrarLogin.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnCerrarLogin_MouseMove);
-            // 
             // upperPanelCategoria
             // 
             this.upperPanelCategoria.BackColor = System.Drawing.Color.MediumSlateBlue;
@@ -228,6 +184,30 @@
             this.label5.Size = new System.Drawing.Size(0, 17);
             this.label5.TabIndex = 49;
             // 
+            // btnCerrarLogin
+            // 
+            this.btnCerrarLogin.BackColor = System.Drawing.Color.Transparent;
+            this.btnCerrarLogin.BackGroundColor = System.Drawing.Color.Transparent;
+            this.btnCerrarLogin.BorderColor = System.Drawing.Color.Crimson;
+            this.btnCerrarLogin.BorderRadius = 0;
+            this.btnCerrarLogin.BorderSize = 0;
+            this.btnCerrarLogin.FlatAppearance.BorderSize = 0;
+            this.btnCerrarLogin.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarLogin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnCerrarLogin.ForeColor = System.Drawing.Color.White;
+            this.btnCerrarLogin.Image = global::MenuGerman.Properties.Resources.Close_thin2_30px;
+            this.btnCerrarLogin.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarLogin.Location = new System.Drawing.Point(337, 2);
+            this.btnCerrarLogin.Name = "btnCerrarLogin";
+            this.btnCerrarLogin.Size = new System.Drawing.Size(40, 27);
+            this.btnCerrarLogin.TabIndex = 53;
+            this.btnCerrarLogin.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCerrarLogin.TextColor = System.Drawing.Color.White;
+            this.btnCerrarLogin.UseVisualStyleBackColor = false;
+            this.btnCerrarLogin.Click += new System.EventHandler(this.btnCerrarLogin_Click);
+            this.btnCerrarLogin.MouseLeave += new System.EventHandler(this.btnCerrarLogin_MouseLeave);
+            this.btnCerrarLogin.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btnCerrarLogin_MouseMove);
+            // 
             // btnCerrar
             // 
             this.btnCerrar.BackColor = System.Drawing.Color.Transparent;
@@ -248,6 +228,27 @@
             this.btnCerrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCerrar.TextColor = System.Drawing.Color.White;
             this.btnCerrar.UseVisualStyleBackColor = false;
+            // 
+            // btnInicioSesion
+            // 
+            this.btnInicioSesion.BackColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnInicioSesion.BackGroundColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnInicioSesion.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.btnInicioSesion.BorderRadius = 15;
+            this.btnInicioSesion.BorderSize = 0;
+            this.btnInicioSesion.FlatAppearance.BorderSize = 0;
+            this.btnInicioSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnInicioSesion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold);
+            this.btnInicioSesion.ForeColor = System.Drawing.Color.White;
+            this.btnInicioSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnInicioSesion.Location = new System.Drawing.Point(77, 326);
+            this.btnInicioSesion.Name = "btnInicioSesion";
+            this.btnInicioSesion.Size = new System.Drawing.Size(241, 40);
+            this.btnInicioSesion.TabIndex = 22;
+            this.btnInicioSesion.Text = "Inicio Sesion";
+            this.btnInicioSesion.TextColor = System.Drawing.Color.White;
+            this.btnInicioSesion.UseVisualStyleBackColor = false;
+            this.btnInicioSesion.Click += new System.EventHandler(this.btnInicioSesion_Click);
             // 
             // login
             // 

@@ -111,5 +111,10 @@ namespace MenuGerman
             ReleaseCapture();
             SendMessage(Handle, 0x112, 0xf012, 0);
         }
+
+        private void btnCerrarLogin_Click(object sender, EventArgs e)
+        {
+            Close();
+        }
     }
 }

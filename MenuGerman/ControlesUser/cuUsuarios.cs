@@ -168,7 +168,7 @@ namespace MenuGerman.ControlesUser
                 DialogResult dialogo = MessageBox.Show("Esta seguro que desea eliminar?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogo == DialogResult.Yes)
                 {
-                    usuarioModel.idUsuario = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["IDUSUARIO"].Value);
+                    usuarioModel.idUsuario = Convert.ToInt32(dgvUsuarios.CurrentRow.Cells["ID"].Value);
                     dgvUsuarios.DataSource = UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.Delete);
                 }
                 else

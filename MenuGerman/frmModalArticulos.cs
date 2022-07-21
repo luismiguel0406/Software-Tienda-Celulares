@@ -62,6 +62,7 @@ namespace MenuGerman
             var dt = ArticuloDTO.MantenimientoArticulo(articulo, GlobalClass.Select);
             try
             {
+                if (dt!= null)            
                 dgvModalArticulo.DataSource = dt;
                 //USUARIO NO NECESITA VER ESTAS CELDAS
                 dgvModalArticulo.Columns["ESTADO"].Visible = false;
