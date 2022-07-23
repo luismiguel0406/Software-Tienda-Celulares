@@ -253,6 +253,7 @@
             this.MinimizeBox = false;
             this.Name = "MenuPrincipal";
             this.Text = "Software Cell";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MenuPrincipal_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.MenuPrincipal_FormClosed);
             this.Load += new System.EventHandler(this.MenuPrincipal_Load);
             this.upPanel.ResumeLayout(false);

@@ -97,11 +97,7 @@ namespace MenuGerman
             {
                 DialogResult dialogo = MessageBox.Show("Desea salir de la aplicación?", "Mensaje", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogo == DialogResult.Yes)
-                {
-                    usuarioModel.idUsuario = GlobalClass.idUsuario;
-                    usuarioModel.empresa = GlobalClass.empresa;
-                    UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.setOffLine);
-                    MessageBox.Show($"{ GlobalClass.Usuario} ha cerrado sesión", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                {                   
                     Close();
                 }
                
@@ -149,6 +145,15 @@ namespace MenuGerman
             cuReportes reportes = new cuReportes();
             mainPanel.Controls.Clear();
             mainPanel.Controls.Add(reportes);
+        }
+
+        private void MenuPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            usuarioModel.idUsuario = GlobalClass.idUsuario;
+            usuarioModel.empresa = GlobalClass.empresa;
+            UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.setOffLine);
+            MessageBox.Show($"{ GlobalClass.Usuario} ha cerrado sesión", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
     }
 }
