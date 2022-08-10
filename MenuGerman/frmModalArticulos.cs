@@ -104,8 +104,6 @@ namespace MenuGerman
                             articulo = Convert.ToString(row.Cells["NOMBRE"].Value);
                             stock = Convert.ToInt32(row.Cells["STOCK"].Value);
 
-                            if (cantidadesValidas(stringBuilder, articulo, cantidad, stock))
-                            {
                                 detalle.Add(new DetalleIngreso
                                 {
                                     idArticulo = Convert.ToInt32(row.Cells["ID"].Value),
@@ -115,10 +113,7 @@ namespace MenuGerman
                                     subTotal = Convert.ToInt32(row.Cells["CANTIDAD"].Value) * Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value)
 
                                 });
-                            }  else
-                            {
-                                return;
-                            }                         
+                                                  
                         }
                     }
                     _cuIngreso.RecibirListaArticulos(detalle);
@@ -200,16 +195,6 @@ namespace MenuGerman
             ReleaseCapture();
             SendMessage(Handle, 0x112, 0xf012, 0);
         }
-
-        private void dgvModalArticulo_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-          /*  if (dgvModalArticulo.Columns["SEL"].Equals(true))
-            {
-                dgvModalArticulo.CurrentRow.Cells["CANTIDAD"].Selected = true;
-            }
-          */
-        }
-
        
     }
 }

@@ -178,7 +178,7 @@
             this.cdtpFecha.Location = new System.Drawing.Point(238, 53);
             this.cdtpFecha.MinimumSize = new System.Drawing.Size(4, 35);
             this.cdtpFecha.Name = "cdtpFecha";
-            this.cdtpFecha.Size = new System.Drawing.Size(226, 35);
+            this.cdtpFecha.Size = new System.Drawing.Size(302, 35);
             this.cdtpFecha.SkinColor = System.Drawing.Color.MediumSlateBlue;
             this.cdtpFecha.TabIndex = 32;
             this.cdtpFecha.TextColor = System.Drawing.Color.White;
@@ -253,7 +253,7 @@
             // 
             this.txtComprobante.AccessibleName = "";
             this.txtComprobante.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtComprobante.Location = new System.Drawing.Point(497, 61);
+            this.txtComprobante.Location = new System.Drawing.Point(573, 61);
             this.txtComprobante.Name = "txtComprobante";
             this.txtComprobante.Size = new System.Drawing.Size(197, 27);
             this.txtComprobante.TabIndex = 15;
@@ -284,7 +284,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label1.Location = new System.Drawing.Point(494, 33);
+            this.label1.Location = new System.Drawing.Point(570, 33);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(138, 20);
             this.label1.TabIndex = 16;
@@ -355,7 +355,7 @@
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.MediumSlateBlue;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;

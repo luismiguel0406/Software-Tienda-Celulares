@@ -139,7 +139,7 @@
             this.dgvModalArticulo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvModalArticulo.Size = new System.Drawing.Size(976, 222);
             this.dgvModalArticulo.TabIndex = 64;
-            this.dgvModalArticulo.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModalArticulo_CellValueChanged);
+            //this.dgvModalArticulo.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModalArticulo_CellValueChanged);
             // 
             // seleccionar
             // 
