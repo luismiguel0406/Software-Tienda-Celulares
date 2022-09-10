@@ -10,6 +10,8 @@ namespace Utilidades
         public static string rol { get; set; }
         public static int idRol { get; set; }
         public static int empresa { get; set; }
+        public static int limiteUsuarios { get; set; }
+        public static int usuariosActivos { get; set; }
         public static int Select { get { return 1; } }
         public static int Insert { get { return 2; } }
         public static int Delete { get { return 3; } }
@@ -19,6 +21,7 @@ namespace Utilidades
         public static int setOffLine { get { return 7; } }
         public static int setOnLine { get { return 8; } }
         
+
 
 
         public static void limpiar(UserControl cu)

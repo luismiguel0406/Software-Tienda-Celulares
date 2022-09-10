@@ -59,6 +59,7 @@ namespace MenuGerman
                 MessageBox.Show("Usuario Invalido, intente de nuevo", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+
             GlobalClass.limpiar(this);
 
             foreach (DataRow item in usuarioValido.Rows)
@@ -68,19 +69,29 @@ namespace MenuGerman
                 GlobalClass.rol = item["ROL"].ToString();
                 GlobalClass.idRol = Convert.ToInt32(item["IDROL"]);
                 GlobalClass.empresa = Convert.ToInt32(item["EMPRESA"]);
+                GlobalClass.limiteUsuarios = Convert.ToInt32(item["LIMITE_USUARIOS"]);
+                GlobalClass.usuariosActivos = Convert.ToInt32(item["ACTIVOS"]);
             }
 
-            usuarioModel.idUsuario = GlobalClass.idUsuario;
-            UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.setOnLine);
+            if (GlobalClass.usuariosActivos <= GlobalClass.limiteUsuarios)
+            {
+                usuarioModel.idUsuario = GlobalClass.idUsuario;
+                UsuariosDTO.MantenimientoUsuario(usuarioModel, GlobalClass.setOnLine);
 
 
-            MessageBox.Show($"Bienvenido: {GlobalClass.Usuario}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Hide();
+                MessageBox.Show($"Bienvenido: {GlobalClass.Usuario}", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Hide();
 
-            login frmLogin = this;
-            MenuPrincipal frmMenu = new MenuPrincipal(frmLogin);
-            frmMenu.ShowDialog();
-
+                login frmLogin = this;
+                MenuPrincipal frmMenu = new MenuPrincipal(frmLogin);
+                frmMenu.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show($"Su limite permitido de usuarios es: {GlobalClass.limiteUsuarios} y actualmente hay {GlobalClass.usuariosActivos} , Intente de nuevo", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+           
         }
 
         private void login_Load(object sender, EventArgs e)

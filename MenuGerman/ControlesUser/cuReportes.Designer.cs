@@ -28,24 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tcReportes = new System.Windows.Forms.TabControl();
             this.tpVenta = new System.Windows.Forms.TabPage();
-            this.btnBuscar = new MenuGerman.customButton();
-            this.txtIdVenta = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
+            this.chkFechas = new System.Windows.Forms.CheckBox();
+            this.dgvVerVenta = new System.Windows.Forms.DataGridView();
             this.gbFechas = new System.Windows.Forms.GroupBox();
             this.cdtpFechaHasta = new MenuGerman.customDateTimePicker();
             this.label9 = new System.Windows.Forms.Label();
             this.cdtpFechaDesde = new MenuGerman.customDateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
-            this.dgvVerVenta = new System.Windows.Forms.DataGridView();
-            this.chkFechas = new System.Windows.Forms.CheckBox();
+            this.btnBuscar = new MenuGerman.customButton();
+            this.txtIdVenta = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.tcReportes.SuspendLayout();
             this.tpVenta.SuspendLayout();
-            this.gbFechas.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVerVenta)).BeginInit();
+            this.gbFechas.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcReportes
@@ -74,6 +74,119 @@
             this.tpVenta.Size = new System.Drawing.Size(1144, 530);
             this.tpVenta.TabIndex = 0;
             this.tpVenta.Text = "Ventas";
+            // 
+            // chkFechas
+            // 
+            this.chkFechas.AutoSize = true;
+            this.chkFechas.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkFechas.Location = new System.Drawing.Point(533, 14);
+            this.chkFechas.Name = "chkFechas";
+            this.chkFechas.Size = new System.Drawing.Size(15, 14);
+            this.chkFechas.TabIndex = 75;
+            this.chkFechas.UseVisualStyleBackColor = true;
+            this.chkFechas.CheckedChanged += new System.EventHandler(this.chkFechas_CheckedChanged);
+            // 
+            // dgvVerVenta
+            // 
+            this.dgvVerVenta.AllowUserToAddRows = false;
+            this.dgvVerVenta.AllowUserToDeleteRows = false;
+            this.dgvVerVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvVerVenta.BackgroundColor = System.Drawing.Color.White;
+            this.dgvVerVenta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVerVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvVerVenta.ColumnHeadersHeight = 35;
+            this.dgvVerVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVerVenta.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvVerVenta.EnableHeadersVisualStyles = false;
+            this.dgvVerVenta.GridColor = System.Drawing.Color.MediumSlateBlue;
+            this.dgvVerVenta.Location = new System.Drawing.Point(16, 160);
+            this.dgvVerVenta.Name = "dgvVerVenta";
+            this.dgvVerVenta.ReadOnly = true;
+            this.dgvVerVenta.RowHeadersVisible = false;
+            this.dgvVerVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvVerVenta.Size = new System.Drawing.Size(1109, 338);
+            this.dgvVerVenta.TabIndex = 74;
+            this.dgvVerVenta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVerVenta_CellDoubleClick);
+            // 
+            // gbFechas
+            // 
+            this.gbFechas.Controls.Add(this.cdtpFechaHasta);
+            this.gbFechas.Controls.Add(this.label9);
+            this.gbFechas.Controls.Add(this.cdtpFechaDesde);
+            this.gbFechas.Controls.Add(this.label8);
+            this.gbFechas.Enabled = false;
+            this.gbFechas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.gbFechas.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.gbFechas.Location = new System.Drawing.Point(533, 34);
+            this.gbFechas.Name = "gbFechas";
+            this.gbFechas.Size = new System.Drawing.Size(592, 106);
+            this.gbFechas.TabIndex = 73;
+            this.gbFechas.TabStop = false;
+            this.gbFechas.Text = "Por fechas";
+            // 
+            // cdtpFechaHasta
+            // 
+            this.cdtpFechaHasta.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.cdtpFechaHasta.BorderSize = 0;
+            this.cdtpFechaHasta.CalendarFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cdtpFechaHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cdtpFechaHasta.Location = new System.Drawing.Point(306, 47);
+            this.cdtpFechaHasta.MinimumSize = new System.Drawing.Size(4, 35);
+            this.cdtpFechaHasta.Name = "cdtpFechaHasta";
+            this.cdtpFechaHasta.Size = new System.Drawing.Size(268, 35);
+            this.cdtpFechaHasta.SkinColor = System.Drawing.Color.MediumSlateBlue;
+            this.cdtpFechaHasta.TabIndex = 71;
+            this.cdtpFechaHasta.TextColor = System.Drawing.Color.White;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label9.Location = new System.Drawing.Point(302, 27);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(53, 20);
+            this.label9.TabIndex = 70;
+            this.label9.Text = "Hasta:";
+            // 
+            // cdtpFechaDesde
+            // 
+            this.cdtpFechaDesde.BorderColor = System.Drawing.Color.PaleVioletRed;
+            this.cdtpFechaDesde.BorderSize = 0;
+            this.cdtpFechaDesde.CalendarFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cdtpFechaDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cdtpFechaDesde.Location = new System.Drawing.Point(15, 47);
+            this.cdtpFechaDesde.MinimumSize = new System.Drawing.Size(4, 35);
+            this.cdtpFechaDesde.Name = "cdtpFechaDesde";
+            this.cdtpFechaDesde.Size = new System.Drawing.Size(269, 35);
+            this.cdtpFechaDesde.SkinColor = System.Drawing.Color.MediumSlateBlue;
+            this.cdtpFechaDesde.TabIndex = 71;
+            this.cdtpFechaDesde.TextColor = System.Drawing.Color.White;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.label8.Location = new System.Drawing.Point(11, 27);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(56, 20);
+            this.label8.TabIndex = 70;
+            this.label8.Text = "Desde:";
             // 
             // btnBuscar
             // 
@@ -117,119 +230,6 @@
             this.label6.TabIndex = 70;
             this.label6.Text = "Id venta";
             // 
-            // gbFechas
-            // 
-            this.gbFechas.Controls.Add(this.cdtpFechaHasta);
-            this.gbFechas.Controls.Add(this.label9);
-            this.gbFechas.Controls.Add(this.cdtpFechaDesde);
-            this.gbFechas.Controls.Add(this.label8);
-            this.gbFechas.Enabled = false;
-            this.gbFechas.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.gbFechas.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.gbFechas.Location = new System.Drawing.Point(559, 34);
-            this.gbFechas.Name = "gbFechas";
-            this.gbFechas.Size = new System.Drawing.Size(566, 106);
-            this.gbFechas.TabIndex = 73;
-            this.gbFechas.TabStop = false;
-            this.gbFechas.Text = "Por fechas";
-            // 
-            // cdtpFechaHasta
-            // 
-            this.cdtpFechaHasta.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.cdtpFechaHasta.BorderSize = 0;
-            this.cdtpFechaHasta.CalendarFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cdtpFechaHasta.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cdtpFechaHasta.Location = new System.Drawing.Point(291, 47);
-            this.cdtpFechaHasta.MinimumSize = new System.Drawing.Size(4, 35);
-            this.cdtpFechaHasta.Name = "cdtpFechaHasta";
-            this.cdtpFechaHasta.Size = new System.Drawing.Size(263, 35);
-            this.cdtpFechaHasta.SkinColor = System.Drawing.Color.MediumSlateBlue;
-            this.cdtpFechaHasta.TabIndex = 71;
-            this.cdtpFechaHasta.TextColor = System.Drawing.Color.White;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label9.Location = new System.Drawing.Point(287, 27);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 20);
-            this.label9.TabIndex = 70;
-            this.label9.Text = "Hasta:";
-            // 
-            // cdtpFechaDesde
-            // 
-            this.cdtpFechaDesde.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.cdtpFechaDesde.BorderSize = 0;
-            this.cdtpFechaDesde.CalendarFont = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cdtpFechaDesde.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cdtpFechaDesde.Location = new System.Drawing.Point(15, 47);
-            this.cdtpFechaDesde.MinimumSize = new System.Drawing.Size(4, 35);
-            this.cdtpFechaDesde.Name = "cdtpFechaDesde";
-            this.cdtpFechaDesde.Size = new System.Drawing.Size(263, 35);
-            this.cdtpFechaDesde.SkinColor = System.Drawing.Color.MediumSlateBlue;
-            this.cdtpFechaDesde.TabIndex = 71;
-            this.cdtpFechaDesde.TextColor = System.Drawing.Color.White;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.label8.Location = new System.Drawing.Point(11, 27);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(56, 20);
-            this.label8.TabIndex = 70;
-            this.label8.Text = "Desde:";
-            // 
-            // dgvVerVenta
-            // 
-            this.dgvVerVenta.AllowUserToAddRows = false;
-            this.dgvVerVenta.AllowUserToDeleteRows = false;
-            this.dgvVerVenta.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dgvVerVenta.BackgroundColor = System.Drawing.Color.White;
-            this.dgvVerVenta.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVerVenta.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvVerVenta.ColumnHeadersHeight = 35;
-            this.dgvVerVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.MediumSlateBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVerVenta.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvVerVenta.EnableHeadersVisualStyles = false;
-            this.dgvVerVenta.GridColor = System.Drawing.Color.MediumSlateBlue;
-            this.dgvVerVenta.Location = new System.Drawing.Point(16, 160);
-            this.dgvVerVenta.Name = "dgvVerVenta";
-            this.dgvVerVenta.ReadOnly = true;
-            this.dgvVerVenta.RowHeadersVisible = false;
-            this.dgvVerVenta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVerVenta.Size = new System.Drawing.Size(1109, 338);
-            this.dgvVerVenta.TabIndex = 74;
-            this.dgvVerVenta.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVerVenta_CellDoubleClick);
-            // 
-            // chkFechas
-            // 
-            this.chkFechas.AutoSize = true;
-            this.chkFechas.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkFechas.Location = new System.Drawing.Point(559, 14);
-            this.chkFechas.Name = "chkFechas";
-            this.chkFechas.Size = new System.Drawing.Size(15, 14);
-            this.chkFechas.TabIndex = 75;
-            this.chkFechas.UseVisualStyleBackColor = true;
-            this.chkFechas.CheckedChanged += new System.EventHandler(this.chkFechas_CheckedChanged);
-            // 
             // cuReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,9 +240,9 @@
             this.tcReportes.ResumeLayout(false);
             this.tpVenta.ResumeLayout(false);
             this.tpVenta.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvVerVenta)).EndInit();
             this.gbFechas.ResumeLayout(false);
             this.gbFechas.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvVerVenta)).EndInit();
             this.ResumeLayout(false);
 
         }
