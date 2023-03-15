@@ -1,4 +1,5 @@
-﻿using CapaDeDatos.Models;
+﻿using CapaDeDatos;
+using CapaDeDatos.Models;
 using CapaNegocio.DTO;
 using System;
 using System.Collections.Generic;
@@ -32,9 +33,13 @@ namespace MenuGerman.ControlesUser
         {
             datosVenta();
             dgvVerVenta.DataSource = VentaDTO.MantenimientoVenta(ventaModel, GlobalClass.Select);
+            var totales = CalculoTotales(dgvVerVenta);
+            lblSubTotal.Text = totales.subtotal.ToString();
+            lblDescuento.Text = totales.descuento.ToString();
+            lblTotal.Text = totales.total.ToString();
             if (dgvVerVenta.Rows.Count == 0)
             {
-                MessageBox.Show("Sin datos para Mostrar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Sin datos para mostrar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
         }
@@ -62,6 +67,23 @@ namespace MenuGerman.ControlesUser
             {
                 gbFechas.Enabled = false;
             }
+        }
+        private Totales CalculoTotales(DataGridView dgv)
+        {
+            float subTotal = 0;
+            float itbis = 0;
+            float descuento = 0;
+
+
+            foreach (DataGridViewRow row in dgv.Rows)
+            {
+                subTotal += Convert.ToSingle(row.Cells["SUBTOTAL"].Value);
+                descuento += Convert.ToSingle(row.Cells["DESCUENTO"].Value);
+
+            }
+            float total = (subTotal + itbis) - descuento;
+            return new Totales { subtotal = subTotal, total = total, itbis = itbis, descuento = descuento };
+
         }
     }
 }

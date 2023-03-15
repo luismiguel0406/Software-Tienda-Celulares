@@ -13,5 +13,7 @@ namespace CapaDeDatos.Interfaces
         int cantidad { get; set; }
         float precio { get; set; }
         float subTotal { get; set; }
+        float descuento { get; set; }
+
     }
 }

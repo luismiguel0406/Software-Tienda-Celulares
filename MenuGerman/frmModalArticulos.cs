@@ -88,11 +88,11 @@ namespace MenuGerman
 
         private void btnProcesar_Click(object sender, EventArgs e)
         {
-            int cantidad = 0;
-            string articulo = "";
-            int stock = 0;
             try
             {
+                string articulo;
+                int cantidad;
+                int stock;
                 if (_cuIngreso != null)
                 {
                     List<IDetalleIngresoDetails> detalle = new List<IDetalleIngresoDetails>();
@@ -104,23 +104,23 @@ namespace MenuGerman
                             articulo = Convert.ToString(row.Cells["NOMBRE"].Value);
                             stock = Convert.ToInt32(row.Cells["STOCK"].Value);
 
-                                detalle.Add(new DetalleIngreso
-                                {
-                                    idArticulo = Convert.ToInt32(row.Cells["ID"].Value),
-                                    descripcion = Convert.ToString(row.Cells["NOMBRE"].Value),
-                                    cantidad = Convert.ToInt32(row.Cells["CANTIDAD"].Value),
-                                    precio = Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value),
-                                    subTotal = Convert.ToInt32(row.Cells["CANTIDAD"].Value) * Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value)
+                            detalle.Add(new DetalleIngreso
+                            {
+                                idArticulo = Convert.ToInt32(row.Cells["ID"].Value),
+                                descripcion = Convert.ToString(row.Cells["NOMBRE"].Value),
+                                cantidad = Convert.ToInt32(row.Cells["CANTIDAD"].Value),
+                                precio = Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value),
+                                subTotal = Convert.ToInt32(row.Cells["CANTIDAD"].Value) * Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value)
 
-                                });
-                                                  
+                            });
+
                         }
                     }
                     _cuIngreso.RecibirListaArticulos(detalle);
                 }
                 if (_cuVenta != null)
                 {
-                    
+
                     List<IDetalleVentaDetails> detalle = new List<IDetalleVentaDetails>();
                     foreach (DataGridViewRow row in dgvModalArticulo.Rows)
                     {
@@ -138,7 +138,8 @@ namespace MenuGerman
                                     descripcion = Convert.ToString(row.Cells["NOMBRE"].Value),
                                     cantidad = Convert.ToInt32(row.Cells["CANTIDAD"].Value),
                                     precio = Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value),
-                                    subTotal = Convert.ToInt32(row.Cells["CANTIDAD"].Value) * Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value)
+                                    subTotal = Convert.ToInt32(row.Cells["CANTIDAD"].Value) * Convert.ToSingle(row.Cells["PRECIO_VENTA"].Value),
+                                    descuento = Convert.ToSingle(row.Cells["DESCUENTO"].Value)
 
                                 });
                             }
@@ -146,16 +147,16 @@ namespace MenuGerman
                             {
                                 return;
                             }
-                           
+
                         }
-                        
+
                     }
                     _cuVenta.RecibirListaArticulos(detalle);
                 }
-               
+
                 Close();
             }
-            catch (Exception )
+            catch (Exception)
             {
 
                 MessageBox.Show("Ha ocurrido un error", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);

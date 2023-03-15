@@ -36,11 +36,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnCerrar = new MenuGerman.customButton();
             this.dgvModalArticulo = new System.Windows.Forms.DataGridView();
-            this.seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtBuscar = new System.Windows.Forms.TextBox();
             this.btnBuscar = new MenuGerman.customButton();
             this.btnProcesar = new MenuGerman.customButton();
+            this.seleccionar = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descuento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.upperPanelCategoria.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvModalArticulo)).BeginInit();
             this.SuspendLayout();
@@ -122,7 +123,8 @@
             this.dgvModalArticulo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dgvModalArticulo.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.seleccionar,
-            this.cantidad});
+            this.cantidad,
+            this.descuento});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -139,19 +141,6 @@
             this.dgvModalArticulo.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvModalArticulo.Size = new System.Drawing.Size(976, 222);
             this.dgvModalArticulo.TabIndex = 64;
-            //this.dgvModalArticulo.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvModalArticulo_CellValueChanged);
-            // 
-            // seleccionar
-            // 
-            this.seleccionar.HeaderText = "SEL.";
-            this.seleccionar.Name = "seleccionar";
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "CANTIDAD";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.cantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // txtBuscar
             // 
@@ -208,6 +197,24 @@
             this.btnProcesar.UseVisualStyleBackColor = false;
             this.btnProcesar.Click += new System.EventHandler(this.btnProcesar_Click);
             // 
+            // seleccionar
+            // 
+            this.seleccionar.HeaderText = "SEL.";
+            this.seleccionar.Name = "seleccionar";
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "CANTIDAD";
+            this.cantidad.Name = "cantidad";
+            this.cantidad.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.cantidad.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // descuento
+            // 
+            this.descuento.HeaderText = "DESCUENTO";
+            this.descuento.Name = "descuento";
+            this.descuento.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
             // frmModalArticulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -242,10 +249,11 @@
         private System.Windows.Forms.Label label1;
         private customButton btnCerrar;
         private System.Windows.Forms.DataGridView dgvModalArticulo;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn seleccionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
         private customButton btnProcesar;
         private System.Windows.Forms.TextBox txtBuscar;
         private customButton btnBuscar;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn seleccionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descuento;
     }
 }

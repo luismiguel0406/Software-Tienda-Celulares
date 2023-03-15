@@ -49,6 +49,7 @@ namespace MenuGerman.ControlesUser
             foreach (DataGridViewRow row in dgv.Rows)
             {
                 subTotal += Convert.ToSingle(row.Cells["SUBTOTAL"].Value);
+                descuento += Convert.ToSingle(row.Cells["DESCUENTO"].Value);
 
             }
             float total = (subTotal + itbis) - descuento;
@@ -81,10 +82,11 @@ namespace MenuGerman.ControlesUser
         }
 
         private void btnEliminarArticulo_Click(object sender, EventArgs e)
-        {
+        {   
             if (GlobalClass.validaDgv(dgvVenta))
-            {
+            {   
                 int deleteId = (int)dgvVenta.CurrentRow.Cells["idArticulo"].Value;
+
 
                 var query = from d in detalleActual.AsEnumerable()
                             where d.idArticulo != deleteId
@@ -132,7 +134,7 @@ namespace MenuGerman.ControlesUser
                     idArticulo = (int)row.Cells["IDARTICULO"].Value,
                     descripcion = row.Cells["DESCRIPCION"].Value.ToString(),
                     subTotal = (float)row.Cells["SUBTOTAL"].Value,
-                    descuento = 0,
+                    descuento = (float)row.Cells["DESCUENTO"].Value,
                     itbis = 0,
                 });
             }
