@@ -43,6 +43,7 @@
             this.mainPanel = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.imageryService1 = new Microsoft.Reporting.Map.WebForms.VirtualEarth.ImageryService();
+            this.lblVersion = new System.Windows.Forms.Label();
             this.upPanel.SuspendLayout();
             this.menuPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -177,6 +178,7 @@
             // 
             this.menuPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.menuPanel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.menuPanel.Controls.Add(this.lblVersion);
             this.menuPanel.Controls.Add(this.pictureBox1);
             this.menuPanel.Controls.Add(this.lblUsuario);
             this.menuPanel.Controls.Add(this.btnIngresoMenu);
@@ -193,7 +195,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MenuGerman.Properties.Resources.user_black30px;
-            this.pictureBox1.Location = new System.Drawing.Point(3, 515);
+            this.pictureBox1.Location = new System.Drawing.Point(3, 484);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(32, 35);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -205,11 +207,11 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.MediumSlateBlue;
-            this.lblUsuario.Location = new System.Drawing.Point(3, 553);
+            this.lblUsuario.Location = new System.Drawing.Point(3, 522);
             this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(92, 21);
+            this.lblUsuario.Size = new System.Drawing.Size(22, 21);
             this.lblUsuario.TabIndex = 18;
-            this.lblUsuario.Text = "Juan perez";
+            this.lblUsuario.Text = "...";
             // 
             // mainPanel
             // 
@@ -237,6 +239,17 @@
             this.imageryService1.Credentials = null;
             this.imageryService1.Url = "http://dev.virtualearth.net/webservices/v1/imageryservice/imageryservice.svc";
             this.imageryService1.UseDefaultCredentials = false;
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.AutoSize = true;
+            this.lblVersion.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVersion.ForeColor = System.Drawing.Color.MediumSlateBlue;
+            this.lblVersion.Location = new System.Drawing.Point(3, 556);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(56, 21);
+            this.lblVersion.TabIndex = 26;
+            this.lblVersion.Text = "V1.2.0";
             // 
             // MenuPrincipal
             // 
@@ -282,6 +295,7 @@
         private Microsoft.Reporting.Map.WebForms.VirtualEarth.ImageryService imageryService1;
         private customButton btnCerrar;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblVersion;
     }
 }
 
