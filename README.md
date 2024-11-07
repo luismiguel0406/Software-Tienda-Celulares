@@ -3,5 +3,5 @@ System was made to handle single inventories, tracing information from sales, it
 
 # How to run
 
-- Go to releases section and take **SQL.scripts** file and run **script inicial** file, after all other files.
+- Go to *Releases* section and take **SQL.scripts** file and run **script inicial** file, after all other files.
 
