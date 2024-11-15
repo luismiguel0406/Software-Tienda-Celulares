@@ -1,4 +1,4 @@
-# OnInventario | Inventory managment
+# OnInventario | Inventory managment | C#, .Net Framework, Windows forms, ADO.Net, SQL Server
 System was made to handle single inventories, tracing information from sales, item quantities and averages. 
 
 # How to run
